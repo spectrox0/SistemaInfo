@@ -1,0 +1,11 @@
+footer{
+    background: black;
+    border-top: 4px ridge red;
+    width: 100%;
+    color: aliceblue;
+    font-family: 'Frijole' , cursive;
+}
+a{
+    text-decoration: none;
+   
+}

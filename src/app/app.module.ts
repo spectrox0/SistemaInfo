@@ -3,16 +3,46 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavegacionComponent } from './componentes/navegacion/navegacion.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { AdministradorComponent } from './componentes/administrador/administrador.component';
+import { OrdenComponent } from './componentes/orden/orden.component';
+import { ComprasComponent } from './componentes/compras/compras.component';
+import { FooterComponent } from './componentes/footer/footer.component';
+import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { CambiarComponent } from './componentes/cambiar/cambiar.component';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
+import {environment} from '../environments/environment';
+import {AuthService} from './services/auth.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavegacionComponent,
+    RegistroComponent,
+    PrincipalComponent,
+    AdministradorComponent,
+    OrdenComponent,
+    ComprasComponent,
+    FooterComponent,
+    EncabezadoComponent,
+    MenuComponent,
+    CambiarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgbModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
+
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

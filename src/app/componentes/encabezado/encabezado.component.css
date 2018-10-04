@@ -1,0 +1,18 @@
+.jumbotron{
+    margin-bottom: 0;
+    border: 4px ridge red;
+   
+    background: url(/../../assets/img/free50.jpg);
+    color: red;
+  }
+  h1{
+    font-family: 'Frijole', cursive;
+    font-size: 500%;
+    display: inline-block;
+    background: rgb(0,0,0,0.5);
+    border: crimson ridge 2px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 3px crimson;
+    
+  }
+   

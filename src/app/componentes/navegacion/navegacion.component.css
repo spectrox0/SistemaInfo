@@ -1,0 +1,43 @@
+*{
+  color: aliceblue;
+  font-family: 'Pacifico', cursive;
+}
+ a img {
+   width: 70px;
+   border-radius: 10px;
+   border: solid 2px crimson;
+ }
+ a img:hover{
+
+  border: solid 2px crimson;
+  box-shadow: 0px 0px 15px 2px crimson;
+}
+.navbar {
+    margin-bottom: 20px;
+    border-radius: 0;
+
+  }
+  button{
+    border: 3px ridge crimson;
+  }
+
+
+  .navbar-dark .navbar-toggler:hover{
+   color: greenyellow;
+   box-shadow: 0px 0px 10px 2px rgb(220, 20, 20);
+   transition: all .5s ease;
+
+  }
+
+
+  .nav-item:hover{
+
+ border-radius: 10px;
+ box-shadow: 0px 0px 2.5px 2.5px crimson;
+ background: rgba(14, 14, 14, 0.7);
+
+ transition: all .5s ease;
+  }
+  .nav-link:hover {
+    color: black;
+  }

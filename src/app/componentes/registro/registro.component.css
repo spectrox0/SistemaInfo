@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Pacifico', cursive;
+}
+
+
+.contenedorF{
+    background: rgba(0,0,0,.7);
+    border: 4px ridge #d93300;
+    max-width: 500px;
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+   padding: 40px;
+}
+
+
+.contenedorF .toggle{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedorF .toggle:hover{
+    border-top: 2px solid #d93300;
+    border-bottom: 2px solid #f3e309;
+
+}
+
+.contenedorF .toggle span{
+   letter-spacing: 1px;
+
+}
+.contenedorF .toggle span a{
+
+    color: whitesmoke;
+
+ }
+.contenedorF .toggle span a:hover{
+    text-decoration: none;
+    color: greenyellow;
+
+ }
+.contenedorF h2{
+    margin: 0 0 28px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+.contenedorF input[type="text"],
+.contenedorF input[type="password"],
+.contenedorF input[type="email"]{
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background: rgba(0,0,0,.5);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid rgb(241, 14, 14);
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+.contenedorF input[type="text"]:focus,
+.contenedorF input[type="password"]:focus,
+.contenedorF input[type="email"]:focus {
+    border-bottom: 4px solid #f3e309;
+}
+
+.contenedorF input[type="submit"] {
+    background: rgb(241, 14, 14);
+    color: #FFF;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedorF input[type="submit"]:hover {
+    background: rgba(251, 255, 0, 0.705);
+}
