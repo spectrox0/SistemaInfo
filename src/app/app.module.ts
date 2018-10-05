@@ -19,6 +19,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
 import {environment} from '../environments/environment';
 import {AuthService} from './services/auth.service';
+import { DireccionComponent } from './componentes/direccion/direccion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import {AuthService} from './services/auth.service';
     FooterComponent,
     EncabezadoComponent,
     MenuComponent,
-    CambiarComponent
+    CambiarComponent,
+    DireccionComponent
   ],
   imports: [
     BrowserModule,
