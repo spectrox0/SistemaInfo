@@ -23,6 +23,10 @@
   background: rgba(255, 0, 0, 0.5);
   box-shadow: 0px 0px 15px 1px black;
 }
+h3 {
+  text-align: center;
+  font-size: 1.4em;
+}
 .table{
 margin: 20px;
 background: rgba(0, 0, 0, 0.5);
