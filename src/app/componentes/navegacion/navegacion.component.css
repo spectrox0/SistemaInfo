@@ -15,7 +15,7 @@
 .navbar {
     margin-bottom: 0px;
     border-radius: 0;
-    padding: 2px;
+    padding: 3px;
 
   }
   button{
@@ -43,8 +43,17 @@
 
   }
 
+  .navbar-dark .navbar-toggler:hover .fa-user , .nav-link:hover .fa-user-cog, .nav-link:focus .fa-user-cog, .nav-link:hover .fa-user-tie, .nav-link:focus .fa-user-tie , .nav-link:hover .fa-history, .nav-link:focus .fa-history
+  , .nav-link:hover .fa-shopping-cart, .nav-link:focus .fa-shopping-cart , .nav-link:hover .fa-sign-out-alt, .nav-link:focus .fa-sign-out-alt,
+  .nav-link:hover .fa-utensils, .nav-link:focus .fa-utensils {
+    color: rgba(255, 0, 0, 0.527);
+    transition: all .5s ease;
 
+  }
+  .nav-item{
+     padding-left: 10px;
 
+     }
   .nav-item:hover{
 
  border-radius: 10px;
@@ -56,3 +65,4 @@
   .nav-link:hover {
     color: black;
   }
+
