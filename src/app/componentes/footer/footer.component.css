@@ -3,9 +3,10 @@ footer{
     border-top: 4px ridge red;
     width: 100%;
     color: aliceblue;
+    margin: 0%;
     font-family: 'Frijole' , cursive;
 }
 a{
     text-decoration: none;
-   
+
 }

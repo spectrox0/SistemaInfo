@@ -1,3 +1,13 @@
-body{
-    background-image: radial-gradient( white, gray, black);
+
+.cuerpo {
+
+  padding-top: 54px;
+  padding-bottom: 20px;
+margin-bottom: 0px;
+margin-top : 0px;
+background-image: url(/../../assets/img/fondo3.jpg);
+background-position: center center;
+background-repeat: no-repeat;
+ background-size: cover;
+color: red;
 }

@@ -1,18 +1,21 @@
-* {
+*{
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+ .cuerpo {
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Pacifico', cursive;
-}
-
+  padding-bottom: 5px;
+  padding-top:5px;
+  font-family: "Pacifico" , cursive;
+ }
 
 .contenedorF{
   background: rgba(0,0,0,.7);
-  border: 4px ridge #07d900;
+  border: 4px ridge #d90000;
   max-width: 500px;
   width: 100%;
   margin: 48px auto;
@@ -41,11 +44,12 @@
   margin: 0 0 20px 0;
   background: rgba(0,0,0,.5);
   color: white;
-  border: none;
+  border: ridge 2px crimson;
   border-radius: 2px;
-  border-bottom: 4px solid rgb(14, 241, 25);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 6px 10px crimson;
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 14px;
   font-weight:normal;
   transition: all .5s ease;
@@ -54,24 +58,30 @@
 .contenedorF input[type="text"]:focus,
 .contenedorF input[type="password"]:focus,
 .contenedorF input[type="email"]:focus {
-  border-bottom: 4px solid #f3e309;
+  box-shadow: 0px 6px 10px  #f3e309;
 }
 
 .contenedorF input[type="submit"] {
-  background: rgb(52, 241, 14);
+  background: rgba(0, 0, 0, 0.75);
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: none;
+  border: 2px ridge rgb(20, 175, 28);
   padding: 10px 0;
   font-size: 16px;
   font-weight: normal;
-  font-family: fantasy;
+
   letter-spacing: 1px;
   cursor: pointer;
   transition: all .5s ease;
 }
 
 .contenedorF input[type="submit"]:hover {
-  background: rgba(251, 255, 0, 0.705);
+  font-weight: bold;
+  box-shadow: 0px 0px 20px greenyellow;
+  text-shadow: 0px 0px 4px white;
+}
+h2{
+  font-family: 'Frijole',cursive;
+  text-shadow: 0px 0px 4px white;
 }

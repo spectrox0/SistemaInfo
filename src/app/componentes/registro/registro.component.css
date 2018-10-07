@@ -1,14 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: 'Pacifico', cursive;
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family:'Pacifico', cursive;
 }
-
+ .cuerpo {
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 5px;
+  padding-top:5px;
+ }
 
 .contenedorF{
     background: rgba(0,0,0,.7);
@@ -37,7 +40,13 @@
     cursor: pointer;
     transition: all .5s ease;
 }
-
+.contenedorF h2{
+  margin: 0 0 28px 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
 .contenedorF .toggle:hover{
     border-top: 2px solid #d93300;
     border-bottom: 2px solid #f3e309;
@@ -58,53 +67,57 @@
     color: greenyellow;
 
  }
-.contenedorF h2{
-    margin: 0 0 28px 0;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1;
-}
-.contenedorF input[type="text"],
-.contenedorF input[type="password"],
-.contenedorF input[type="email"]{
-    outline: none;
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    margin: 0 0 20px 0;
-    background: rgba(0,0,0,.5);
-    color: white;
-    border: none;
-    border-radius: 2px;
-    border-bottom: 4px solid rgb(241, 14, 14);
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
-    font-weight:normal;
-    transition: all .5s ease;
-}
+
+ .contenedorF input[type="text"],
+ .contenedorF input[type="password"],
+ .contenedorF input[type="email"]{
+   outline: none;
+   display: block;
+   width: 100%;
+   padding: 10px 15px;
+   margin: 0 0 20px 0;
+   background: rgba(0,0,0,.5);
+   color: white;
+   border: ridge 2px crimson;
+   border-radius: 2px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   box-shadow: 0px 6px 10px crimson;
+   box-sizing: border-box;
+   font-size: 14px;
+   font-weight:normal;
+   transition: all .5s ease;
+ }
 
 .contenedorF input[type="text"]:focus,
 .contenedorF input[type="password"]:focus,
 .contenedorF input[type="email"]:focus {
-    border-bottom: 4px solid #f3e309;
+    box-shadow: 0px 6px 10px  #f3e309;
 }
 
 .contenedorF input[type="submit"] {
-    background: rgb(241, 14, 14);
-    color: #FFF;
-    width: 100%;
-    border-radius: 10px;
-    border: none;
-    padding: 10px 0;
-    font-size: 16px;
-    font-weight: normal;
-    font-family: fantasy;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all .5s ease;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFF;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px ridge rgb(20, 175, 28);
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: normal;
+
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .5s ease;
 }
 
 .contenedorF input[type="submit"]:hover {
-    background: rgba(251, 255, 0, 0.705);
+  font-weight: bold;
+  box-shadow: 0px 0px 20px greenyellow;
+  text-shadow: 0px 0px 4px white;
+
+}
+
+h2{
+  font-family: 'Frijole',cursive;
+  text-shadow: 0px 0px 4px white;
 }

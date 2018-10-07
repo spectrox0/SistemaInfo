@@ -38,7 +38,7 @@ import { DireccionComponent } from './componentes/direccion/direccion.component'
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
+
     AppRoutingModule,
     TooltipModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),

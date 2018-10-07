@@ -1,7 +1,6 @@
-.cuerpo {
-    padding-top: 20px;
-  }
-
+ *{
+   color: white;
+ }
   @media (min-width: 992px) {
     .cuerpo {
       padding-top: 20px;
@@ -32,7 +31,7 @@
            text-align: center;
            padding: 10px;
            color: rgb(255, 255, 255);
-           font-size: em;
+           font-size: 1.5em;
            margin:0px;
         font-family: 'Frijole',cursive;
          border-radius: 10px;
@@ -111,4 +110,11 @@
   color: #e03535;
   left: initial;
   font-size: 14px;
+}
+.baila{
+  width: 15%;
+  height: 10%;
+ border-radius: 10px;
+ border: 1px ridge rgb(241, 46, 85);
+ box-shadow: 0px 0px 15px rgb(248, 39, 81);
 }

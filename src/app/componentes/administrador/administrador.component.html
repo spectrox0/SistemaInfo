@@ -1,4 +1,6 @@
+
 <app-navegacion></app-navegacion>
+<app-encabezado></app-encabezado>
 <div class="cuerpo">
 
   <div class="container">
@@ -66,7 +68,27 @@
         <tfoot>
           <tr>
             <td colspan =4>
-          <button type="button" class="btn" routerLink='/menu'>Crear nuevo producto</button>
+          <button type="button" class="btn" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1" >Crear nuevo producto</button>
+        </td>
+      </tr>
+        <tr> <td colspan="4"> <div class="collapse" id="collapseExample1">
+            <form action="">
+                <div class="form-group">
+                    <label for="NameProduct">Nombre del producto</label>
+                    <input type="text" class="form-control" id="NameProduct" aria-describedby="emailHelp" placeholder="Nombre del producto">
+                  </div>
+                  <div class="form-group">
+                    <label for="nroInv1">Nro en el inventario</label>
+                    <input type="text" class="form-control" id="nroInv1" placeholder="Nro Invnetario">
+                  </div>
+                  <div class="form-group">
+                      <label for="Imagen">Imagen del producto</label>
+                      <input type="file" class="form-control" id="Imagen">
+                    </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+          </div>
       </td> </tr> </tfoot>
     </table>
 
