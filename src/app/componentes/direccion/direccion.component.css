@@ -61,12 +61,12 @@
   box-shadow: 0px 6px 10px  #f3e309;
 }
 
-.contenedorF input[type="submit"] {
-  background: rgba(8, 153, 15, 0.5);
+.contenedorF .btn-primary {
+  background: rgba(5, 122, 201, 0.5);
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(20, 175, 28);
+  border: 2px ridge rgb(20, 82, 175);
   padding: 10px 0;
   font-size: 16px;
   font-weight: normal;
@@ -76,10 +76,10 @@
   transition: all .5s ease;
 }
 
-.contenedorF input[type="submit"]:hover {
+.contenedorF .btn-primary:hover {
   font-weight: bold;
   text-shadow: 0px 0px 4px white;
-  box-shadow: 0px 0px 20px greenyellow;
+  box-shadow: 0px 0px 20px rgb(47, 120, 255);
 }
 h2{
   font-family: 'Frijole',cursive;

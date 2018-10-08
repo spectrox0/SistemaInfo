@@ -48,8 +48,8 @@
   text-align: center;
 }
 .contenedorF .toggle:hover{
-    border-top: 2px solid #d93300;
-    border-bottom: 2px solid #f3e309;
+  border-top: 2px ridge crimson;
+  border-bottom: 2px ridge #f3e309;
 
 }
 
@@ -65,7 +65,7 @@
 .contenedorF .toggle span a:hover{
     text-decoration: none;
     color: greenyellow;
-
+    text-shadow: 0px 0px 10px greenyellow;
  }
 
  .contenedorF input[type="text"],

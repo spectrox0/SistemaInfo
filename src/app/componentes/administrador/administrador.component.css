@@ -63,17 +63,18 @@ font-weight: bold;
 .table tfoot button{
   float: right;
   color: white;
-  text-shadow: 0px 0px 4px white;
   border-color: greenyellow;
 }
 .table tfoot button:hover{
-
+  text-shadow: 0px 0px 4px white;
   box-shadow: 0px 0px 15px chartreuse;
   background: black;
   }
   .table tbody button:hover {
     background: black;
+    color: greenyellow;
     text-shadow: 0px 0px 7px chartreuse;
+   border: 2px ridge crimson;
   }
 .table tfoot {
   background: rgba(0, 0, 0, 0.5);
@@ -135,18 +136,63 @@ font-weight: bold;
 .form-group {
   text-align: center;
 }
-.form-group input{
+.form-group input, .form-group select,.form-group textarea{
   background: rgba(0, 0, 0, 0.5);
   border: crimson 2px ridge;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #11cf0ab3;
 }
-.form-group input:focus{
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
   box-shadow: 0px 7px 15px crimson;
   transition: all .5s ease;
 }
 
+.custom-control-input:active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: rgb(11, 189, 11);
+}
 
+.custom-control-label::before {
+  background-color: #c50b14a8;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #0eb10e;
+}
+.custom-select:disabled {
+  color: #f70000;
+  background-color: #15171a;
+}
+.custom-select:focus::-ms-value {
+  color: #33be21;
+  background-color: rgb(231, 36, 36);
+}
+.custom-select:focus {
+  border-color: #da0000;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: crimson;
+  box-shadow: 0 2px 0 0.2rem rgba(255, 0, 0, 0.295);
+}
+
+.custom-file-input:focus ~ .custom-file-label::after {
+  border-color: #ff8080;
+}
+
+.custom-file-input:disabled ~ .custom-file-label {
+  background-color: #000000;
+}
+
+.custom-file-label {
+
+  color: chartreuse;
+  background-color: rgba(0, 0, 0,0.5);
+  border: 2px ridge crimson
+}
 
 

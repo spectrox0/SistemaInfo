@@ -23,9 +23,10 @@
     </div>
       <div class="list-group">
 
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
+        <a href="#" class="list-group-item">Bebida</a>
+        <a href="#" class="list-group-item">Postre</a>
+        <a href="#" class="list-group-item">Almuerzo</a>
+        <a href="#" class="list-group-item">Desayuno</a>
       </div>
 
     </div>
@@ -35,7 +36,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th><h3>Compra</h3></th>
+          <th><h3>Producto</h3></th>
           <th><h3>Fecha</h3></th>
           <th><h3>Precio</h3></th>
           <th> </th>
@@ -55,30 +56,52 @@
             <div class="collapse" id="collapseExample4">
 
                 <form action="">
-                    <div class="form-group">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                         <label for="NameProduct">Nombre del producto</label>
                         <input type="text" class="form-control" id="NameProduct" aria-describedby="emailHelp" placeholder="Nombre del producto">
                       </div>
-                      <div class="form-group">
-                          <label for="Imagen">Imagen del producto</label>
-                          <input type="file" class="form-control" id="Imagen">
+                      <div class="form-group col-md-6">
+                        <label for="imagen1">Imagen del producto</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagen1">
+                          <label class="custom-file-label" for="imagen1">Elige imagen</label>
                         </div>
-                      <div class="form-group">
+                        </div>
+                        </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 1</label>
                         <input type="text" class="form-control" id="Ing1" placeholder="Ingrediente 1">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 2</label>
                         <input type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing3">Ingrediente 3</label>
                         <input type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
                       </div>
-                      <div class="form-group">
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
                           <label for="Precio ">Precio</label>
                           <input type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="sel4">Categoria</label>
+                          <select class="custom-select" id="sel4">
+                            <option>Postre</option>
+                            <option>Bebida</option>
+                            <option>Desayuno</option>
+                            <option>Almuerzo</option>
+                          </select>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Descripcion</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck2">
                             <label class="custom-control-label" for="customCheck2">Disponible</label>
@@ -101,30 +124,52 @@
             <div class="collapse" id="collapseExample3">
 
                 <form action="">
-                    <div class="form-group">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                         <label for="NameProduct">Nombre del producto</label>
                         <input type="text" class="form-control" id="NameProduct" aria-describedby="emailHelp" placeholder="Nombre del producto">
                       </div>
-                      <div class="form-group">
-                          <label for="Imagen">Imagen del producto</label>
-                          <input type="file" class="form-control" id="Imagen">
+                      <div class="form-group col-md-6">
+                        <label for="imagen2">Imagen del producto</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagen2">
+                          <label class="custom-file-label" for="imagen2">Elige imagen</label>
                         </div>
-                      <div class="form-group">
+                        </div>
+                        </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 1</label>
                         <input type="text" class="form-control" id="Ing1" placeholder="Ingrediente 1">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 2</label>
                         <input type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing3">Ingrediente 3</label>
                         <input type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
                       </div>
-                      <div class="form-group">
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
                           <label for="Precio ">Precio</label>
                           <input type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="sel3">Categoria</label>
+                          <select class="custom-select" id="sel3">
+                            <option>Postre</option>
+                            <option>Bebida</option>
+                            <option>Desayuno</option>
+                            <option>Almuerzo</option>
+                          </select>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea2">Descripcion</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                          </div>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck4">
                             <label class="custom-control-label" for="customCheck4">Disponible</label>
@@ -146,34 +191,58 @@
             <div class="collapse" id="collapseExample2">
 
                 <form action="">
-                    <div class="form-group">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
                         <label for="NameProduct">Nombre del producto</label>
                         <input type="text" class="form-control" id="NameProduct" aria-describedby="emailHelp" placeholder="Nombre del producto">
                       </div>
-                      <div class="form-group">
-                          <label for="Imagen">Imagen del producto</label>
-                          <input type="file" class="form-control" id="Imagen">
+                      <div class="form-group col-md-6">
+                          <label for="imagen3">Imagen del producto</label>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="imagen3">
+                          <label class="custom-file-label" for="imagen3">Elige imagen</label>
                         </div>
-                      <div class="form-group">
+                        </div>
+                        </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 1</label>
                         <input type="text" class="form-control" id="Ing1" placeholder="Ingrediente 1">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 2</label>
                         <input type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-md-4">
                         <label for="Ing3">Ingrediente 3</label>
                         <input type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
                       </div>
-                      <div class="form-group">
+                    </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
                           <label for="Precio ">Precio</label>
                           <input type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
                         </div>
+                        <div class="form-group col-md-6">
+                          <label for="sel2">Categoria</label>
+                          <select class="custom-select" id="sel2">
+                            <option>Postre</option>
+                            <option>Bebida</option>
+                            <option>Desayuno</option>
+                            <option>Almuerzo</option>
+                          </select>
+                        </div>
+                         </div>
+                         <div class="form-group">
+                            <label for="exampleFormControlTextarea3">Descripcion</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+                          </div>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck3">
                             <label class="custom-control-label" for="customCheck3">Disponible</label>
                           </div>
+
+
                       <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form>
@@ -189,30 +258,54 @@
       </tr>
         <tr> <td colspan="4"> <div class="collapse" id="collapseExample1">
             <form action="">
-                <div class="form-group">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                     <label for="NameProduct">Nombre del producto</label>
                     <input type="text" class="form-control" id="NameProduct" aria-describedby="emailHelp" placeholder="Nombre del producto">
                   </div>
-                  <div class="form-group">
-                      <label for="Imagen">Imagen del producto</label>
-                      <input type="file" class="form-control" id="Imagen">
+                  <div class="form-group col-md-6">
+                  <label for="imagen4">Imagen del producto</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="imagen4">
+                      <label class="custom-file-label" for="imagen4">Elige imagen</label>
                     </div>
-                  <div class="form-group">
+                  </div>
+                    </div>
+
+                  <div class="form-row">
+                      <div class="form-group col-md-4">
                     <label for="Ing1">Ingrediente 1</label>
                     <input type="text" class="form-control" id="Ing1" placeholder="Ingrediente 1">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-4">
                     <label for="Ing1">Ingrediente 2</label>
                     <input type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-4">
                     <label for="Ing3">Ingrediente 3</label>
                     <input type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
                   </div>
-                  <div class="form-group">
+                  </div>
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
                       <label for="Precio ">Precio</label>
                       <input type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
                     </div>
+                    <div class="form-group col-md-6">
+
+                      <label for="sel1">Categoria</label>
+                      <select class="custom-select" id="sel1" required>
+                        <option>Postre</option>
+                        <option>Bebida</option>
+                        <option>Desayuno</option>
+                        <option>Almuerzo</option>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea4">Descripcion</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
+                      </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">Disponible</label>

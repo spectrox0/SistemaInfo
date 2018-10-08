@@ -9,7 +9,7 @@
   }
 
    .list-group-item{
-       background-color: rgba(255, 0, 0, 0.75);
+    background: linear-gradient(#db1919b2,#ff5858b2);
       color: rgb(255, 255, 255);
       font-family: 'Pacifico',cursive;
     }
@@ -22,7 +22,7 @@
        .list-group-item:hover{
        color: rgb(17, 207, 10);
        font-weight: bold;
-       background-color: rgba(0, 0, 0, 0.5);
+       background: rgba(0, 0, 0, 0.5);
        transition: all .5s ease;
        border: ridge 2px crimson;
 
@@ -35,17 +35,17 @@
            margin:0px;
         font-family: 'Frijole',cursive;
          border-radius: 10px;
-         background: rgba(255, 0, 0, 0.5);
+         background: linear-gradient(#db1919b2,#ff5858b2);
          box-shadow: 0px 0px 15px 1px black;
        }
 
        .card {
-         background: linear-gradient(#ff000db2,#ff3661b2);
-         border:2px ridge red;
+         background: linear-gradient(#030303b2,#7e0202b2);
+         border:2px ridge crimson;
          font-family: 'Pacifico',cursive;
        }
         .card:hover{
-          box-shadow: 0px 0px 15px 2px red;
+          box-shadow: 0px 0px 15px 2px crimson;
           transition: all .5s ease;
         }
        .card a {
@@ -65,7 +65,7 @@
   background-color: rgba(0, 0, 0,0.76);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
   border-radius: 25px;
-  border: 2px ridge rgb(255, 1, 1);
+  border: 2px ridge crimson;
 
 
 }
