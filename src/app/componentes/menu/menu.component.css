@@ -16,6 +16,7 @@
 
    .list-group{
        margin-top: 0px;
+       margin-bottom: 20px;
        padding-top: 0px;
        box-shadow: 0px 0px 15px 1px black;
    }
@@ -114,7 +115,52 @@
 .baila{
   width: 15%;
   height: 10%;
+  max-width: 70px;
+  max-height: 100px;
+  height: auto;
  border-radius: 10px;
  border: 1px ridge rgb(241, 46, 85);
  box-shadow: 0px 0px 15px rgb(248, 39, 81);
+}
+
+.form-group select:focus{
+  box-shadow: 0px 7px 15px crimson;
+  transition: all .5s ease;
+}
+.form-group select{
+  background: rgba(0, 0, 0, 0.5);
+  border: crimson 2px ridge;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #11cf0ab3;
+}
+.card-footer button {
+  border: ridge 2px red;
+   background: black;
+   color: greenyellow;
+   margin-right: 10px;
+}
+.card-footer button:hover {
+  color: greenyellow;
+  text-shadow: 0px 0px 7px chartreuse;
+ border: 2px ridge crimson;
+ box-shadow: 0px 0px 15px crimson;
+ font-weight: bold;
+}
+.card-footer button[type="submit"] {
+  border: ridge 2px chartreuse;
+  background: black;
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+
+}
+.card-footer button[type="submit"]:hover {
+  box-shadow: 0px 0px 15px chartreuse;
+
+}
+.list-group img{
+  width: 10%;
+  max-width: 70px;
+  height: auto;
+
 }
