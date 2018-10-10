@@ -7,8 +7,6 @@
   font-family:'Pacifico', cursive;
 }
  .cuerpo {
-  background-size: cover;
-  background-attachment: fixed;
   padding-bottom: 5px;
   padding-top:5px;
  }
