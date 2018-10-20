@@ -9,7 +9,7 @@
   }
 
    .list-group-item{
-    background: linear-gradient(#db1919b2,#ff5858b2);
+    background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
       font-family: 'Pacifico',cursive;
     }
@@ -34,15 +34,18 @@
            color: rgb(255, 255, 255);
            font-size: 1.5em;
            margin:0px;
-        font-family: 'Frijole',cursive;
+        font-family: 'Ewert',cursive;
          border-radius: 10px;
-         background: linear-gradient(#db1919b2,#ff5858b2);
-         box-shadow: 0px 0px 15px 1px black;
+         background: linear-gradient(#c51d41b2,#00000075);
+         box-shadow: 0px 0px 15px 1px crimson;
+         border-top-right-radius: 50%;
+         border-top-left-radius: 50%;
        }
 
        .card {
-         background: linear-gradient(#030303b2,#7e0202b2);
-         border:2px ridge crimson;
+         background: linear-gradient(#c51d41b2,#00000075);
+       border-top-right-radius: 50%;
+
          font-family: 'Pacifico',cursive;
        }
         .card:hover{
@@ -56,6 +59,7 @@
         color: #00ff15;
         text-decoration: none;
         font-weight: bolder;
+        text-shadow: 0px 0px 15px chartreuse;
         transition: all .5s ease;
       }
 .search-form .form-group {
@@ -63,12 +67,17 @@
   transition: all 0.35s, border-radius 0s;
   width: 32px;
   height: 32px;
-  background-color: rgba(0, 0, 0,0.76);
+  background-color: rgba(0, 0, 0,0.4);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
   border-radius: 25px;
-  border: 2px ridge crimson;
+  border: 1px ridge crimson;
 
 
+}
+.col-lg-3 {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0px 0px 15px black;
 }
 .search-form .form-group input.form-control {
   padding-right: 20px;
@@ -77,7 +86,7 @@
   background: transparent;
   box-shadow: none;
   display:block;
-  color: #00ff15;
+  color: white;
 }
 .search-form .form-group input.form-control::-webkit-input-placeholder {
   display: none;
@@ -108,7 +117,7 @@
   height: 34px;
   line-height: 34px;
   text-align: center;
-  color: #e03535;
+  color:  crimson;
   left: initial;
   font-size: 14px;
 }
@@ -135,21 +144,21 @@
   color: #11cf0ab3;
 }
 .card-footer button {
-  border: ridge 2px red;
-   background: black;
-   color: greenyellow;
+  border: ridge 2px  crimson;
+  background: linear-gradient(#ac34489c,#dc143cc7);
+   color: whitesmoke;
    margin-right: 10px;
 }
 .card-footer button:hover {
-  color: greenyellow;
-  text-shadow: 0px 0px 7px chartreuse;
+  color: white;
+  text-shadow: 0px 0px 7px whitesmoke;
  border: 2px ridge crimson;
  box-shadow: 0px 0px 15px crimson;
  font-weight: bold;
 }
 .card-footer button[type="submit"] {
   border: ridge 2px chartreuse;
-  background: black;
+  background: rgba(21, 255, 0, 0.514);
   color: rgb(255, 255, 255);
   margin-right: 10px;
 
