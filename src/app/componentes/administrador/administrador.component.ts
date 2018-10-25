@@ -25,7 +25,8 @@ export class AdministradorComponent implements OnInit {
   constructor(private productoService: ProductService) {
 
   }
-
+  editState: boolean = false;
+  productoToEdit: Producto;
   ngOnInit() {
    this.productoService.getProductos().subscribe( productos => {
      this.productos = productos;
@@ -36,6 +37,21 @@ export class AdministradorComponent implements OnInit {
     this.producto.fecha = fecha;
     this.productoService.addProducto(this.producto);
   }
-
+ editProducto( event, producto: Producto) {
+ this.editState = true;
+ this.productoToEdit = producto;
+ }
+  clearState() {
+   this.editState = false;
+    this.productoToEdit = null;
+  }
+  onUpdateProducto (producto: Producto) {
+    this.productoService.updateProducto(producto);
+    this.clearState();
+   }
+ deleteProducto(event, producto: Producto) {
+    this.productoService.deleteProducto(producto);
+    this.clearState();
+ }
 
 }

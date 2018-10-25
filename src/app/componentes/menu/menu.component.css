@@ -87,7 +87,7 @@
   background: transparent;
   box-shadow: none;
   display:block;
-  color: white;
+  color: chartreuse;
 }
 .search-form .form-group input.form-control::-webkit-input-placeholder {
   display: none;
