@@ -10,7 +10,7 @@
   .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
-      font-family: 'Pacifico',cursive;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
    .list-group{
@@ -36,7 +36,7 @@
            width: 100%px;
            margin: 0px;
            margin-bottom: 20px;
-        font-family: 'Butcherman',cursive;
+        font-family: 'Frijole',cursive;
          border-radius: 10px;
          background: linear-gradient(#c51d41b2,#00000075);
          box-shadow: 0px 0px 15px 1px crimson;
@@ -48,20 +48,41 @@
 margin: 20px;
 background: rgba(0, 0, 0, 0.5);
 color: white;
-font-family: 'Pacifico',cursive;
+font-family: fantasy;
 
 }
  .table thead th{
+  font-family: 'Pacifico',cursive;
   background: linear-gradient(#c51d41b2,#00000075);
   border-left: ridge 1px whitesmoke;
   border-right: ridge 1px whitesmoke;
-color: greenyellow;
+  border: 1px white ridge;
+color: rgb(87, 243, 39);
+text-shadow: 0px 0px 4px greenyellow;
 font-weight: bold;
  }
+ .baila{
+  width: 15%;
+  height: 10%;
+  max-width: 70px;
+  max-height: 100px;
+  height: auto;
+ border-radius: 10px;
+ border: 1px ridge rgb(241, 46, 85);
+ box-shadow: 0px 0px 15px rgb(248, 39, 81);
+}
+.list-group img{
+  width: 10%;
+  max-width: 70px;
+  height: auto;
+
+}
+
  button {
-   border: ridge 2px red;
-   background: black;
-   color: greenyellow;
+   border: ridge 2px crimson;
+   background: #dc143cab;
+   background: linear-gradient(#dc143c2f,#dc143cda);
+   color: whitesmoke;
    margin-right: 10px;
    float: right;
  }
@@ -73,16 +94,17 @@ font-weight: bold;
   float: right;
   color: white;
   border-color: greenyellow;
+  background: linear-gradient(#acff2f57,rgba(172, 255, 47, 0.829));
 }
 .table tfoot button:hover{
   text-shadow: 0px 0px 4px white;
   box-shadow: 0px 0px 15px chartreuse;
-  background: black;
+
   }
   .table tbody button:hover {
-    background: black;
-    color: greenyellow;
-    text-shadow: 0px 0px 7px chartreuse;
+
+
+    text-shadow: 0px 0px 7px white;;
    border: 2px ridge crimson;
   }
 .table tfoot {
@@ -143,7 +165,7 @@ font-weight: bold;
   height: 34px;
   line-height: 34px;
   text-align: center;
-  color: #e03535;
+  color: crimson;
   left: initial;
   font-size: 14px;
 }

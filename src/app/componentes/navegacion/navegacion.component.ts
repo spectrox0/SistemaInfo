@@ -9,6 +9,7 @@ export class NavegacionComponent implements OnInit {
  public userName: string;
  public userId: string;
  public isLogin: string;
+ public userPicture: string;
   constructor(
     private authService: AuthService
   ) { }

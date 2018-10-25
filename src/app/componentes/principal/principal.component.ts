@@ -15,5 +15,9 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onClickGoogleLogin() {
+    // this.authService.loginGoogle().then.( res => {
+      // console.log(res);
+   // }).catch(err => console.log( err.message));
+  }
 }

@@ -12,13 +12,14 @@
     text-align: center;
     padding: 10px;
     color: rgb(255, 255, 255);
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin:0px;
  font-family: 'Frijole',cursive;
   border-radius: 10px;
-  background: rgba(255, 0, 0, 0.5);
-  box-shadow: 0px 0px 15px 1px black;
-}
+  background: linear-gradient(#c51d41b2,#00000075);
+  box-shadow: 0px 0px 15px 1px crimson;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;}
 h3 {
   text-align: center;
   font-size: 1.4em;
@@ -27,27 +28,33 @@ h3 {
 margin: 20px;
 background: rgba(0, 0, 0, 0.5);
 color: white;
-font-family: 'Pacifico',cursive;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 .table thead th{
-background: linear-gradient(#ff000db2,#ff3661b2);
-color: greenyellow;
+background: linear-gradient(#dc143c3b,rgba(220, 20, 60, 0.815));
+color: rgb(71, 255, 47);
+text-shadow: 0px 0px 6px greenyellow;
+font-family: 'Pacifico', cursive;
+border-left: ridge 2px whitesmoke;
+border-right: ridge 2px whitesmoke;
 }
 button {
   float: right;
-border: ridge 2px red;
-background: black;
-color: greenyellow;
+border: ridge 2px crimson;
+background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 0.781));
+color: whitesmoke;
 margin-right: 10px;
 }
 button:hover {
 box-shadow: 0px 0px 15px crimson;
 font-weight: bold;
+text-shadow: 0px 0px 10px white;
 }
 .table tfoot button{
 float: right;
 color: white;
+background: linear-gradient(rgba(172, 255, 47, 0.281),rgba(172, 255, 47, 0.808));
 border-color: greenyellow;
 
 

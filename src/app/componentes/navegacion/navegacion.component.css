@@ -22,25 +22,28 @@
     border: 3px ridge crimson;
   }
   .bg-dark {
-    background-image: linear-gradient(#dc143cb4, black) !important;
-   border-bottom: 2px ridge crimson;
+    background: linear-gradient(rgba(220, 20, 60, 0.7), rgba(0, 0, 0, 0.9)), url(../../../assets/img/fondo5.jpg) !important;
+   border-bottom: 0.7px ridge crimson;
   }
   .navbar-dark nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
     color: rgba(43, 255, 0, 0.75);
     font-weight: bold;
   }
  .navbar-dark .navbar-toggler {
-    color: rgba(9, 255, 0, 0.575);
-    border-color: rgba(255, 0, 0, 0.527);
-    background: rgba(0, 0, 0, 0.4);
+    color: whitesmoke;
+    border-color: rgba(9, 255, 0, 0.575);
+    background: linear-gradient(rgba(3, 172, 12, 0.397),rgba(0, 0, 0, 1));
+    border-radius: 16px;
+    padding:10px;
+    margin: 5px;
   }
 
   .navbar-dark .navbar-toggler:hover{
    color: greenyellow;
    text-shadow: 0px 0px 10px greenyellow;
-   box-shadow: 0px 0px 10px 2px crimson;
+   box-shadow: 0px 0px 10px 2px greenyellow;
    transition: all .5s ease;
-
+   font-weight: bold;
   }
 
   .navbar-dark .navbar-toggler:hover .fa-user , .nav-link:hover .fa-user-cog, .nav-link:focus .fa-user-cog, .nav-link:hover .fa-user-tie, .nav-link:focus .fa-user-tie , .nav-link:hover .fa-history, .nav-link:focus .fa-history
@@ -53,12 +56,11 @@
   .nav-item{
      padding-left: 4px;
    margin-bottom: 10px;
+   border-radius: 10px;
      }
   .nav-item:hover{
-
- border-radius: 10px;
- box-shadow: 0px 0px 2.5px 2.5px crimson;
- background: rgba(14, 14, 14, 0.2);
+ box-shadow: 0px 2px 15px 1px rgba(255, 0, 106, 0.794);
+ background: linear-gradient( rgba(255, 0, 106, 0.05),rgba(14, 14, 14, 0.1));
  text-shadow: 0px 0px 4px rgb(17, 207, 10);
  transition: all .5s ease;
   }
