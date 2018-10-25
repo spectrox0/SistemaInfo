@@ -5,7 +5,7 @@
 
   <div class="container">
     <div class="row">
-        <div class="col-lg-12"><h2>Articulos vigentes</h2> </div></div>
+        <div class="col-lg-12"><h2>Administrador</h2> </div></div>
 
     <div class="row">
     <div class="col-lg-3">
@@ -48,51 +48,53 @@
           <td> <strong>{{producto.nombre}}</strong> </td>
           <td> <strong>{{producto.fecha  | date: 'dd/MM/yyyy'}}</strong> </td>
           <td><strong>{{producto.precio}}  </strong></td>
-          <td><button type="button" class="btn"><i class="far fa-times-circle"></i> Delete</button>
-            <button type="button" class="btn" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4"><i class="fas fa-edit"></i> Edit</button>
-           </td>
-          </tr>
-          <tr> <td colspan="4">
-            <div class="collapse" id="{{producto.id}}">
+          <td><button type="button" (click)="deleteProducto($event,producto)"class="btn"><i class="far fa-times-circle"></i>Borra</button>
+            <button type="button" *ngIf="editState==false" (click)="editProducto($event,producto)" class="btn" ><i class="fas fa-edit"></i>Edita</button>
+            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn" ><i class="fas fa-edit"></i>Cierra</button>
+          </td>
 
-                <form>
+          </tr>
+          <tr > <td colspan="4">
+            <div *ngIf="editState && productoToEdit.id==producto.id" class=container>
+                <form (ngSubmit)="onUpdateProducto(producto)">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="NameProduct">Nombre del producto</label>
-                        <input type="text" class="form-control"
-                        id="NameProduct" placeholder="Nombre del producto"
-                        >
+                        <label class="nombre">Nombre del producto</label>
+
+                        <input [(ngModel)]="producto.nombre" #nombre="ngModel" name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del producto">
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="imagen1">Imagen del producto</label>
+                      <label for="img">Imagen del producto</label>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="imagen1">
-                          <label class="custom-file-label" for="imagen1">Elige imagen</label>
+                          <input  [(ngModel)]="producto.img" #img="ngModel" name="img" type="file" class="custom-file-input" id="img">
+                          <label class="custom-file-label" name="img" for="img">Elige imagen</label>
                         </div>
+                      </div>
                         </div>
-                        </div>
+
                       <div class="form-row">
                           <div class="form-group col-md-4">
-                        <label for="Ing1">Ingrediente 1</label>
-                        <input type="text" class="form-control" id="Ing1" placeholder="Ingrediente 1">
+                        <label for="ing1">Ingrediente 1</label>
+                        <input  [(ngModel)]="producto.ing1" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="Ing1">Ingrediente 2</label>
-                        <input type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
+                        <input  [(ngModel)]="producto.ing2" name="ing2" #ing2="ngModel" type="text" class="form-control" id="Ing2" >
                       </div>
                       <div class="form-group col-md-4">
                         <label for="Ing3">Ingrediente 3</label>
-                        <input type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
+                        <input [(ngModel)]="producto.ing3" name="ing3" #ing3="ngModel" type="text" class="form-control" id="Ing3">
                       </div>
                       </div>
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="Precio ">Precio</label>
-                          <input type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
+                          <input [(ngModel)]="producto.precio" name="precio" #precio="ngModel" type="text" class="form-control" id="Precio">
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="sel4">Categoria</label>
-                          <select class="custom-select" id="sel4">
+
+                          <label for="sel1">Categoria</label>
+                          <select [(ngModel)]="producto.categoria" name="categoria" #categoria="ngModel" class="custom-select" id="sel1" >
                             <option>Postre</option>
                             <option>Bebida</option>
                             <option>Desayuno</option>
@@ -101,16 +103,17 @@
                         </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Descripcion</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label for="exampleFormControlTextarea4">Descripcion</label>
+                            <textarea [(ngModel)]="producto.descripcion" name="descripcion" #descripcion="ngModel" class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
                           </div>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                            <label class="custom-control-label" for="customCheck2">Disponible</label>
+                            <input [(ngModel)]="producto.disponibilidad" name="disponibilidad" #disponibilidad="ngModel" type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Disponible</label>
                           </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" class="btn btn-primary">Actualizar</button>
 
                 </form>
+
               </div>
           </td> </tr>
 
@@ -127,9 +130,13 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label class="nombre">Nombre del producto</label>
-
-                    <input [(ngModel)]="producto.nombre" #nombre="ngModel" name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del producto">
-                  </div>
+                     <input [(ngModel)]="producto.nombre" #nombre="ngModel" name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del producto" required
+                     minlength="4" maxlength="20">
+                   <div *ngIf="nombre.touched && !nombre.valid">
+                     <div *ngIf="nombre.errors.required"> El nombre del producto es requerido </div>
+                     <div *ngIf="nombre.errors.minlength"> El nombre debe ser de al menos 4 caracteres </div>
+                   </div>
+                    </div>
                   <div class="form-group col-md-6">
                   <label for="img">Imagen del producto</label>
                     <div class="custom-file">
@@ -142,21 +149,42 @@
                   <div class="form-row">
                       <div class="form-group col-md-4">
                     <label for="ing1">Ingrediente 1</label>
-                    <input  [(ngModel)]="producto.ing1" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1" placeholder="Ingrediente 1">
+                    <input  [(ngModel)]="producto.ing1" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1" placeholder="Ingrediente 1"
+                     minlength="5" maxlength="10" required>
+
+                  <div class='alerta' *ngIf="ing1.touched && !ing1.valid">
+                      <div *ngIf="ing1.errors.required"> El nombre del ingrediente es requerido </div>
+                      <div *ngIf="ing1.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                    </div>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="Ing1">Ingrediente 2</label>
-                    <input  [(ngModel)]="producto.ing2" name="ing2" #ing2="ngModel" type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2">
+                    <input  [(ngModel)]="producto.ing2" name="ing2" #ing2="ngModel" type="text" class="form-control" id="Ing2" placeholder="Ingrediente 2"
+                    minlength="5" maxlength="10" required>
+                    <div class='alerta' *ngIf="ing2.touched && !ing2.valid">
+                        <div *ngIf="ing2.errors.required"> El nombre del ingrediente es requerido </div>
+                        <div *ngIf="ing2.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                      </div>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="Ing3">Ingrediente 3</label>
-                    <input [(ngModel)]="producto.ing3" name="ing3" #ing3="ngModel" type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3">
+                    <input [(ngModel)]="producto.ing3" name="ing3" #ing3="ngModel" type="text" class="form-control" id="Ing3" placeholder="Ingrediente 3"
+                   minlength="5" maxlength="10" required>
+                   <div class='alerta' *ngIf="ing3.touched && !ing3.valid">
+                      <div *ngIf="ing3.errors.required"> El nombre del ingrediente es requerido </div>
+                      <div *ngIf="ing3.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                    </div>
                   </div>
                   </div>
                   <div class="form-row">
                       <div class="form-group col-md-6">
                       <label for="Precio ">Precio</label>
-                      <input [(ngModel)]="producto.precio" name="precio" #precio="ngModel" type="text" class="form-control" id="Precio" placeholder="Ingrese Precio">
+                      <input [(ngModel)]="producto.precio" name="precio" #precio="ngModel" type="text" class="form-control" id="Precio" placeholder="Ingrese Precio"
+                      minlength="1" maxlength="7" required>
+                      <div class='alerta' *ngIf="precio.touched && !precio.valid">
+                          <div *ngIf="precio.errors.required"> El nombre del ingrediente es requerido </div>
+                          <div *ngIf="precio.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
 

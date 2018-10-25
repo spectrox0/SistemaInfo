@@ -10,7 +10,7 @@
   .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-family: "Pacifico" , cursive;
     }
 
    .list-group{
@@ -24,7 +24,7 @@
        font-weight: bold;
        background: rgba(0, 0, 0, 0.5);
        transition: all .5s ease;
-       border: ridge 2px crimson;
+
 
        }
        h2{
