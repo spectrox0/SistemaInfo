@@ -3,13 +3,15 @@
   font-family: 'Pacifico', cursive;
 }
  a img {
-   width: 70px;
+   width: 10%;
+
+   height: 5%;
    border-radius: 10px;
-   border: solid 2px crimson;
+   border: ridge 1px crimson;
  }
  a img:hover{
 
-  border: solid 2px crimson;
+  border: solid 1px crimson;
   box-shadow: 0px 0px 15px 2px crimson;
 }
 .navbar {

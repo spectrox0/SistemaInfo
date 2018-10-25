@@ -25,11 +25,12 @@ export class AdministradorComponent implements OnInit {
   constructor(private productoService: ProductService) {
 
   }
-  editState: boolean = false;
+  editState: any = false;
   productoToEdit: Producto;
   ngOnInit() {
    this.productoService.getProductos().subscribe( productos => {
      this.productos = productos;
+     console.log(productos);
    });
   }
   onGuardarProducto(myForm: NgForm) {

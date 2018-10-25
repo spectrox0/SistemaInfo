@@ -60,7 +60,7 @@
 }
 
 .contenedorF input[type="submit"] {
-  background: rgba(8, 153, 15, 0.5);
+  background: linear-gradient(rgba(8, 153, 15, 0.212),rgba(8, 153, 15, 0.808));
   color: #FFF;
   width: 100%;
   border-radius: 10px;

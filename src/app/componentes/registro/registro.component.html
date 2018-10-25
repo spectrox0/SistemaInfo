@@ -7,13 +7,11 @@
       </div>
         <div class= "formular">
       <h2> Registro</h2>
-     <form action="">
+     <form (ngSubmit) = "onSubmitAddUser()" >
 
-    <input type="text" placeholder="Ingrese su usuario" required>
-    <input type="email" placeholder="Ingrese su correo" required>
-    <input type="password" placeholder="Ingrese su contrasena" required>
-    <input type="password" placeholder="Ingrese su contrasena otra vez" required>
-    <input type="submit" value="Registrarse" routerLink="/menu">
+    <input type="email" class="form-control" name="email" id ="email" [(ngModel)] ="email" placeholder="Ingrese su correo" required>
+    <input type="password" class="form-control" name="password" id ="password" [(ngModel)] ="password" placeholder="Ingrese su correo" placeholder="Ingrese su contrasena" required>
+    <input type="submit" value="Registrarse" >
     </form>
         </div>
       </div>

@@ -44,9 +44,9 @@
         </tr>
       </thead>
       <tbody *ngFor= "let producto of productos" class="collection" >
-        <tr >
+        <tr>
           <td> <strong>{{producto.nombre}}</strong> </td>
-          <td> <strong>{{producto.fecha  | date: 'dd/MM/yyyy'}}</strong> </td>
+          <td> <strong>{{producto.fecha | date: 'dd/MM/yyyy'}}</strong> </td>
           <td><strong>{{producto.precio}}  </strong></td>
           <td><button type="button" (click)="deleteProducto($event,producto)"class="btn"><i class="far fa-times-circle"></i>Borra</button>
             <button type="button" *ngIf="editState==false" (click)="editProducto($event,producto)" class="btn" ><i class="fas fa-edit"></i>Edita</button>
@@ -66,7 +66,7 @@
                       <div class="form-group col-md-6">
                       <label for="img">Imagen del producto</label>
                         <div class="custom-file">
-                          <input  [(ngModel)]="producto.img" #img="ngModel" name="img" type="file" class="custom-file-input" id="img">
+                      <input  [(ngModel)]="producto.img" #img="ngModel" name="img" type="text" class="custom-file-input" id="img">
                           <label class="custom-file-label" name="img" for="img">Elige imagen</label>
                         </div>
                       </div>
@@ -94,12 +94,14 @@
                         <div class="form-group col-md-6">
 
                           <label for="sel1">Categoria</label>
-                          <select [(ngModel)]="producto.categoria" name="categoria" #categoria="ngModel" class="custom-select" id="sel1" >
+                          <select [(ngModel)]="producto.categoria" name="categoria" #categoria="ngModel" class="custom-select" id="sel1" required >
                             <option>Postre</option>
                             <option>Bebida</option>
                             <option>Desayuno</option>
                             <option>Almuerzo</option>
                           </select>
+
+
                         </div>
                         </div>
                         <div class="form-group">

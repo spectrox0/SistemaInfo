@@ -7,11 +7,11 @@
   </div>
     <div class= "formular">
   <h2> Login </h2>
- <form action="">
+  <form (ngSubmit) = "onSubmitLogin()" >
 
-<input type="text" placeholder="Ingrese su usuario" required>
-<input type="password" placeholder="Ingrese su contrasena" required>
-<input type="submit" value="Inicia Sesion" routerLink="/menu">
+      <input type="email" class="form-control" name="email" id ="email" [(ngModel)] ="email" placeholder="Ingrese su correo" required>
+      <input type="password" class="form-control" name="password" id ="password" [(ngModel)] ="password" placeholder="Ingrese su correo" placeholder="Ingrese su contrasena" required>
+<input type="submit" value="Inicia Sesion">
 <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "onClickGoogleLogin()"> <i class="fab fa-google"></i> <b> Inicia sesion con Google </b></button>
 
 </form>

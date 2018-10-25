@@ -25,7 +25,6 @@ import {environment} from '../environments/environment';
 import {AuthService} from './services/auth.service';
 import {ProductService} from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,
