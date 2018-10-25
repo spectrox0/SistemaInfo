@@ -4,7 +4,7 @@
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <a><i class="fas fa-user"></i> Usuario </a>
+    <a><i class="fas fa-user"></i> {{userName}} </a>
   </button>
 
   <!-- Navbar links -->
@@ -23,11 +23,11 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/compras"><i class="fas fa-history"></i> Compras</a>
       </li>
-       <li class="nav-item">
+       <li class="nav-item active" *ngIf="isAdmin">
         <a class="nav-link" routerLink="/administrador"><i class="fas fa-user-tie"></i>  Administrador</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/login"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a class="nav-link" routerLink="/login" (click) = "onLogout()"><i class="fas fa-sign-out-alt"></i> Salir</a>
       </li>
     </ul>
   </div>

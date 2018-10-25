@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -8,7 +9,8 @@ import {AuthService} from '../../services/auth.service';
 export class PrincipalComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
 
    }
@@ -16,8 +18,8 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
   }
   onClickGoogleLogin() {
-    // this.authService.loginGoogle().then.( res => {
-      // console.log(res);
-   // }).catch(err => console.log( err.message));
+    this.authService.loginGoogle().then( (res) => {
+       this.router.navigate(['/menu']);
+   }).catch(err => console.log( err.message));
   }
 }

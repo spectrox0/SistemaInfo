@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navegacion',
   templateUrl: './navegacion.component.html',
@@ -8,13 +9,17 @@ import {AuthService} from '../../services/auth.service';
 export class NavegacionComponent implements OnInit {
  public userName: string;
  public userId: string;
- public isLogin: string;
+ public userEmail: string;
+ public isLogin: boolean;
+ public isAdmin: boolean;
  public userPicture: string;
+ private router: Router;
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit() {
+    this.onComprobaruserLogin();
   }
   onLogout() {
     this.authService.logout();
@@ -22,7 +27,14 @@ export class NavegacionComponent implements OnInit {
   onComprobaruserLogin() {
  this.authService.getAuth().subscribe( auth => {
    if (auth) {
-     console.log(auth);
+     this.isAdmin=false;
+     this.isLogin=true;
+     this.userName=auth.displayName;
+     this.userId=auth.uid;
+     this.userEmail=auth.email;
+     this.userPicture=auth.photoURL;
+   }else{
+     this.isLogin=false;
    }
  });
   }
