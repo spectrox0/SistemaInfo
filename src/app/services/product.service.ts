@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Producto} from '../models/producto';
+import {Producto} from './../models/producto';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,8 +13,7 @@ export class ProductService {
 
   constructor( public afs: AngularFirestore
   ) {
-     // this.productos = afs.collection('productos').valueChanges();
-     this.productosCollection = afs.collection<Producto>('productos');
+     this.productosCollection = afs.collection<Producto>('productos' , ref => ref.orderBy('fecha', 'desc'));
      this.productos = this.productosCollection.snapshotChanges(). pipe (
        map (actions => actions.map (a => {
    const data = a.payload.doc.data() as Producto;
@@ -23,7 +22,6 @@ export class ProductService {
        }))
      );
 }
-
   getProductos() {
  return this.productos;
   }
@@ -44,6 +42,6 @@ this.productosCollection.add(producto);
 
   deleteProducto( producto: Producto) {
     console.log('borra PRODUCTO');
-    this.productoDoc = this.afs.doc(`productos/${producto.id}`)
+    this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.delete();
 } }

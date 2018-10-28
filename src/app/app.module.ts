@@ -17,14 +17,20 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { CambiarComponent } from './componentes/cambiar/cambiar.component';
 import { DireccionComponent } from './componentes/direccion/direccion.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages';
+
 // firebase
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
 import {environment} from '../environments/environment';
 import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
 import {ProductService} from './services/product.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireStorageModule} from 'angularfire2/storage';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +54,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'uMakeIT'),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     FormsModule ,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FlashMessagesModule,
   ],
   providers: [AuthService ,
-   ProductService ],
+   ProductService ,
+  AuthGuard ,
+FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

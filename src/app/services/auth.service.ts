@@ -15,7 +15,6 @@ export class AuthService {
   usuarioDoc: AngularFirestoreDocument<Usuario>;
   constructor(
     public afAuth: AngularFireAuth , public afs: AngularFirestore) {
-
       this.usuariosCollection = afs.collection<Usuario>('usuarios');
       this.usuarios = this.usuariosCollection.snapshotChanges(). pipe (
         map (actions => actions.map (a => {
@@ -37,7 +36,7 @@ export class AuthService {
 
     }
     logout() {
-      return this.afAuth.auth.signOut;
+      return this.afAuth.auth.signOut();
     }
 
     registerUser(email: string , pass: string) {

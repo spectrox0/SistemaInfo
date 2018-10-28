@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth.service';
+import {AuthService} from './../../services/auth.service';
 import {Usuario} from '../../models/usuario';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-navegacion',
   templateUrl: './navegacion.component.html',
   styleUrls: ['./navegacion.component.css']
 })
 export class NavegacionComponent implements OnInit {
+  constructor(  public authService: AuthService ) { }
+
  public userName: string;
  public userId: string;
  public userEmail: string;
- public isLogin: boolean;
- public isAdmin: boolean;
+ public isLogin: boolean = false;
+ public isAdmin: boolean = false;
  public userPicture: string;
- private router: Router;
-  constructor(
-    private authService: AuthService
-  ) { }
   public usuarios: Usuario [];
 
   ngOnInit() {
@@ -31,22 +28,21 @@ export class NavegacionComponent implements OnInit {
       });
     });
   }
-  onLogout() {
+  onLogout(): void {
     this.authService.logout();
   }
-  onComprobaruserLogin() {
+
+  onComprobaruserLogin(): void {
  this.authService.getAuth().subscribe( auth => {
    if (auth) {
      this.isLogin = true;
-     this.isAdmin = false;
      this.userName = auth.displayName;
      this.userId = auth.uid;
      this.userEmail = auth.email;
      this.userPicture = auth.photoURL;
-   } else {
-     this.isLogin = false;
-   }
+    }
+    }
 
- });
+ );
   }
 }

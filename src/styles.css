@@ -11,3 +11,20 @@ background-repeat: no-repeat;
  background-size: cover;
 color: red;
 }
+.alert-success {
+    border:2px ridge crimson;
+    box-shadow: 0px 4px 20px 2px crimson;
+    border-radius: 16px;
+    margin-left:10%;
+    margin-right:10%;
+
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align:center;
+    font-size: 130%;
+    text-decoration: upperCase;
+    font-size: bold;
+    text-shadow: 0px 0px 7px white;
+    background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.9));
+
+}

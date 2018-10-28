@@ -11,7 +11,7 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { MenuComponent } from './componentes/menu/menu.component';
 import { CambiarComponent } from './componentes/cambiar/cambiar.component';
 import { DireccionComponent} from './componentes/direccion/direccion.component';
-
+import { AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '' , redirectTo : '/login' , pathMatch: 'full' } ,
@@ -19,13 +19,13 @@ const routes: Routes = [
   {path: 'navegacion', component: NavegacionComponent},
   {path: 'encabezado', component: EncabezadoComponent},
   {path: 'login', component: PrincipalComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'orden', component: OrdenComponent},
-  {path: 'compras', component: ComprasComponent},
+  {path: 'menu', component: MenuComponent , canActivate: [AuthGuard] },
+  {path: 'orden', component: OrdenComponent, canActivate: [AuthGuard]},
+  {path: 'compras', component: ComprasComponent , canActivate: [AuthGuard] },
   {path: 'footer', component: FooterComponent},
-  {path: 'administrador', component: AdministradorComponent},
-  {path: 'cambiar', component: CambiarComponent},
-  {path: 'direccion', component: DireccionComponent}
+  {path: 'administrador', component: AdministradorComponent, canActivate: [AuthGuard]},
+  {path: 'cambiar', component: CambiarComponent, canActivate: [AuthGuard] },
+  {path: 'direccion', component: DireccionComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

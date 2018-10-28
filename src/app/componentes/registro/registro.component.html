@@ -1,5 +1,4 @@
-<app-encabezado></app-encabezado>
- <div class="cuerpo">
+
 <div class= "contenedorF">
       <div class = "toggle">
         <span>  <a routerLink ="/login"> Login
@@ -8,11 +7,9 @@
         <div class= "formular">
       <h2> Registro</h2>
      <form (ngSubmit) = "onSubmitAddUser()" >
-
     <input type="email" class="form-control" name="email" id ="email" [(ngModel)] ="email" placeholder="Ingrese su correo" required>
     <input type="password" class="form-control" name="password" id ="password" [(ngModel)] ="password" placeholder="Ingrese su correo" placeholder="Ingrese su contrasena" required>
     <input type="submit" value="Registrarse" >
     </form>
         </div>
       </div>
-</div>

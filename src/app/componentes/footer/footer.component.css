@@ -1,10 +1,12 @@
 footer{
-    background: black;
-    border-top: 4px ridge red;
+
+    border-top: 1px ridge crimson;
     width: 100%;
     color: aliceblue;
     margin: 0%;
     font-family: 'Frijole' , cursive;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(220, 20, 60, 0.7)), url(../../../assets/img/fondo5.jpg);
+    background-position: bottom;
 }
 a{
     text-decoration: none;

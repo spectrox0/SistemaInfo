@@ -1,10 +1,11 @@
-<nav class="navbar navbar- bg-dark navbar-dark">
+<nav *ngIf="isLogin" class="navbar navbar- bg-dark navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand"> <img src="/../../assets/img/collect.gif" alt=""></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <a><i class="fas fa-user"></i> {{userEmail}} </a>
+    <a *ngIf="userName==null"><i class="fas fa-user"></i>  {{userEmail}} </a>
+    <a *ngIf="userName!=null"> <img src="{{userPicture}}">  {{userName}} </a>
   </button>
 
   <!-- Navbar links -->
@@ -27,7 +28,7 @@
         <a class="nav-link" routerLink="/administrador"><i class="fas fa-user-tie"></i>  Administrador</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" (click)="onLogout()" ><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a class="nav-link"  (click)="onLogout()" href="#" ><i class="fas fa-sign-out-alt"></i> Salir</a>
       </li>
     </ul>
   </div>
