@@ -63,7 +63,15 @@ uploadURL: Observable <string>;
 
   this.uploadProgress = task.percentageChanges();
 
-  task.snapshotChanges().pipe (finalize( () => this.uploadURL = fileRef.getDownloadURL())
+  task.snapshotChanges().pipe (finalize( () => {
+    this.uploadURL = fileRef.getDownloadURL();
+   this.uploadURL.subscribe (
+     url => {
+      this.producto.img = url;
+      console.log (this.producto.img);
+      console.log ('ddsdsdsdds');
+   });
+  }) // {{ downloadURL | async }})
   ).subscribe();
 }
 

@@ -61,10 +61,10 @@
                       </div>
                       <div class="form-group col-md-6">
                       <label for="img">Imagen del producto</label>
-                        <div class="custom-file">
-                      <input  [(ngModel)]="producto.img" #img="ngModel" name="img" type="text" class="custom-file-input" id="img">
-                          <label class="custom-file-label" name="img" for="img">Elige imagen</label>
-                        </div>
+                      <div class="custom-file">
+                        <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img">
+                        <label class="custom-file-label" name="img" for="img">Elige imagen</label>
+                      </div>
                       </div>
                         </div>
 
@@ -151,9 +151,9 @@
 
                       </section>
                     </div>
-                    <div class="item">
-                      <input #inputFile class="hidden" type="file" (change)="upload($event)" accept="image/*">
-                      <button (click)="inputFile.click()">Upload</button>
+                    <div class="custom-file">
+                      <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img">
+                      <label class="custom-file-label" name="img" for="img">Elige imagen</label>
                     </div>
                     </div>
                   </div>
@@ -218,7 +218,7 @@
                         <input [(ngModel)]="producto.disponibilidad" name="disponibilidad" #disponibilidad="ngModel" type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">Disponible</label>
                       </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button  type="submit" class="btn btn-primary">Submit</button>
 
             </form>
           </div>

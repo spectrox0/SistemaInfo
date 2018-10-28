@@ -1,7 +1,7 @@
 export interface Producto {
   id?: string;
   nombre?: string;
-  img?: any;
+  img?: string;
   ing1?: string;
   ing2?: string;
   ing3?: string;
