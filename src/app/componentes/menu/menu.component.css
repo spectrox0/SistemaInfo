@@ -1,12 +1,7 @@
  *{
    color: white;
  }
-  @media (min-width: 992px) {
-    .cuerpo {
-      padding-top: 20px;
-    }
 
-  }
 
    .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);

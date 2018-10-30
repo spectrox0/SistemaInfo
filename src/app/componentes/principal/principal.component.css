@@ -6,10 +6,6 @@
   box-sizing: border-box;
   font-family:'Pacifico', cursive;
 }
- .cuerpo {
-  padding-bottom: 5px;
-  padding-top:5px;
- }
 
 .contenedorF{
     background: rgba(0,0,0,.7);

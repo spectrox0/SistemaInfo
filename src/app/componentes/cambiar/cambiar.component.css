@@ -5,11 +5,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
- .cuerpo {
-  padding-bottom: 5px;
-  padding-top:5px;
-  font-family: "Pacifico" , cursive;
- }
+
 
 .contenedorF{
   background: rgba(0,0,0,.7);

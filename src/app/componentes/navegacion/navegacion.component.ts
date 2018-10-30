@@ -11,7 +11,6 @@ export class NavegacionComponent implements OnInit {
 
  public userName: string;
  public userId: string;
- public userEmail: string;
  public isLogin: boolean = false;
  public isAdmin: boolean = false;
  public userPicture: string;
@@ -38,7 +37,6 @@ export class NavegacionComponent implements OnInit {
      this.isLogin = true;
      this.userName = auth.displayName;
      this.userId = auth.uid;
-     this.userEmail = auth.email;
      this.userPicture = auth.photoURL;
     }
     }

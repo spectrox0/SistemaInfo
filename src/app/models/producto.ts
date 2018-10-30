@@ -10,4 +10,5 @@ export interface Producto {
   descripcion?: string;
   disponibilidad?: boolean;
   fecha?: any;
+  isPersonalizable?: boolean;
 }
