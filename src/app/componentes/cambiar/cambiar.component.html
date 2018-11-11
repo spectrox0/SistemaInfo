@@ -5,9 +5,9 @@
   <h2> Cambio de contraseña </h2>
  <form (ngSubmit)="onSubmitChange()">
 
-<input type="password" name="password1" placeholder="Ingrese su contraseña" [(ngModel)] ="password1" required>
+<input type="password" name="password1" placeholder="Ingrese su contraseña" [(ngModel)] ="oldPassword" required>
 <input type="password"  name="newPassword" placeholder="Ingrese su nueva contraseña" [(ngModel)] ="newPassword" required>
-<input type="password" name="password2" placeholder="Confirme su nueva contraseña" [(ngModel)] ="password2" required>
+<input type="password" name="password2" placeholder="Confirme su nueva contraseña" [(ngModel)] ="newPassword2" required>
 <input type="Submit" value="Confirmar">
 </form>
     </div>

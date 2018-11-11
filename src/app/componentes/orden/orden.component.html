@@ -1,63 +1,38 @@
 
 <div class = "container">
-  <h2>Orden</h2>
-
-
   <table class="table table-hover">
     <thead>
       <tr>
-        <th> <h3> Compra</h3></th>
-        <th> <h3>Nro de elementos</h3></th>
-        <th><h3> Precio bruto </h3></th>
+        <th> <h3>Producto</h3></th>
+        <th> <h3>Cantidad</h3></th>
+        <th> <h3>Ingredientes extras</h3></th>
+        <th><h3>Precio bruto</h3></th>
         <th><h3>Iva</h3></th>
+         <th><h3>Precio total</h3></th>
         <th><h3>Opciones</h3></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td> <span>Item1</span></td>
-        <td><span>1</span></td>
-        <td><span>3000</span> </td>
-        <td> <span>32</span></td>
+      <tr *ngFor='let product of productos'>
+        <td> <span> <img src="{{product.urlImg}}" alt="">{{product.nombre}} </span></td>
+        <td><span> {{product.cantidad}}</span></td>
+        <td> <span>{{product.ing1}} y {{product.ing2}}</span> <span> </span></td>
+        <td><span> {{product.precio}}</span> </td>
+        <td> <span>{{product.iva}}</span></td>
+        <td> <span>{{product.precioTotal}}</span></td>
         <td>
-          <button type="button" class="btn"><i class="far fa-times-circle"></i></button>
-<button type="button" class="btn">Add</button></td>
+          <button type="button" (click)="deleteProduct($event,product)" class="btn"><i class="far fa-times-circle"></i></button>
+       <button type="button" class="btn">Add</button></td>
       </tr>
-      <tr>
-        <td><span>extra cocinado</span></td>
-        <td><span>1</span></td>
-        <td><span>60000</span></td>
-        <td><span>213</span></td>
-        <td>
-          <button type="button" class="btn"><i class="far fa-times-circle"></i></button>
-<button type="button" class="btn">Add</button></td>
-      </tr>
-      <tr>
-        <td> <span> hamburg</span> </td>
-        <td> <span>1</span>
-        </td>
-        <td><span>1</span> </td>
-        <td> <span>32</span></td>
-        <td>
-          <button type="button" class="btn"><i class="far fa-times-circle"></i></button>
-          <button type="button" class="btn">Add</button></td>
-      </tr>
-
     </tbody>
     <tfoot>
         <tr> <td></td>
-          <td> <p>nro total </p> <span></span>
 
-          </td>
-          <td> <p>subtotal</p> <span></span></td>
-          <td> <p>total</p> <span></span></td>
-          <td></td>
+          <td colspan="5"> <strong> Total de orden : {{Total}} $ </strong> </td>
+          <td > <button type="button" class="btn" routerLink='/direccion' >Proceder <i class="fa-shopping-cart"></i>
+          </button></td>
          </tr>
-        <tr>
-          <td colspan="5">
-            <button type="button" class="btn" routerLink='/direccion' >Proceder <i class="fa-shopping-cart"></i>
-  </button>
-        </tr></tfoot>
+    </tfoot>
   </table>
 
 </div>

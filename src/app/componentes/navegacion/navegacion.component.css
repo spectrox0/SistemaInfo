@@ -1,15 +1,17 @@
 *{
-  color: aliceblue;
   font-family: 'Pacifico', cursive;
 }
- a img {
-   width: 10%;
-
-   height: 5%;
-   border-radius: 10px;
-   border: ridge 1px crimson;
+.navbar-brand img{
+  width: 16%;
+   height: auto;
+}
+ div img {
+   width: 30%;
+   height: auto;
+   border-radius: 50%;
+   box-shadow: 0px 0px 6px crimson;
  }
- a img:hover{
+ .navbar-toggler:hover div img{
 
   border: solid 1px crimson;
   box-shadow: 0px 0px 15px 2px crimson;
@@ -24,7 +26,7 @@
     border: 3px ridge crimson;
   }
   .bg-dark {
-    background: linear-gradient(rgba(220, 20, 60, 0.7), rgba(0, 0, 0, 0.9)), url(../../../assets/img/fondo5.jpg) !important;
+    background: linear-gradient(rgba(255, 0, 119, 0.6), rgba(0, 0, 0, 0.9)), url(../../../assets/img/fondo5.jpg) !important;
    border-bottom: 0.7px ridge crimson;
   }
   .navbar-dark nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
@@ -33,17 +35,33 @@
   }
  .navbar-dark .navbar-toggler {
     color: whitesmoke;
-    border-color: rgba(9, 255, 0, 0.575);
-    background: linear-gradient(rgba(3, 172, 12, 0.397),rgba(0, 0, 0, 1));
+    border-color: rgba(255, 0, 64, 0.575);
+    background: linear-gradient(rgba(255, 0, 64, 0.575),black);
     border-radius: 16px;
-    padding:10px;
-    margin: 5px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    padding:3px;
+    margin:1px;
+  }
+  .navbar-dark .navbar-toggler:focus{
+  outline :0 !important;
+  }
+  .navbar-dark .navbar-toggler:active {
+    border:none;
+  }
+  .navbar-toggler{
+    max-width: 200px;
+    min-width: 50px;
+  }
+  .navbar-toggler div {
+    padding:0px;
+    margin: 0px;
   }
 
-  .navbar-dark .navbar-toggler:hover{
-   color: greenyellow;
+  .navbar-dark .navbar-toggler:hover {
+   color: chartreuse;
    text-shadow: 0px 0px 10px greenyellow;
-   box-shadow: 0px 0px 10px 2px greenyellow;
+   box-shadow: 0px 0px 10px 2px rgb(255, 0, 64);
    transition: all .5s ease;
    font-weight: bold;
   }
@@ -60,9 +78,12 @@
    margin-bottom: 10px;
    border-radius: 10px;
      }
+      .nav-link{
+      color:white;
+      }
   .nav-item:hover{
  box-shadow: 0px 2px 15px 1px rgba(255, 0, 106, 0.794);
- background: linear-gradient( rgba(255, 0, 106, 0.05),rgba(14, 14, 14, 0.1));
+ background: linear-gradient( rgba(255, 0, 106, 0.1),rgba(14, 14, 14, 0.1));
  text-shadow: 0px 0px 4px rgb(17, 207, 10);
  transition: all .5s ease;
   }

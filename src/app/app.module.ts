@@ -28,8 +28,10 @@ import {environment} from '../environments/environment';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {ProductService} from './services/product.service';
+import {ComprasService} from './services/compras.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule} from 'angularfire2/storage';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { AngularFireStorageModule} from 'angularfire2/storage';
   ],
   providers: [AuthService ,
    ProductService ,
+   ComprasService,
   AuthGuard ,
 FlashMessagesService],
   bootstrap: [AppComponent]

@@ -7,6 +7,8 @@ export interface Producto {
   ing3?: string;
   categoria?: string;
   precio?: number;
+  precioTotal?: number;
+  iva?: number;
   descripcion?: string;
   disponibilidad?: boolean;
   fecha?: any;

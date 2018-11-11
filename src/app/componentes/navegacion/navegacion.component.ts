@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from './../../services/auth.service';
 import {Usuario} from '../../models/usuario';
+import {ProductService} from './../../services/product.service';
 @Component({
   selector: 'app-navegacion',
   templateUrl: './navegacion.component.html',
@@ -11,21 +12,14 @@ export class NavegacionComponent implements OnInit {
 
  public userName: string;
  public userId: string;
- public isLogin: boolean = false;
- public isAdmin: boolean = false;
+ public userEmail: string;
+ public isLogin = false;
+ public isAdmin = false;
  public userPicture: string;
   public usuarios: Usuario [];
 
   ngOnInit() {
     this.onComprobaruserLogin();
-    this.authService.getUsuarios().subscribe( usuarios => {
-      this.usuarios = usuarios;
-      this.usuarios.forEach(element => {
-        if (element.uid === this.userId) {
-          this.isAdmin = true;
-        }
-      });
-    });
   }
   onLogout(): void {
     this.authService.logout();
@@ -35,9 +29,19 @@ export class NavegacionComponent implements OnInit {
  this.authService.getAuth().subscribe( auth => {
    if (auth) {
      this.isLogin = true;
-     this.userName = auth.displayName;
+     this.userEmail =  auth.email;
      this.userId = auth.uid;
      this.userPicture = auth.photoURL;
+     this.authService.getUsuarios().subscribe( usuarios => {
+      this.usuarios = usuarios;
+      this.usuarios.forEach(element => {
+        if ((element.uid === this.userId)) {
+          if (element.isAdmin) {
+          this.isAdmin = true; }
+          this.userName = element.userName;
+        }
+      });
+    });
     }
     }
 

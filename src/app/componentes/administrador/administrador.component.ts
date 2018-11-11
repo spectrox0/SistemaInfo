@@ -16,13 +16,16 @@ export class AdministradorComponent implements OnInit {
   producto: Producto = {
     nombre: '',
     precio: 0,
+    iva: 0,
+    precioTotal: 0,
     descripcion: '',
-    categoria: '',
-    disponibilidad: false,
+    categoria: 'Desayuno',
+    disponibilidad: true,
     ing1: '',
     ing2: '',
     ing3: '',
     img: '',
+    isPersonalizable: true
   };
  editState: any = false;
   productoToEdit: Producto;
@@ -32,15 +35,18 @@ uploadURL: Observable <string>;
   constructor(private productoService: ProductService, private _storage: AngularFireStorage) {
 }
  ngOnInit() {
-  this.productoService.getProductos().subscribe( productos => {
-   this.getProduct(productos); });
+  this.productoService.getProductos().subscribe( productos =>
+   this.productos = productos
+  );
   }
-  getProduct(data) {
-    this.productos = data;
-   }
+
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
     const fecha = Date.now();
+    const iva = parseInt((this.producto.precio * 0.1).toFixed(2), 10);
+    const precioTotal = this.suma(iva , this.producto.precio);
+    this.producto.iva = iva;
+    this.producto.precioTotal = precioTotal;
     this.producto.fecha = fecha;
     this.productoService.addProducto(this.producto);
     myForm.reset();
@@ -50,6 +56,9 @@ uploadURL: Observable <string>;
  editProducto( event, producto: Producto) {
  this.editState = true;
  this.productoToEdit = producto;
+ }
+ suma(valor1, valor2): number {
+  return ( valor1 + parseInt(valor2, 10));
  }
 
  upload(event) {
@@ -69,7 +78,6 @@ uploadURL: Observable <string>;
      url => {
       this.producto.img = url;
       console.log (this.producto.img);
-      console.log ('ddsdsdsdds');
    });
   }) // {{ downloadURL | async }})
   ).subscribe();
@@ -81,10 +89,19 @@ uploadURL: Observable <string>;
     this.productoToEdit = null;
   }
   onUpdateProducto (producto: Producto) {
+     if (this.producto.img !== '') {
+        producto.img = this.producto.img;
+      }
+      const iva = parseInt((producto.precio * 0.1).toFixed(2), 10);
+      const precioTotal = this.suma(iva , producto.precio);
+      producto.iva = iva;
+      console.log (iva);
+      producto.precioTotal = precioTotal;
     this.productoService.updateProducto(producto);
     this.clearState();
    }
  deleteProducto(event, producto: Producto) {
+   console.log (producto.nombre);
     this.productoService.deleteProducto(producto);
     this.clearState();
  }

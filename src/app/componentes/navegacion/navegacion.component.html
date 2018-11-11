@@ -1,19 +1,19 @@
 <nav *ngIf="isLogin" class="navbar navbar- bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand"> <img src="/../../assets/img/collect.gif" alt=""></a>
+  <a class="navbar-brand"> <img src="/../../assets/img/logo.png" alt=""></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <a *ngIf="userName==null"><i class="fas fa-user"></i>  {{userEmail}} </a>
-    <a *ngIf="userName!=null"> <img src="{{userPicture}}">  {{userName}} </a>
+    <a *ngIf="userPicture==null"> <i class="fas fa-user"></i>  {{userName}} </a>
+    <div *ngIf="userPicture!=null"> <img src="{{userPicture}}"> </div>
+    <div *ngIf="userPicture!=null"> {{userName}} </div>
   </button>
 
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="nav nav-pills nav-fill">
-
       <li class="nav-item">
-          <a class="nav-link" routerLink="/menu"><i class="fas fa-utensils"></i> Menu</a>
+          <a class="nav-link" href="#" routerLink="/menu"><i class="fas fa-utensils"></i> Menu</a>
        </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/cambiar"><i class="fas fa-user-cog"></i> Cambiar contrasena</a>

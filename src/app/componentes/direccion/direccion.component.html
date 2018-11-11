@@ -3,13 +3,13 @@
 
   <div class= "formular">
 <h2> Ingrese su dirreccion </h2>
-<form action="">
+<form (ngSubmit)="saveCompra(formPro)" #formPro="ngForm">
 <input type="text" placeholder="Ingrese su pais" required>
 <input type="text" placeholder="Ingrese su ciudad" required>
 <input type="text" placeholder="Ingrese su codigo postal" required>
 <input type="text" placeholder="Especifique la direccion de envio" required>
 
-<button type="button" class="btn btn-primary btn-lg btn-block"><i class="fab fa-cc-paypal"></i> Proceder a Pagar</button>
+<button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fab fa-cc-paypal"></i> Proceder a Pagar</button>
 </form>
   </div>
 </div>

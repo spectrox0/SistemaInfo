@@ -9,14 +9,29 @@ import { timeout } from 'rxjs/operators';
 })
 export class CambiarComponent implements OnInit {
   public newPassword: string;
-  public password1: string;
-  public password2: string;
-  constructor(public authService: AuthService) { }
+  public newPassword2: string;
+  public oldPassword: string;
+  constructor(public authService: AuthService , public flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
 
    onSubmitChange() {
+    const User = this.authService.afAuth.auth.currentUser;
+     this.authService.loginEmail(User.email, this.oldPassword).then(sucess => {
+     if (this.newPassword === this.newPassword2) {
+      this.flashMessage.show('Has cambiado la clave correctamente', {cssClass: 'alert-success', timeout: 4000});
+     User.updatePassword(this.newPassword);
+     } else {
+      this.flashMessage.show('Ha ocurrido un error, confirme bien', {cssClass: 'alert-warning', timeout: 4000});
+     }
+
+
+     }).catch(error => {
+      this.flashMessage.show('Ha ocurrido un error, ingrese su contrasena actual bien', {cssClass: 'alert-warning', timeout: 4000});
+     }) ;
+
+    // const cred = this.authService.afAuth.auth.Crede
 
 }
 }

@@ -9,39 +9,51 @@ import { map } from 'rxjs/operators';
 export class ProductService {
  productosCollection: AngularFirestoreCollection <Producto>;
  productos: Observable<Producto[]>;
+ producto: Observable <Producto> ;
  productoDoc: AngularFirestoreDocument<Producto>;
 
-  constructor( public afs: AngularFirestore
+  constructor( private afs: AngularFirestore
   ) {
-     this.productosCollection = afs.collection<Producto>('productos' , ref => ref.orderBy('fecha', 'desc'));
-     this.productos = this.productosCollection.snapshotChanges(). pipe (
-       map (actions => actions.map (a => {
-   const data = a.payload.doc.data() as Producto;
-   const id = a.payload.doc.id;
-   return {id , ... data};
-       }))
-     );
+    this.productosCollection = this.afs.collection<Producto>('productos' , ref => ref.orderBy('fecha', 'desc'));
 }
-  getProductos() {
+  getProductos(): Observable<Producto []> {
+    this.productos = this.productosCollection.snapshotChanges(). pipe (
+      map (actions => {
+       return actions.map(a => {
+  const data = a.payload.doc.data() as Producto;
+  data.id = a.payload.doc.id;
+  return data;
+      });
+      }) );
  return this.productos;
   }
 
   addProducto(producto: Producto) {
-console.log('NEW PRODUCTO');
 this.productosCollection.add(producto);
   }
 
   updateProducto(producto: Producto) {
-    console.log('actualiza PRODUCTO');
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.update(producto);
-
    }
 
+   getProducto (idProducto: string) {
+     this.productoDoc = this.afs.doc<Producto>(`productos/${idProducto}`);
+   this.producto = this.productoDoc.snapshotChanges(). pipe (
+    map (actions => {
+      if (actions.payload.exists === false) {
+        return null;
+      } else {
+        const data = actions.payload.data() as Producto;
+        data.id = actions.payload.id;
+        return data;
+      }
 
+    } ) ) ;
+    return this.producto;
+   }
 
   deleteProducto( producto: Producto) {
-    console.log('borra PRODUCTO');
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.delete();
 } }

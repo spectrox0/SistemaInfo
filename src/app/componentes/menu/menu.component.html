@@ -39,34 +39,47 @@
               <p class="card-text">{{product.descripcion}}</p>
             </div>
             <div class="card-footer">
-                <button type="button" class="btn" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6"><i class="fas fa-edit"></i>Edita</button>
-                <button type="button" class="btn"><i class="fas fa-shopping-cart"></i> Buy </button>
-                <div class="collapse" id="collapseExample6">
+                <button *ngIf="!product.isPersonalizable" type="button" class="btn disabled"><i class="fas fa-edit"></i>Edita</button>
+                <button *ngIf="product.isPersonalizable && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="false" aria-controls="collapseExample6"><i class="fas fa-shopping-cart"></i> Buy</button>
+                <button *ngIf="product.isPersonalizable && editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" aria-controls="collapseExample6"><i class="fas fa-edit"></i>Cierra</button>
 
-                    <form>
+                <div class="collapse" id="{{product.id}}">
+
+                    <form (ngSubmit)="saveProduct(formPro)" #formPro="ngForm">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="sel4">Ingrediente 1</label>
-                                <select class="custom-select" id="sel4">
+                                <label for="sel1 {{product.id}}">Ingrediente 1</label>
+                                <select [(ngModel)]="productoPedido.ing1" name="ing1" class="custom-select" id="sel1 {{product.id}}">
                                   <option>Ninguno</option>
                                   <option>{{product.ing1}}</option>
                                   <option>{{product.ing2}}</option>
                                   <option>{{product.ing3}}</option>
-
                                 </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="sel4">Ingrediente 2</label>
-                                    <select class="custom-select" id="sel5">
+                                    <label for="sel2 {{product.id}}">Ingrediente 2</label>
+                                    <select [(ngModel)]="productoPedido.ing2" name="ing2" class="custom-select" id="sel2 {{product.id}}">
                                   <option>Ninguno</option>
                                   <option>{{product.ing1}}</option>
                                   <option>{{product.ing2}}</option>
                                   <option>{{product.ing3}}</option>
                                     </select>
                                     </div>
+                                     <div class="row">
 
-                                <button type="submit" class="btn btn-primary">Confirmar</button>
-
+                                    <div class="form-group col-sm">
+                                        <label for="sel3 {{product.id}}">Cantidad</label>
+                                      <select name="cantidad" [(ngModel)]="productoPedido.cantidad" class="custom-select" id="sel3 {{product.id}}">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                      </select>
+                                      </div>
+                                    </div>
+                                <div class="col-sm">
+                                <button type="submit" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" aria-controls="collapseExample6">Confirmar</button>
+                              </div>
                                 </div>
                               </form>
               </div>

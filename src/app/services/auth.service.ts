@@ -13,20 +13,26 @@ export class AuthService {
   usuariosCollection: AngularFirestoreCollection <Usuario>;
   usuarios: Observable<Usuario[]>;
   usuarioDoc: AngularFirestoreDocument<Usuario>;
+
   constructor(
     public afAuth: AngularFireAuth , public afs: AngularFirestore) {
       this.usuariosCollection = afs.collection<Usuario>('usuarios');
-      this.usuarios = this.usuariosCollection.snapshotChanges(). pipe (
-        map (actions => actions.map (a => {
-    const data = a.payload.doc.data() as Usuario;
-    const id = a.payload.doc.id;
-    return {id , ... data};
-        }))
-      );
 
     }
     getUsuarios() {
-      return this.usuarios;
+      this.usuarios = this.usuariosCollection.snapshotChanges(). pipe (
+        map (actions => {
+         return actions.map(a => {
+    const data = a.payload.doc.data() as Usuario;
+     data.id = a.payload.doc.id;
+    return data;
+        });
+        }) );
+   return this.usuarios;
+       }
+       getIdUser() {
+        const id = this.afAuth.auth.currentUser.uid;
+
        }
     loginGoogle() {
        return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
@@ -39,22 +45,22 @@ export class AuthService {
       return this.afAuth.auth.signOut();
     }
 
-    registerUser(email: string , pass: string) {
+    registerUser(email: string , pass: string, usuario: Usuario) {
    return new Promise((resolve, reject) => {
    this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
-   .then(userData => resolve(userData), err => reject (err)) ;
-
-
+   .then(userData => { resolve(userData);
+     usuario.uid = userData.user.uid;
+     this.agregaUsuario(usuario); }
+     , err => reject (err)) ;
    });
     }
-
+    agregaUsuario(usuario: Usuario) {
+      this.usuariosCollection.add(usuario) ;
+    }
     loginEmail(email: string , pass: string) {
       return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithEmailAndPassword(email, pass)
       .then(userData => resolve(userData), err => reject (err)) ;
       });
        }
-
-
-
 }

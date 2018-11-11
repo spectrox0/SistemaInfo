@@ -1,16 +1,14 @@
 
-  @media (min-width: 992px) {
-
-  }
 
 
   h2{
     text-align: center;
     padding: 10px;
-    color: rgb(255, 255, 255);
+    color: chartreuse;
+    text-shadow: 0px 0px 15px crimson;
     font-size: 1.5em;
     margin:0px;
- font-family: 'Frijole',cursive;
+ font-family: 'Pacifico',cursive;
   border-radius: 10px;
   background: linear-gradient(#c51d41b2,#00000075);
   box-shadow: 0px 0px 15px 1px crimson;
@@ -20,6 +18,13 @@ h3 {
   text-align: center;
   font-size: 1.4em;
 }
+
+td img {
+  width: 15%;
+  max-width: 70px;
+  height: auto;
+ border-radius: 50%;
+ }
 .table{
 margin: 20px;
 background: rgba(0, 0, 0, 0.5);
@@ -29,6 +34,7 @@ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .table thead th{
 background: linear-gradient(#c51d41b2,#00000075);
+text-align: center;
 color: rgb(71, 255, 47);
 text-shadow: 0px 0px 6px greenyellow;
 font-family: 'Pacifico', cursive;
@@ -36,7 +42,6 @@ border-left: ridge 2px whitesmoke;
 border-right: ridge 2px whitesmoke;
 }
 button {
-  float: right;
 border: ridge 2px crimson;
 background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 0.781));
 color: whitesmoke;
@@ -62,4 +67,18 @@ border-color: greenyellow;
   }
 .table tfoot {
 background: rgba(0, 0, 0, 0.5);
+}
+.form-group select{
+  background: rgba(0, 0, 0, 0.5);
+  border: crimson 2px ridge;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #11cf0ab3;
+}
+.form-group{
+  text-align: center;
+}
+.form-group select:focus{
+  box-shadow: 0px 7px 15px crimson;
+  transition: all .5s ease;
 }

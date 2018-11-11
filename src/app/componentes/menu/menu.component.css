@@ -49,6 +49,7 @@
         }
        .card button,input {
         font-family: 'Pacifico' , cursive;
+        margin-top: 5px;
        }
 
        .card h4 {
@@ -146,25 +147,31 @@ opacity: 0.8;
 }
 .form-group select{
   background: rgba(0, 0, 0, 0.5);
-  border: crimson 2px ridge;
+  border: crimson 1px ridge;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #11cf0ab3;
 }
-.card-footer button {
+.card-footer .btn-primary{
   border: ridge 2px  crimson;
   background: linear-gradient(#ac34489c,#dc143cc7);
    color: whitesmoke;
    margin-right: 10px;
 }
-.card-footer button:hover {
+.card-footer .btn-secondary{
+  border: ridge 2px chartreuse;
+  background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
+  color: rgb(255, 255, 255);
+
+}
+.card-footer .btn-primary:hover {
   color: white;
   text-shadow: 0px 0px 7px whitesmoke;
  border: 2px ridge crimson;
  box-shadow: 0px 0px 15px crimson;
  font-weight: bold;
 }
-.card-footer button[type="submit"] {
+.card-footer .btn-secondary[type="submit"] {
   border: ridge 2px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
@@ -181,3 +188,16 @@ opacity: 0.8;
   height: auto;
 
 }
+.card-footer .disabled{
+  background: linear-gradient(rgba(128, 128, 128, 0.39),gray);
+  border-color: black;
+
+}
+.card-footer .disabled:hover{
+ text-shadow:none;
+box-shadow:none;
+border-color:black;
+font-weight: normal;
+
+}
+
