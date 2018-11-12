@@ -86,6 +86,8 @@ uploadURL: Observable <string>;
 
   clearState() {
    this.editState = false;
+    console.log(this.productoToEdit.nombre);
+    console.log(this.productoToEdit.id);
     this.productoToEdit = null;
   }
   onUpdateProducto (producto: Producto) {

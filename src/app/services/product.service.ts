@@ -56,4 +56,10 @@ this.productosCollection.add(producto);
   deleteProducto( producto: Producto) {
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);
     this.productoDoc.delete();
-} }
+}
+getProductoFilterCategory(categoria: string) {
+
+
+}
+
+}

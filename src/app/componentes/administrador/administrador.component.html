@@ -42,15 +42,15 @@
         <tr>
           <td> <strong> <img src="{{producto.img}}" alt=""> {{producto.nombre}}</strong> </td>
           <td> <strong>{{producto.fecha | date: 'dd/MM/yyyy'}}</strong> </td>
-          <td><strong>{{producto.precio}}  </strong></td>
+          <td><strong>{{producto.precio}}</strong></td>
           <td><button type="button" (click)="deleteProducto($event,producto)"class="btn"><i class="far fa-times-circle"></i>Borra</button>
-            <button type="button" *ngIf="editState==false" (click)="editProducto($event,producto)" class="btn" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="false" aria-controls="collapse" ><i class="fas fa-edit"></i>Edita</button>
-            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="true" aria-controls="collapse" ><i class="fas fa-edit"></i>Cierra</button>
+            <button type="button" *ngIf="editState==false" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="false" [attr.aria-controls]="producto.id" (click)="editProducto($event,producto)" class="btn"><i class="fas fa-edit"></i>Edita</button>
+            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="true" [attr.aria-controls]="producto.id" ><i class="fas fa-edit"></i>Cierra</button>
           </td>
 
           </tr>
           <tr > <td colspan="4">
-            <div class="collapse container" id="{{producto.id}}">
+            <div [attr.id]="producto.id" class="collapse container">
                 <form (ngSubmit)="onUpdateProducto(producto)" #formOld="ngForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -155,8 +155,8 @@
                       </section>
 
                     <div class="custom-file">
-                      <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img{{producto.id}}">
-                      <label class="custom-file-label" name="img" for="img{{producto.id}}">Elige imagen</label>
+                      <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img">
+                      <label class="custom-file-label" name="img" for="img">Elige imagen</label>
                     </div>
                     </div>
                   </div>

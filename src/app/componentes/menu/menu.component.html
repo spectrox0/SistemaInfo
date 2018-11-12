@@ -39,9 +39,9 @@
               <p class="card-text">{{product.descripcion}}</p>
             </div>
             <div class="card-footer">
-                <button *ngIf="!product.isPersonalizable" type="button" class="btn disabled"><i class="fas fa-edit"></i>Edita</button>
-                <button *ngIf="product.isPersonalizable && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="false" aria-controls="collapseExample6"><i class="fas fa-shopping-cart"></i> Buy</button>
-                <button *ngIf="product.isPersonalizable && editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" aria-controls="collapseExample6"><i class="fas fa-edit"></i>Cierra</button>
+                <button *ngIf="!product.disponibilidad" type="button" class="btn disabled"><i class="fas fa-edit"></i>Comprar</button>
+                <button *ngIf="product.disponibilidad && product.isPersonalizable && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" [attr.aria-controls]="product.id"><i class="fas fa-shopping-cart"></i> Compra</button>
+                <button *ngIf="product.isPersonalizable && editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" [attr.aria-controls]="product.id"><i class="fas fa-edit"></i>Cierra</button>
 
                 <div class="collapse" id="{{product.id}}">
 
