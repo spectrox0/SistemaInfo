@@ -1,15 +1,9 @@
-*{
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family:'Pacifico', cursive;
-}
+
 
 .contenedorF{
-    background: radial-gradient(rgba(46, 59, 58, 0.226),rgba(35, 46, 45, 0.568),rgba(4, 26, 29, 0.842));
-    border: 3px ridge #cf0520;
+    background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+    border: 2px ridge crimson;
+    box-shadow: 0px 0px 6px crimson;
     max-width: 500px;
     width: 100%;
     margin: 48px auto;
@@ -52,7 +46,7 @@
 
 .contenedorF .toggle span{
    letter-spacing: 1px;
-
+font-family: 'Oleo Script',cursive;
 }
 .contenedorF .toggle span a{
 
@@ -109,21 +103,26 @@
   transition: all .5s ease;
 }
 
-.contenedorF input[type="submit"]:hover {
+.contenedorF input[type="submit"]:hover ,.btn-primary:hover {
   font-weight: bold;
   box-shadow: 0px 0px 20px greenyellow;
   text-shadow: 0px 0px 4px white;
-
 }
+  .contenedorF input[type="submit"]:focus ,.btn-primary:focus{
+  outline :0 !important;
+  }
+  .contenedorF input[type="submit"]:active ,.btn-primary:active {
+    border:none;
+  }
 
 
 .btn-primary {
   margin-top: 15px;
-  padding: 5px;
   border: 2px ridge rgb(250, 102, 3);
    background: rgba(255, 81, 0, 0.5);
    background-image: linear-gradient(rgba(255, 81, 0, 0.01), rgba(255, 81, 0, 0.5));
    border-radius: 10px;
+   padding: 10px 0;
 }
 .btn-primary b {
   display: inline-block;
@@ -134,6 +133,7 @@
   box-shadow: 0px 0px 15px coral;
   transition: all .5s ease;
 }
+
 .fa-google {
   margin:0px;
    padding: 2px;

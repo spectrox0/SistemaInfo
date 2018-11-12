@@ -8,8 +8,9 @@
 
 
 .contenedorF{
-  background: rgba(0,0,0,.7);
-  border: 4px ridge #d90000;
+  background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+  border: 2px ridge crimson;
+  box-shadow: 0px 0px 4px crimson;
   max-width: 500px;
   width: 100%;
   margin: 48px auto;
@@ -23,9 +24,11 @@
 
 .contenedorF h2{
   margin: 0 0 28px 0;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 1;
+  font-family: 'Oleo Script', cursive;
+  text-shadow: 0px 0px 10px yellow;
   text-align: center;
 }
 .contenedorF input[type="text"],
@@ -56,7 +59,7 @@
 }
 
 .contenedorF input[type="submit"] {
-  background: linear-gradient(rgba(8, 153, 15, 0.212),rgba(8, 153, 15, 0.808));
+  background: linear-gradient(rgba(4, 207, 14, 0.212),rgba(8, 204, 18, 0.904));
   color: #FFF;
   width: 100%;
   border-radius: 10px;
@@ -75,7 +78,9 @@
   box-shadow: 0px 0px 20px greenyellow;
   text-shadow: 0px 0px 4px white;
 }
-h2{
-  font-family: 'Pacifico',cursive;
-  text-shadow: 0px 0px 10px crimson;
+input[type="submit"]:focus {
+  outline :0 !important;
+}
+input[type="submit"]:active {
+ border: none;
 }

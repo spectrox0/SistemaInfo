@@ -25,7 +25,7 @@
     <!-- /.col-lg-3 -->
 
     <div class="col-lg-9">
-
+        <div class="row"> <h2><img src="/../../assets/img/MenuTitulo.png" alt=""></h2></div>
       <div class="row">
 
         <div *ngFor='let product of productos' class="col-lg-4 col-md-6 mb-4">
@@ -35,19 +35,22 @@
               <h4 class="card-title">
                 {{product.nombre}}
               </h4>
-              <h5> ${{product.precio}}</h5>
+              <h5> ${{product.precioTotal}}</h5>
               <p class="card-text">{{product.descripcion}}</p>
             </div>
             <div class="card-footer">
+               <div class="row">
+                 <div class="container">
                 <button *ngIf="!product.disponibilidad" type="button" class="btn disabled"><i class="fas fa-edit"></i>Comprar</button>
-                <button *ngIf="product.disponibilidad && product.isPersonalizable && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" [attr.aria-controls]="product.id"><i class="fas fa-shopping-cart"></i> Compra</button>
-                <button *ngIf="product.isPersonalizable && editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" [attr.aria-controls]="product.id"><i class="fas fa-edit"></i>Cierra</button>
-
+                <button *ngIf="product.disponibilidad && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" [attr.aria-controls]="product.id"><i class="fas fa-shopping-cart"></i> Compra</button>
+                <button *ngIf="editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" [attr.aria-controls]="product.id"><i class="fas fa-edit"></i>Cierra</button>
+              </div>
+            </div>
                 <div class="collapse" id="{{product.id}}">
 
                     <form (ngSubmit)="saveProduct(formPro)" #formPro="ngForm">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div *ngIf="product.isPersonalizable" class="form-group col-md-6">
                                 <label for="sel1 {{product.id}}">Ingrediente 1</label>
                                 <select [(ngModel)]="productoPedido.ing1" name="ing1" class="custom-select" id="sel1 {{product.id}}">
                                   <option>Ninguno</option>
@@ -56,7 +59,7 @@
                                   <option>{{product.ing3}}</option>
                                 </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div *ngIf="product.isPersonalizable" class="form-group col-md-6">
                                     <label for="sel2 {{product.id}}">Ingrediente 2</label>
                                     <select [(ngModel)]="productoPedido.ing2" name="ing2" class="custom-select" id="sel2 {{product.id}}">
                                   <option>Ninguno</option>
@@ -74,6 +77,12 @@
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
                                       </select>
                                       </div>
                                     </div>

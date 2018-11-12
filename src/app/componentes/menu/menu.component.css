@@ -6,7 +6,7 @@
    .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
-      font-family: 'Pacifico',cursive;
+      font-family: 'Oleo Script', cursive;
     }
 
    .list-group{
@@ -26,9 +26,11 @@
        h2{
            text-align: center;
            padding: 0px;
+           display:block;
+           width: 100%;
            color: rgb(255, 255, 255);
            font-size: 1.5em;
-           margin:0px;
+           margin:10px;
         font-family: 'Frijole',cursive;
          border-radius: 10px;
          background: linear-gradient(#c51d41b2,#00000075);
@@ -129,18 +131,10 @@
  border-radius: 10px;
 
 }
-.tv {
-  position: absolute;
-  float:left;
-  box-shadow: 0px 0px 30px crimson;
-bottom: 5px;
-right:28%;;
- box-align: center;
-width:10%;
-border: 1px ridge crimson;
-border-radius:16px;
-opacity: 0.8;
-}
+  h2 img {
+    padding:0px;
+    margin:0px;
+  }
 .form-group select:focus{
   box-shadow: 0px 7px 15px crimson;
   transition: all .5s ease;
@@ -153,16 +147,24 @@ opacity: 0.8;
   color: #11cf0ab3;
 }
 .card-footer .btn-primary{
+
   border: ridge 2px  crimson;
   background: linear-gradient(#ac34489c,#dc143cc7);
    color: whitesmoke;
    margin-right: 10px;
+   float:right;
+}
+.card-footer .btn-primary:focus,.card-footer .btn-secondary:focus{
+  outline :0 !important;
+}
+.card-footer .btn-primary:active,.card-footer .btn-secondary:active{
+ border:none;
 }
 .card-footer .btn-secondary{
   border: ridge 2px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
-
+  float:right;
 }
 .card-footer .btn-primary:hover {
   color: white;
@@ -171,14 +173,14 @@ opacity: 0.8;
  box-shadow: 0px 0px 15px crimson;
  font-weight: bold;
 }
-.card-footer .btn-secondary[type="submit"] {
+.card-footer .btn-secondary{
   border: ridge 2px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
   margin-right: 10px;
 
 }
-.card-footer button[type="submit"]:hover {
+.card-footer .btn-secondary:hover {
   box-shadow: 0px 0px 15px chartreuse;
 
 }
@@ -191,6 +193,7 @@ opacity: 0.8;
 .card-footer .disabled{
   background: linear-gradient(rgba(128, 128, 128, 0.39),gray);
   border-color: black;
+  float:right;
 
 }
 .card-footer .disabled:hover{

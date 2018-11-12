@@ -6,7 +6,7 @@
   .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
-      font-family: "Pacifico" , cursive;
+      font-family: 'Oleo Script', cursive;
     }
 
    .list-group{
@@ -36,14 +36,14 @@
 
        }
        h2{
-          box-align: center;
+         display: block;
+         width:100%;
            text-align: center;
-           padding: 10px;
+           padding: 0px;
            color: rgb(255, 255, 255);
            font-size: 1.5em;
            width: 100%px;
-           margin: 0px;
-           margin-bottom: 20px;
+           margin: 10px;
         font-family: 'Pacifico',cursive;
          border-radius: 10px;
          background: linear-gradient(#c51d41b2,#00000075);
@@ -59,9 +59,13 @@ color: white;
 font-family: fantasy;
 
 }
+.table thead{
+  background: url(../../../assets/img/imgMosaico.jpg) !important;
+}
  .table thead th{
+   text-align:center;
+   background: linear-gradient(#eb1644c7,#00000096);
   font-family: 'Pacifico',cursive;
-  background: linear-gradient(#c51d41b2,#00000075);
   border-left: ridge 1px whitesmoke;
   border-right: ridge 1px whitesmoke;
   border: 1px white ridge;
@@ -70,14 +74,12 @@ text-shadow: 0px 0px 4px greenyellow;
 font-weight: bold;
  }
  .baila{
-  width: 15%;
-  height: 10%;
-  max-width: 70px;
-  max-height: 100px;
+  width: 70%;
+
+  max-width: 300px;
+
   height: auto;
  border-radius: 10px;
- border: 1px ridge rgb(241, 46, 85);
- box-shadow: 0px 0px 15px rgb(248, 39, 81);
 }
 .list-group img{
   width: 10%;
@@ -85,7 +87,7 @@ font-weight: bold;
   height: auto;
 }
 
- button {
+  .btn-primary {
    border: ridge 2px crimson;
    background: #dc143cab;
    background: linear-gradient(#dc143c2f,#dc143cda);
@@ -93,9 +95,37 @@ font-weight: bold;
    margin-right: 10px;
    float: right;
  }
- button:hover {
+ .btn-primary[type="submit"] {
+  border: ridge 2px rgb(43, 220, 20);
+   background: #25dc14ab;
+   background: linear-gradient(#32dc142f,#4ddc14da);
+
+}
+ .btn-secondary {
+  border: ridge 2px rgb(140, 20, 220);
+  background: linear-gradient(rgba(140, 20, 220,0.2),rgba(140, 20, 220, 0.897));
+  color: whitesmoke;
+  margin-right: 10px;
+  float: right;
+}
+ button:focus{
+  outline :0 !important;
+}
+button:active{
+ border:none;
+}
+ .btn-primary:hover {
   box-shadow: 0px 0px 15px crimson;
   font-weight: bold;
+}
+.btn-secondary:hover {
+  box-shadow: 0px 0px 15px rgb(140, 20, 220);
+  font-weight: bold;
+}
+ button[type="submit"]:hover{
+  box-shadow: 0px 0px 15px chartreuse;
+  font-weight: bold;
+
 }
 .table tfoot button{
   float: right;
@@ -108,12 +138,11 @@ font-weight: bold;
   box-shadow: 0px 0px 15px chartreuse;
 
   }
-  .table tbody button:hover {
+  .table tbody .btn-primary:hover {
 
-
-    text-shadow: 0px 0px 7px white;;
-   border: 2px ridge crimson;
+    text-shadow: 0px 0px 7px white;
   }
+
 .table tfoot {
   background: rgba(0, 0, 0, 0.5);
 }

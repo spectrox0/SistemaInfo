@@ -57,6 +57,9 @@ export class MenuComponent implements OnInit {
      this.productos = productos;
      });
   }
+   getProductoFilterCategory(categoria: string) {
+
+   }
   editProducto( event, producto: Producto) {
     this.editState = true;
     this.productoToEdit = producto;
