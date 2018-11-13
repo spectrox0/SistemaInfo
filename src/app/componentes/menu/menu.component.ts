@@ -62,6 +62,7 @@ export class MenuComponent implements OnInit {
       });
    }
    getProductoFilterNombre() {
+     console.log(this.Busquedad);
      this.productoService.getProductoFilterName(this.Busquedad).subscribe( productos => {
       this.productos = productos;
       });

@@ -44,6 +44,12 @@
         border-bottom-right-radius: 16px;
          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
        }
+        .card img {
+           border-radius: 50% ;
+           box-shadow: 0px 0px 10px crimson;
+          background: radial-gradient(rgba(255, 0, 55, 0.05),rgba(116, 7, 34, 0.3),rgba(0,0,0,0.6));
+           max-height:300px;
+        }
         .card:hover{
           box-shadow: 0px 4px 15px  black;
           transition: all .5s ease;
