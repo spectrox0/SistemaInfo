@@ -4,7 +4,8 @@
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <a *ngIf="userPicture==null"> <i class="fas fa-user"></i>  {{userName}} </a>
+    <div *ngIf="userPicture==null"> <img src="/../../assets/img/imgUser.png"> </div>
+    <div *ngIf="userPicture==null"> {{userName}} </div>
     <div *ngIf="userPicture!=null"> <img src="{{userPicture}}"> </div>
     <div *ngIf="userPicture!=null"> {{userName}} </div>
   </button>

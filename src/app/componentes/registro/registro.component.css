@@ -7,10 +7,15 @@
   font-family:'Acme', sans-serif;
 }
 
-
 .contenedorF{
+<<<<<<< HEAD
     background: rgba(0,0,0,.7);
     border: 4px ridge #cf0520;
+=======
+  background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+    border: 2px ridge crimson;
+    box-shadow: 0px 0px 4px crimson;
+>>>>>>> c3380eb3ae5d940e889badcade7d99996d293597
     max-width: 500px;
     width: 100%;
     margin: 48px auto;
@@ -37,12 +42,20 @@
 }
 .contenedorF h2{
   margin: 0 0 28px 0;
+<<<<<<< HEAD
   font-size: 35px;
+=======
+  font-size: 30px;
+>>>>>>> c3380eb3ae5d940e889badcade7d99996d293597
   font-weight: 400;
   line-height: 1;
   text-align: center;
   font-family: 'Oleo Script',cursive;
+<<<<<<< HEAD
   text-shadow: 0px 0px 4px rgb(16, 223, 205);
+=======
+  text-shadow: 0px 0px 4px yellow;
+>>>>>>> c3380eb3ae5d940e889badcade7d99996d293597
 }
 .contenedorF .toggle:hover{
   border-top: 2px ridge #f3e309;
@@ -52,6 +65,7 @@
 
 .contenedorF .toggle span{
    letter-spacing: 1px;
+   font-family: 'Oleo Script',cursive;
 
 }
 .contenedorF .toggle span a{
@@ -108,7 +122,12 @@
   cursor: pointer;
   transition: all .5s ease;
 }
-
+.btn-primary:focus,input[type="submit"]:focus{
+  outline :0 !important;
+}
+.btn-primary:active,input[type="submit"]:active{
+ border: none;
+}
 .contenedorF input[type="submit"]:hover {
   font-weight: bold;
   box-shadow: 0px 0px 20px greenyellow;
@@ -116,7 +135,3 @@
 
 }
 
-h2{
-  font-family: 'Frijole',cursive;
-  text-shadow: 0px 0px 4px white;
-}
