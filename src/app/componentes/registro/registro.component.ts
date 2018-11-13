@@ -29,7 +29,7 @@ export class RegistroComponent implements OnInit {
       this.router.navigate(['/menu']);
       console.log(res);
   } ).catch((err) => {
-    this.flashMessage.show('ha ocurrido un error', { cssClass: 'alert-warning', timeout: 4000});
+    this.flashMessage.show('Ha ocurrido un error', { cssClass: 'alert-warning', timeout: 4000});
     this.router.navigate(['/principal']);
     console.log(err);
   });

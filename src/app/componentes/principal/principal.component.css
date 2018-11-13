@@ -4,7 +4,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family:'Pacifico', cursive;
+  font-family:'Acme', sans-serif;
 }
 
 .contenedorF{
@@ -16,7 +16,7 @@
     border-radius: 5px;
     color: #fff;
     position: relative;
-   padding: 40px;
+    padding: 40px;
 }
 
 
@@ -26,7 +26,7 @@
     right: 7px;
     width: 100px;
     height: 30px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 25px;
     text-align: center;
     border-top: 2px solid #000000;
@@ -40,14 +40,13 @@
   line-height: 1;
   text-align: center;
   font-family: 'Oleo Script',cursive;
-  text-shadow: 0px 0px 4px yellow;
-  font-size: 30px;
+  text-shadow: 0px 0px 4px rgb(16, 223, 205);
+  font-size: 40px;
 
 }
 .contenedorF .toggle:hover{
-  border-top: 2px ridge crimson;
+  border-top: 2px ridge #f3e309;
   border-bottom: 2px ridge #f3e309;
-
 }
 
 .contenedorF .toggle span{
@@ -61,8 +60,8 @@
  }
 .contenedorF .toggle span a:hover{
     text-decoration: none;
-    color: greenyellow;
-    text-shadow: 0px 0px 10px greenyellow;
+    color: rgb(16, 223, 205);
+    text-shadow: 0px 0px 10px ;
 
  }
 
@@ -76,13 +75,13 @@
    margin: 0 0 20px 0;
    background: rgba(0,0,0,.5);
    color: white;
-   border: ridge 2px crimson;
+   border: ridge 2px #cf0520;
    border-radius: 2px;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
-   box-shadow: 0px 6px 10px crimson;
+   box-shadow: 0px 3px 5px #cf0520;
    box-sizing: border-box;
-   font-size: 14px;
+   font-size: 16px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-weight:normal;
    transition: all .5s ease;
@@ -91,7 +90,7 @@
 .contenedorF input[type="text"]:focus,
 .contenedorF input[type="password"]:focus,
 .contenedorF input[type="email"]:focus {
-    box-shadow: 0px 6px 10px  #f3e309;
+    box-shadow: 0px 6px 10px  rgb(16, 223, 205);
 }
 
 .contenedorF input[type="submit"] {
@@ -101,19 +100,20 @@
   border-radius: 10px;
   border: 2px ridge rgb(20, 175, 28);
   padding: 10px 0;
-  font-size: 16px;
-  font-weight: normal;
+  font-family:'Acme', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all .5s ease;
 }
 
 .contenedorF input[type="submit"]:hover {
+
   font-weight: bold;
   box-shadow: 0px 0px 20px greenyellow;
   text-shadow: 0px 0px 4px white;
-
 }
 
 
