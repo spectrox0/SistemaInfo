@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *{
   margin: 0;
   padding: 0;
@@ -6,15 +5,13 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family:'Acme', sans-serif;
+  letter-spacing: 1.5px;
 }
-=======
-
->>>>>>> c3380eb3ae5d940e889badcade7d99996d293597
 
 .contenedorF{
     background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
-    border: 2px ridge crimson;
-    box-shadow: 0px 0px 6px crimson;
+    border: 2px ridge #cf0520;
+    box-shadow: 0px 0px 6px #cf0520;
     max-width: 500px;
     width: 100%;
     margin: 48px auto;
@@ -31,7 +28,7 @@
     right: 7px;
     width: 100px;
     height: 30px;
-    font-size: 14px;
+    font-size: px;
     line-height: 25px;
     text-align: center;
     border-top: 2px solid #000000;
@@ -39,14 +36,14 @@
     cursor: pointer;
     transition: all .5s ease;
 }
-.contenedorF h2{
+.contenedorF h1{
   margin: 0 0 28px 0;
   font-weight: 400;
   line-height: 1;
   text-align: center;
   font-family: 'Oleo Script',cursive;
   text-shadow: 0px 0px 4px rgb(16, 223, 205);
-  font-size: 40px;
+  font-size: 45px;
 
 }
 .contenedorF .toggle:hover{
@@ -56,7 +53,7 @@
 
 .contenedorF .toggle span{
    letter-spacing: 1px;
-font-family: 'Oleo Script',cursive;
+   font-family: 'Acme', sans-serif;
 }
 .contenedorF .toggle span a{
 
@@ -105,8 +102,8 @@ font-family: 'Oleo Script',cursive;
   border-radius: 10px;
   border: 2px ridge rgb(20, 175, 28);
   padding: 10px 0;
-  font-family:'Acme', sans-serif;
-  font-size: 20px;
+  font-family:'Timmana', sans-serif;;
+  font-size: 21px;
   font-weight: bold;
 
   letter-spacing: 0.5px;
@@ -114,12 +111,7 @@ font-family: 'Oleo Script',cursive;
   transition: all .5s ease;
 }
 
-<<<<<<< HEAD
-.contenedorF input[type="submit"]:hover {
-
-=======
 .contenedorF input[type="submit"]:hover ,.btn-primary:hover {
->>>>>>> c3380eb3ae5d940e889badcade7d99996d293597
   font-weight: bold;
   box-shadow: 0px 0px 20px greenyellow;
   text-shadow: 0px 0px 4px white;
@@ -143,6 +135,7 @@ font-family: 'Oleo Script',cursive;
 .btn-primary b {
   display: inline-block;
   margin-left: 5px;
+  
 }
 .btn-primary:hover {
   text-shadow: 0px 0px 5px white;
