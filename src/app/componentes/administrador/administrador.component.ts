@@ -27,6 +27,7 @@ export class AdministradorComponent implements OnInit {
     img: '',
     isPersonalizable: true
   };
+  Busquedad: string;
  editState: any = false;
   productoToEdit: Producto;
   productos: Producto [];
@@ -35,11 +36,13 @@ uploadURL: Observable <string>;
   constructor(private productoService: ProductService, private _storage: AngularFireStorage) {
 }
  ngOnInit() {
-  this.productoService.getProductos().subscribe( productos =>
-   this.productos = productos
-  );
+  this.getProduct();
   }
-
+  getProduct() {
+    this.productoService.getProductos().subscribe( productos =>
+      this.productos = productos
+     );
+  }
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
     const fecha = Date.now();
@@ -86,6 +89,8 @@ uploadURL: Observable <string>;
 
   clearState() {
    this.editState = false;
+    console.log(this.productoToEdit.nombre);
+    console.log(this.productoToEdit.id);
     this.productoToEdit = null;
   }
   onUpdateProducto (producto: Producto) {
@@ -100,10 +105,21 @@ uploadURL: Observable <string>;
     this.productoService.updateProducto(producto);
     this.clearState();
    }
+   getProductoFilterNombre() {
+    this.productoService.getProductoFilterName(this.Busquedad).subscribe( productos => {
+     this.productos = productos;
+     });
+  }
  deleteProducto(event, producto: Producto) {
    console.log (producto.nombre);
     this.productoService.deleteProducto(producto);
     this.clearState();
  }
+ getProductoFilterCategory(categoria: string) {
+  this.productoService.getProductoFilterCategory(categoria).subscribe( productos => {
+    this.productos = productos;
+    });
+ }
+
 
 }

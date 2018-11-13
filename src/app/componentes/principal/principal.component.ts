@@ -27,7 +27,7 @@ export class PrincipalComponent implements OnInit {
  this.authService.loginEmail(this.email, this.password)
  .then ((res) => {
    this.router.navigate(['/menu']);
-   this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 4000});
+   this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});
  }).catch((err) => {
    console.log(err);
    this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 4000});
@@ -40,9 +40,9 @@ export class PrincipalComponent implements OnInit {
       this.usuario.uid = res.user.uid;
       this.usuario.userName = res.user.displayName;
       this.authService.agregaUsuario(this.usuario);
-      console.log('entro aca');
-        } else {console.log('sdsd'); }
+        } else { }
+       this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});
        this.router.navigate(['/menu']);
-   }).catch(err => this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 4000}));
+   }).catch(err => this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 8000}));
   }
 }

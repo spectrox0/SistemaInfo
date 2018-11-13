@@ -5,6 +5,8 @@ import {ComprasService} from './../../services/compras.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 declare let paypal: any;
 
+import {Router} from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-direccion',
   templateUrl: './direccion.component.html',
@@ -60,7 +62,10 @@ export class DireccionComponent implements OnInit {
 
 
   constructor(public authService: AuthService ,
+    public router: Router,
+    public flashMessage: FlashMessagesService,
     public comprasService: ComprasService) { }
+
  compras: ProductoPedido[];
  Total = 0;
  // dirrecion
@@ -99,7 +104,8 @@ export class DireccionComponent implements OnInit {
     this.comprasService.agregarCompraHistorial(element, this.userUid);
     this.comprasService.deleteProductoPedido(this.userUid, element);
     } ) ;
-
+    this.router.navigate(['/compras']);
+   this.flashMessage.show('Has completado el pedido correctamente', {cssClass: 'alert-success', timeout: 4000});
    }
 
     }

@@ -6,7 +6,7 @@
    .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
-      font-family: 'Pacifico',cursive;
+      font-family: 'Oleo Script', cursive;
     }
 
    .list-group{
@@ -19,22 +19,23 @@
        color: rgb(17, 207, 10);
        font-weight: bold;
        background: rgba(0, 0, 0, 0.5);
+       cursor: pointer;
        transition: all .5s ease;
-
-
        }
        h2{
            text-align: center;
            padding: 0px;
+           display:block;
+           width: 100%;
            color: rgb(255, 255, 255);
            font-size: 1.5em;
-           margin:0px;
-        font-family: 'Frijole',cursive;
+           margin:10px;
          border-radius: 10px;
          background: linear-gradient(#c51d41b2,#00000075);
          box-shadow: 0px 0px 15px 1px crimson;
          border-top-right-radius: 50%;
          border-top-left-radius: 50%;
+         cursor: pointer;
        }
 
        .card {
@@ -43,6 +44,12 @@
         border-bottom-right-radius: 16px;
          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
        }
+        .card img {
+           border-radius: 50% ;
+           box-shadow: 0px 0px 10px crimson;
+          background: radial-gradient(rgba(255, 0, 55, 0.05),rgba(116, 7, 34, 0.3),rgba(0,0,0,0.6));
+           max-height:300px;
+        }
         .card:hover{
           box-shadow: 0px 4px 15px  black;
           transition: all .5s ease;
@@ -86,6 +93,8 @@
   box-shadow: none;
   display:block;
   color: chartreuse;
+  font-family: 'Oleo Script', cursive;
+  font-size:16px;
 }
 .search-form .form-group input.form-control::-webkit-input-placeholder {
   display: none;
@@ -118,7 +127,7 @@
   text-align: center;
   color:  crimson;
   left: initial;
-  font-size: 14px;
+  font-size: 16px;
 }
 .baila{
   width: 70%;
@@ -129,18 +138,10 @@
  border-radius: 10px;
 
 }
-.tv {
-  position: absolute;
-  float:left;
-  box-shadow: 0px 0px 30px crimson;
-bottom: 5px;
-right:28%;;
- box-align: center;
-width:10%;
-border: 1px ridge crimson;
-border-radius:16px;
-opacity: 0.8;
-}
+  h2 img {
+    padding:0px;
+    margin:0px;
+  }
 .form-group select:focus{
   box-shadow: 0px 7px 15px crimson;
   transition: all .5s ease;
@@ -153,16 +154,24 @@ opacity: 0.8;
   color: #11cf0ab3;
 }
 .card-footer .btn-primary{
+
   border: ridge 2px  crimson;
   background: linear-gradient(#ac34489c,#dc143cc7);
    color: whitesmoke;
    margin-right: 10px;
+   float:right;
+}
+.card-footer .btn-primary:focus,.card-footer .btn-secondary:focus{
+  outline :0 !important;
+}
+.card-footer .btn-primary:active,.card-footer .btn-secondary:active{
+ border:none;
 }
 .card-footer .btn-secondary{
   border: ridge 2px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
-
+  float:right;
 }
 .card-footer .btn-primary:hover {
   color: white;
@@ -171,14 +180,14 @@ opacity: 0.8;
  box-shadow: 0px 0px 15px crimson;
  font-weight: bold;
 }
-.card-footer .btn-secondary[type="submit"] {
+.card-footer .btn-secondary{
   border: ridge 2px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
   margin-right: 10px;
 
 }
-.card-footer button[type="submit"]:hover {
+.card-footer .btn-secondary:hover {
   box-shadow: 0px 0px 15px chartreuse;
 
 }
@@ -191,6 +200,7 @@ opacity: 0.8;
 .card-footer .disabled{
   background: linear-gradient(rgba(128, 128, 128, 0.39),gray);
   border-color: black;
+  float:right;
 
 }
 .card-footer .disabled:hover{

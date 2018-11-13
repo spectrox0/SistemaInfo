@@ -2,52 +2,55 @@
   <div class="container">
   <div class="row">
     <div class="col-lg-3">
-        <h2 class="my-4"><img class="baila" src="/../../assets/img/logo.png" alt=""> </h2>
+        <h2 class="my-4" (click)="getProduct()"><img class="baila" src="/../../assets/img/logo.png" alt=""> </h2>
         <div class="container">
     <div class="row">
-            <form action="" class="search-form">
+            <form (ngSubmit)="getProductoFilterNombre()" class="search-form">
                 <div class="form-group has-feedback">
             		<label for="search" class="sr-only">Busca</label>
-            		<input type="text" class="form-control" name="search" id="search" placeholder="search">
+            		<input [(ngModel)]="Busquedad" type="text" class="form-control" name="search" id="search" placeholder="Busca por nombre">
               		<span class="glyphicon glyphicon-search form-control-feedback"></span>
             	</div>
             </form>
     </div>
 </div>
       <div class="list-group">
-          <a href="#" class="list-group-item"><i class="fas fa-beer"></i> Bebida</a>
-          <a href="#" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNMjc2LDIyMi40Yy0yNS44LTEwLjgtNTUuMi0xNy04Ni41LTE3Qzg5LDIwNS40LDcuMywyNjguOSw2LDM0Ny42aDI4Mi44TDI3NiwyMjIuNHogTTQ1LjQsMzA3LjVsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42ICAgTDQ1LjQsMzA3LjV6IE0xMjAsMjY4LjlsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42TDEyMCwyNjguOXogTTE0NC43LDMyOS45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNDQuNywzMjkuOXogTTE1MS43LDI5Mi4xICAgbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNTEuNywyOTIuMXogTTE3MC4yLDI0MC45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNzAuMiwyNDAuOXogTTIxNy40LDI3OC4ybDUuNi00LjlsMS41LDEuNiAgIGwtNS42LDQuOUwyMTcuNCwyNzguMnogTTIyMi40LDMyNi42bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyMjIuNCwzMjYuNnogTTI0Mi4zLDI0OS4xbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyNDIuMywyNDkuMXogICAgTTI3MC43LDI4MS41bDUuNi00LjlsMS41LDEuNmwtNS42LDQuOUwyNzAuNywyODEuNXoiLz48cGF0aCBkPSJNMjk2LjksNDI3LjJjLTIuNSwxLjUtNS4zLDIuOC04LjQsNGMtMTIuMSw0LjYtMjcuMSw2LjEtMzkuOCwyLjVjLTI3LjUtNy44LTM1LjktMzUuNy02OS42LTM1LjEgICBjLTEyLjEsMC4yLTIzLjQsNC4zLTMzLjIsOS4xYy0xMS45LDUuOS0yMi44LDEyLjYtMzUuMiwxOC4xYy0xNi40LDcuMi0zNy45LDExLjgtNTUuNSw1LjljLTE3LjMtNS44LTI1LjEtMjIuOC0zMC40LTM1LjRINnYyMy40ICAgYzAsMzAuNiwxNS40LDU1LjUsMzQuMyw1NS41SDMwNWMtMi40LTMuNS00LTcuNi00LjQtMTIuMUwyOTYuOSw0MjcuMnoiLz48cGF0aCBkPSJNMTMuNCwzNjAuNWMwLDIuNCwxLjksNC4zLDQuMyw0LjNoMjcyLjlsLTAuOS04LjZoLTI3MkMxNS4zLDM1Ni4yLDEzLjQsMzU4LjEsMTMuNCwzNjAuNXoiLz48cGF0aCBkPSJNMTMuNywzODcuN2gyNzkuMmwtMS42LTE1LjRIMTMuN2MtNC4yLDAtNy43LDMuNC03LjcsNy43QzYsMzg0LjMsOS40LDM4Ny43LDEzLjcsMzg3Ljd6Ii8+PHBhdGggZD0iTTQ1Nyw0NC4zaDQ5di03LjRoLTQ5Yy0xMiwwLTIyLjQsNy43LTI1LjksMTkuMmwtMTcuNSw1Ny40SDI5Mi40Yy04LjcsMC0xNS41LDcuNS0xNC42LDE2LjJsMzQsMzMyLjMgICBjMC44LDcuNSw3LjEsMTMuMiwxNC42LDEzLjJoNDUuN2gxLjFoNDUuN2M3LjUsMCwxMy45LTUuNywxNC42LTEzLjJsMzQtMzMyLjNjMC45LTguNy01LjktMTYuMi0xNC42LTE2LjJoLTMxLjRsMTYuOS01NS4yICAgQzQ0MC43LDQ5LjksNDQ4LjMsNDQuMyw0NTcsNDQuM3oiLz48L2c+PC9zdmc+" alt="">Almuerzo</a>
-          <a href="#" class="list-group-item"><i class="fas fa-cookie-bite"></i> Postre </a>
-          <a href="#" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxnPjxwYXRoIGQ9Ik00NC4wMjksMjYuODQ0Yy0xLjkzNy0yLjE0Ni00LjYzOC0zLjYwMS03LjY2OS0zLjkxNmMtNi4yNTYtMS4xNTYtMTAuNDg4LTMuNzUxLTEyLjUxNC01LjI4MiAgICBjLTAuMDI5LDAtMC4wNDUtMC4wMjktMC4wNzYtMC4wNmMtMC41MzktMC40MTktMC45MjktMC43Mi0xLjEyNS0wLjkxNWMtMC4wNTktMC4wOTEtMC4xMzUtMC4xMi0wLjE5NC0wLjE4ICAgIGMtMi4zNDEtMS43NTUtNS4yNTEtMi43NjEtOC4zODctMi43NjFjLTcuNzg5LDAtMTQuMTA1LDYuMzE3LTE0LjEwNSwxNC4xMDRjMCwzLjUyNSwxLjI3NSw2LjczOCwzLjQyLDkuMTk4ICAgIGMwLDAsMC4wOTEsMC4wNzQsMC4yNDEsMC4yN2MwLjA2MiwwLjA2MSwwLjEyLDAuMTM3LDAuMTgsMC4yMjZjMC43MTksMC45NiwyLjE3NiwzLjUxMSwyLjY0Miw4LjczMyAgICBjMC4wMTUsMC4yODQsMC4wNDQsMC41ODUsMC4wNTksMC44ODVjMC43NSw3LjQyOCw2Ljk5MywxMy4yMDQsMTQuNjE2LDEzLjIwNGM0LjY2NywwLDguODI0LTIuMTc2LDExLjUwOC01LjU1MiAgICBjMC4zOS0wLjYsMC43NzktMS4xNTQsMS4xNTUtMS42ODFjMy42MDItNS4xOTEsNS44NjgtNi44NDIsNi42NDctNy4zMDdjMC4yMS0wLjEwNSwwLjMxNS0wLjE1LDAuMzE1LTAuMTUgICAgYzMuODEyLTIuMDI1LDYuNDIzLTYuMDQ4LDYuNDIzLTEwLjY5OEM0Ny4xNjUsMzEuODI2LDQ1Ljk3OSwyOC45OSw0NC4wMjksMjYuODQ0eiBNMTkuNTU5LDQzLjMxICAgIGMtNS4yOTUsMC05LjU4OS00LjI5My05LjU4OS05LjU4OWMwLTUuMjkzLDQuMjkzLTkuNTg5LDkuNTg5LTkuNTg5YzUuMjk2LDAsOS41ODksNC4yOTYsOS41ODksOS41ODkgICAgQzI5LjE0OCwzOS4wMTcsMjQuODU1LDQzLjMxLDE5LjU1OSw0My4zMXoiIGZpbGw9IiMyNDFGMjAiLz48L2c+PHBhdGggZD0iTTQzLjQ4MywzLjY1Yy05LjYwMiwwLTE3LjY0NSw0LjUxNi0xOS45MjcsMTAuNjI0YzAsMCw0Ljg2Miw1LjQxNiwxMy4zNyw2LjQwNyAgIGM3LjM4MiwwLjg3LDE2LjczLDkuMzc4LDExLjUzOSwyMC44NDFsLTAuMDE1LDAuMDE3YzAsMC4wMTUtMC4wMTYsMC4wMjktMC4wMTYsMC4wMjljLTAuMjMsMC4zNTQtMS42MjIsMi40MTgtMy4wNTQsMy44OTIgICBjLTAuMDIxLDAuMDIyLTAuMDI2LDAuMDM4LTAuMDQ3LDAuMDYyYy0xLjEwNSwxLjI0LDAsMS4zNDQsMCwxLjM0NGMwLjc0MSwwLDEsMCwxLDBoOS42MzRjMS45OTUsMCwzLjU4NS0xLjYwNSwzLjU4NS0zLjYwMnYtMTYuNyAgIGMyLjgyMS0yLjQsNC40ODctNS40NDcsNC40ODctOC43OTJDNjQuMDQxLDkuOTY3LDU0Ljg0MywzLjY1LDQzLjQ4MywzLjY1eiIgZmlsbD0iIzI0MUYyMCIvPjxwYXRoIGQ9Ik0xNS4wMDksMjkuNTU5YzAsMCwxLjQxNC0xLjg1MiwzLjgzOC0xLjk3YzEuNTc4LTAuMDIzLDIuNTYzLDAuNDQ2LDIuODY4LDAuODY4czAuODIsMS45MjItMC45ODUsMi40MzggICBjLTAuMzc1LDAuMDQ3LTEuMDMxLTAuMjExLTEuMDMxLTAuMjExcy0xLjMzNi0wLjM3NS0yLjIwNCwwLjYwOWMtMC4zNTIsMC40NDUtMC40OTIsMC43OTctMC41NjIsMS4wMzJzLTAuMzg5LDEuMTk2LTEuNDQ5LDEuMTcyICAgYy0xLjA2LTAuMDIzLTEuNjkzLTEuMDU1LTEuNDExLTIuMDE3QzE0LjM1MywzMC41MiwxNS4wMDksMjkuNTU5LDE1LjAwOSwyOS41NTl6IiBmaWxsPSIjMjQxRjIwIi8+PC9nPjwvc3ZnPg==" alt=""> Desayuno</a>
+          <span (click)="getProductoFilterCategory('Bebida')" class="list-group-item"><i class="fas fa-beer"></i>Bebida</span>
+          <span (click)="getProductoFilterCategory('Almuerzo')" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNMjc2LDIyMi40Yy0yNS44LTEwLjgtNTUuMi0xNy04Ni41LTE3Qzg5LDIwNS40LDcuMywyNjguOSw2LDM0Ny42aDI4Mi44TDI3NiwyMjIuNHogTTQ1LjQsMzA3LjVsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42ICAgTDQ1LjQsMzA3LjV6IE0xMjAsMjY4LjlsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42TDEyMCwyNjguOXogTTE0NC43LDMyOS45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNDQuNywzMjkuOXogTTE1MS43LDI5Mi4xICAgbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNTEuNywyOTIuMXogTTE3MC4yLDI0MC45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNzAuMiwyNDAuOXogTTIxNy40LDI3OC4ybDUuNi00LjlsMS41LDEuNiAgIGwtNS42LDQuOUwyMTcuNCwyNzguMnogTTIyMi40LDMyNi42bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyMjIuNCwzMjYuNnogTTI0Mi4zLDI0OS4xbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyNDIuMywyNDkuMXogICAgTTI3MC43LDI4MS41bDUuNi00LjlsMS41LDEuNmwtNS42LDQuOUwyNzAuNywyODEuNXoiLz48cGF0aCBkPSJNMjk2LjksNDI3LjJjLTIuNSwxLjUtNS4zLDIuOC04LjQsNGMtMTIuMSw0LjYtMjcuMSw2LjEtMzkuOCwyLjVjLTI3LjUtNy44LTM1LjktMzUuNy02OS42LTM1LjEgICBjLTEyLjEsMC4yLTIzLjQsNC4zLTMzLjIsOS4xYy0xMS45LDUuOS0yMi44LDEyLjYtMzUuMiwxOC4xYy0xNi40LDcuMi0zNy45LDExLjgtNTUuNSw1LjljLTE3LjMtNS44LTI1LjEtMjIuOC0zMC40LTM1LjRINnYyMy40ICAgYzAsMzAuNiwxNS40LDU1LjUsMzQuMyw1NS41SDMwNWMtMi40LTMuNS00LTcuNi00LjQtMTIuMUwyOTYuOSw0MjcuMnoiLz48cGF0aCBkPSJNMTMuNCwzNjAuNWMwLDIuNCwxLjksNC4zLDQuMyw0LjNoMjcyLjlsLTAuOS04LjZoLTI3MkMxNS4zLDM1Ni4yLDEzLjQsMzU4LjEsMTMuNCwzNjAuNXoiLz48cGF0aCBkPSJNMTMuNywzODcuN2gyNzkuMmwtMS42LTE1LjRIMTMuN2MtNC4yLDAtNy43LDMuNC03LjcsNy43QzYsMzg0LjMsOS40LDM4Ny43LDEzLjcsMzg3Ljd6Ii8+PHBhdGggZD0iTTQ1Nyw0NC4zaDQ5di03LjRoLTQ5Yy0xMiwwLTIyLjQsNy43LTI1LjksMTkuMmwtMTcuNSw1Ny40SDI5Mi40Yy04LjcsMC0xNS41LDcuNS0xNC42LDE2LjJsMzQsMzMyLjMgICBjMC44LDcuNSw3LjEsMTMuMiwxNC42LDEzLjJoNDUuN2gxLjFoNDUuN2M3LjUsMCwxMy45LTUuNywxNC42LTEzLjJsMzQtMzMyLjNjMC45LTguNy01LjktMTYuMi0xNC42LTE2LjJoLTMxLjRsMTYuOS01NS4yICAgQzQ0MC43LDQ5LjksNDQ4LjMsNDQuMyw0NTcsNDQuM3oiLz48L2c+PC9zdmc+" alt="">Almuerzo</span>
+          <span (click)="getProductoFilterCategory('Postre')" class="list-group-item"><i class="fas fa-cookie-bite"></i> Postre</span>
+          <span (click)="getProductoFilterCategory('Desayuno')" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiBoZWlnaHQ9IjY0cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxnPjxwYXRoIGQ9Ik00NC4wMjksMjYuODQ0Yy0xLjkzNy0yLjE0Ni00LjYzOC0zLjYwMS03LjY2OS0zLjkxNmMtNi4yNTYtMS4xNTYtMTAuNDg4LTMuNzUxLTEyLjUxNC01LjI4MiAgICBjLTAuMDI5LDAtMC4wNDUtMC4wMjktMC4wNzYtMC4wNmMtMC41MzktMC40MTktMC45MjktMC43Mi0xLjEyNS0wLjkxNWMtMC4wNTktMC4wOTEtMC4xMzUtMC4xMi0wLjE5NC0wLjE4ICAgIGMtMi4zNDEtMS43NTUtNS4yNTEtMi43NjEtOC4zODctMi43NjFjLTcuNzg5LDAtMTQuMTA1LDYuMzE3LTE0LjEwNSwxNC4xMDRjMCwzLjUyNSwxLjI3NSw2LjczOCwzLjQyLDkuMTk4ICAgIGMwLDAsMC4wOTEsMC4wNzQsMC4yNDEsMC4yN2MwLjA2MiwwLjA2MSwwLjEyLDAuMTM3LDAuMTgsMC4yMjZjMC43MTksMC45NiwyLjE3NiwzLjUxMSwyLjY0Miw4LjczMyAgICBjMC4wMTUsMC4yODQsMC4wNDQsMC41ODUsMC4wNTksMC44ODVjMC43NSw3LjQyOCw2Ljk5MywxMy4yMDQsMTQuNjE2LDEzLjIwNGM0LjY2NywwLDguODI0LTIuMTc2LDExLjUwOC01LjU1MiAgICBjMC4zOS0wLjYsMC43NzktMS4xNTQsMS4xNTUtMS42ODFjMy42MDItNS4xOTEsNS44NjgtNi44NDIsNi42NDctNy4zMDdjMC4yMS0wLjEwNSwwLjMxNS0wLjE1LDAuMzE1LTAuMTUgICAgYzMuODEyLTIuMDI1LDYuNDIzLTYuMDQ4LDYuNDIzLTEwLjY5OEM0Ny4xNjUsMzEuODI2LDQ1Ljk3OSwyOC45OSw0NC4wMjksMjYuODQ0eiBNMTkuNTU5LDQzLjMxICAgIGMtNS4yOTUsMC05LjU4OS00LjI5My05LjU4OS05LjU4OWMwLTUuMjkzLDQuMjkzLTkuNTg5LDkuNTg5LTkuNTg5YzUuMjk2LDAsOS41ODksNC4yOTYsOS41ODksOS41ODkgICAgQzI5LjE0OCwzOS4wMTcsMjQuODU1LDQzLjMxLDE5LjU1OSw0My4zMXoiIGZpbGw9IiMyNDFGMjAiLz48L2c+PHBhdGggZD0iTTQzLjQ4MywzLjY1Yy05LjYwMiwwLTE3LjY0NSw0LjUxNi0xOS45MjcsMTAuNjI0YzAsMCw0Ljg2Miw1LjQxNiwxMy4zNyw2LjQwNyAgIGM3LjM4MiwwLjg3LDE2LjczLDkuMzc4LDExLjUzOSwyMC44NDFsLTAuMDE1LDAuMDE3YzAsMC4wMTUtMC4wMTYsMC4wMjktMC4wMTYsMC4wMjljLTAuMjMsMC4zNTQtMS42MjIsMi40MTgtMy4wNTQsMy44OTIgICBjLTAuMDIxLDAuMDIyLTAuMDI2LDAuMDM4LTAuMDQ3LDAuMDYyYy0xLjEwNSwxLjI0LDAsMS4zNDQsMCwxLjM0NGMwLjc0MSwwLDEsMCwxLDBoOS42MzRjMS45OTUsMCwzLjU4NS0xLjYwNSwzLjU4NS0zLjYwMnYtMTYuNyAgIGMyLjgyMS0yLjQsNC40ODctNS40NDcsNC40ODctOC43OTJDNjQuMDQxLDkuOTY3LDU0Ljg0MywzLjY1LDQzLjQ4MywzLjY1eiIgZmlsbD0iIzI0MUYyMCIvPjxwYXRoIGQ9Ik0xNS4wMDksMjkuNTU5YzAsMCwxLjQxNC0xLjg1MiwzLjgzOC0xLjk3YzEuNTc4LTAuMDIzLDIuNTYzLDAuNDQ2LDIuODY4LDAuODY4czAuODIsMS45MjItMC45ODUsMi40MzggICBjLTAuMzc1LDAuMDQ3LTEuMDMxLTAuMjExLTEuMDMxLTAuMjExcy0xLjMzNi0wLjM3NS0yLjIwNCwwLjYwOWMtMC4zNTIsMC40NDUtMC40OTIsMC43OTctMC41NjIsMS4wMzJzLTAuMzg5LDEuMTk2LTEuNDQ5LDEuMTcyICAgYy0xLjA2LTAuMDIzLTEuNjkzLTEuMDU1LTEuNDExLTIuMDE3QzE0LjM1MywzMC41MiwxNS4wMDksMjkuNTU5LDE1LjAwOSwyOS41NTl6IiBmaWxsPSIjMjQxRjIwIi8+PC9nPjwvc3ZnPg==" alt=""> Desayuno</span>
       </div>
 
     </div>
     <!-- /.col-lg-3 -->
 
     <div class="col-lg-9">
-
+        <div class="row"> <h2><img src="/../../assets/img/MenuTitulo.png" alt=""></h2></div>
       <div class="row">
 
         <div *ngFor='let product of productos' class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{product.img}}" alt=""></a>
+            <a><img class="card-img-top" src="{{product.img}}" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 {{product.nombre}}
               </h4>
-              <h5> ${{product.precio}}</h5>
+              <h5> ${{product.precioTotal}}</h5>
               <p class="card-text">{{product.descripcion}}</p>
             </div>
             <div class="card-footer">
-                <button *ngIf="!product.isPersonalizable" type="button" class="btn disabled"><i class="fas fa-edit"></i>Edita</button>
-                <button *ngIf="product.isPersonalizable && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="false" aria-controls="collapseExample6"><i class="fas fa-shopping-cart"></i> Buy</button>
-                <button *ngIf="product.isPersonalizable && editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" aria-controls="collapseExample6"><i class="fas fa-edit"></i>Cierra</button>
-
+               <div class="row">
+                 <div class="container">
+                <button *ngIf="!product.disponibilidad" type="button" class="btn disabled"><i class="fas fa-edit"></i>Comprar</button>
+                <button *ngIf="product.disponibilidad && editState==false"  (click)="editProducto($event,product)"  type="button" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+product.id" [attr.aria-controls]="product.id"><i class="fas fa-shopping-cart"></i> Compra</button>
+                <button *ngIf="editState==true && productoToEdit.id==product.id" (click)="clearStatex()"  type="button" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+product.id" aria-expanded="true" [attr.aria-controls]="product.id"><i class="fas fa-edit"></i>Cierra</button>
+              </div>
+            </div>
                 <div class="collapse" id="{{product.id}}">
 
                     <form (ngSubmit)="saveProduct(formPro)" #formPro="ngForm">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div *ngIf="product.isPersonalizable" class="form-group col-md-6">
                                 <label for="sel1 {{product.id}}">Ingrediente 1</label>
                                 <select [(ngModel)]="productoPedido.ing1" name="ing1" class="custom-select" id="sel1 {{product.id}}">
                                   <option>Ninguno</option>
@@ -56,7 +59,7 @@
                                   <option>{{product.ing3}}</option>
                                 </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div *ngIf="product.isPersonalizable" class="form-group col-md-6">
                                     <label for="sel2 {{product.id}}">Ingrediente 2</label>
                                     <select [(ngModel)]="productoPedido.ing2" name="ing2" class="custom-select" id="sel2 {{product.id}}">
                                   <option>Ninguno</option>
@@ -74,6 +77,12 @@
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
                                       </select>
                                       </div>
                                     </div>
