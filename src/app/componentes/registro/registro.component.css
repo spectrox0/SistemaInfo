@@ -9,7 +9,7 @@
 
 
 .contenedorF{
-    background: rgba(0,0,0,.7);
+    background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
     border: 4px ridge #cf0520;
     max-width: 500px;
     width: 100%;

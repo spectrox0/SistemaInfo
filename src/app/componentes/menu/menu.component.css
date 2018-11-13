@@ -63,9 +63,9 @@
          text-align: center;
         color: white;
         text-decoration: none;
-        font-weight: bolder;
+        font-weight: normal;
         font-family: 'Pacifico' , cursive;
-        text-shadow: 0px 0px 20px chartreuse;
+        text-shadow: 0px 0px 4px rgb(16, 223, 205);
         transition: all .5s ease;
       }
 .search-form .form-group {
