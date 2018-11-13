@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import {ProductoPedido} from '../../models/producto-pedido';
 import {ProductService} from '../../services/product.service';
 import {AuthService} from '../../services/auth.service';
 import {ComprasService} from '../../services/compras.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
+
+
 @Component({
   selector: 'app-orden',
   templateUrl: './orden.component.html',
   styleUrls: ['./orden.component.css']
 })
 export class OrdenComponent implements OnInit {
+
 
   constructor( public authService: AuthService, public comprasService: ComprasService ) {
 
