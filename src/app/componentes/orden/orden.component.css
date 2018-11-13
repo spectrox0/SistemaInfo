@@ -3,6 +3,7 @@
 h2{
   text-align: center;
   width:100%;
+  padding-bottom: 5px;
   margin:10px;
 border-radius: 10px;
 background: linear-gradient(#c51d41b2,#00000075);

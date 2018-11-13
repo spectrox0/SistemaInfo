@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   editState: any = false;
   userId: string;
   userUid: string;
-
+  Busquedad: string;
   productoPedido: ProductoPedido = {
   nombre: '',
   ing1: 'Ninguno',
@@ -52,13 +52,19 @@ export class MenuComponent implements OnInit {
 }
 
    getProduct() {
-
     this.productoService.getProductos().subscribe( productos => {
      this.productos = productos;
      });
   }
    getProductoFilterCategory(categoria: string) {
-
+    this.productoService.getProductoFilterCategory(categoria).subscribe( productos => {
+      this.productos = productos;
+      });
+   }
+   getProductoFilterNombre() {
+     this.productoService.getProductoFilterName(this.Busquedad).subscribe( productos => {
+      this.productos = productos;
+      });
    }
   editProducto( event, producto: Producto) {
     this.editState = true;

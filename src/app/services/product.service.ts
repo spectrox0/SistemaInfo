@@ -14,9 +14,9 @@ export class ProductService {
 
   constructor( private afs: AngularFirestore
   ) {
-    this.productosCollection = this.afs.collection<Producto>('productos' , ref => ref.orderBy('fecha', 'desc'));
 }
   getProductos(): Observable<Producto []> {
+    this.productosCollection = this.afs.collection<Producto>('productos' , ref => ref.orderBy('fecha', 'desc'));
     this.productos = this.productosCollection.snapshotChanges(). pipe (
       map (actions => {
        return actions.map(a => {
@@ -58,7 +58,29 @@ this.productosCollection.add(producto);
     this.productoDoc.delete();
 }
 getProductoFilterCategory(categoria: string) {
+  this.productosCollection = this.afs.collection('productos' , ref => ref.where('categoria', '==', categoria).orderBy('fecha'));
+  this.productos = this.productosCollection.snapshotChanges(). pipe (
+    map (actions => {
+     return actions.map(a => {
+const data = a.payload.doc.data() as Producto;
+data.id = a.payload.doc.id;
+return data;
+    });
+    }) );
+return this.productos;
+}
 
+getProductoFilterName(nombre: string) {
+  this.productosCollection = this.afs.collection('productos' , ref => ref.where('nombre', '==', nombre).orderBy('fecha'));
+  this.productos = this.productosCollection.snapshotChanges(). pipe (
+    map (actions => {
+     return actions.map(a => {
+const data = a.payload.doc.data() as Producto;
+data.id = a.payload.doc.id;
+return data;
+    });
+    }) );
+return this.productos;
 
 }
 
