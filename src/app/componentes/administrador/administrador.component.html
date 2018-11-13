@@ -202,8 +202,8 @@
                       <input [(ngModel)]="producto.precio" name="precio" #precio="ngModel" type="text" class="form-control" id="precios" placeholder="Ingrese Precio"
                       minlength="1" maxlength="7" required>
                       <div class='alerta' *ngIf="precio.touched && !precio.valid">
-                          <div *ngIf="precio.errors.required"> El nombre del ingrediente es requerido </div>
-                          <div *ngIf="precio.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                          <div *ngIf="precio.errors.required"> El precio es requerido </div>
+                          <div *ngIf="precio.errors.minlength"> El precio debe ser de 1 caracter minimo </div>
                         </div>
                     </div>
                     <div class="form-group col-md-6">

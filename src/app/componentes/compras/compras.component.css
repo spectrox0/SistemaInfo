@@ -43,16 +43,28 @@ font-size:23px;
 border-left: ridge 2px whitesmoke;
 border-right: ridge 2px whitesmoke;
 }
-button {
+.btn-secondary {
 border: ridge 2px crimson;
 background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 0.781));
 color: whitesmoke;
 margin-right: 10px;
 }
-button:hover {
+.btn-secondary:hover {
 box-shadow: 0px 0px 15px crimson;
 font-weight: bold;
 text-shadow: 0px 0px 10px white;
+}
+.btn-primary{
+  border: ridge 2px chartreuse;
+background: linear-gradient(rgba(20, 220, 63, 0.294),rgba(20, 220, 30, 0.781));
+color: whitesmoke;
+margin-right: 10px;
+}
+.btn-primary:hover{
+  box-shadow: 0px 0px 15px chartreuse;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px white;
+
 }
 button:focus{
   outline :0 !important;

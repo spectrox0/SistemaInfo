@@ -34,7 +34,7 @@ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 .table thead th{
 background: linear-gradient(#c51d41b2,#00000075);
 color: rgb(71, 255, 47);
-text-shadow: 0px 0px 6px greenyellow;
+text-shadow: 0px 0px 4px crimson;
 font-family: 'Pacifico', cursive;
 border-left: ridge 2px whitesmoke;
 border-right: ridge 2px whitesmoke;
@@ -45,6 +45,7 @@ border: ridge 2px crimson;
 background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 0.781));
 color: whitesmoke;
 margin-right: 10px;
+font-family: 'Oleo Script',cursive;
 }
 button:hover {
 box-shadow: 0px 0px 15px crimson;
@@ -59,6 +60,14 @@ border-color: greenyellow;
 
 
 
+}
+tfoot td span{
+  float: right;
+  box-shadow: 0px 0px 10px crimson;
+
+border-radius: 16px;
+text-shadow: 0px 0px 3px rgb(255, 255, 255);
+padding: 7px;
 }
 .table tfoot button:hover{
 
