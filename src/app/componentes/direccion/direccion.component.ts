@@ -16,6 +16,14 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 
 
 export class DireccionComponent implements OnInit {
+  compras: ProductoPedido [];
+ Total = 0;
+ // dirrecion
+ pais: string;
+ ciudad: string;
+ dirreccion: string;
+ codigoPostal: string;
+ userUid: string ;
 
   addScript: boolean = false;
   finalAmount: number = 1;
@@ -24,7 +32,7 @@ export class DireccionComponent implements OnInit {
     client: {
       sandbox: 'AQGQTww7YgXAPJ7Vgm98Fg7VML0OxFF8N4ZMHoZrX3Syqrr5h7PIDzcGaMRi58WsGdDrTX_ulrqKPC-P',
       production: ''
-    }, 
+    },
     commit: true,
     payment: (data, actions) => {
       return actions.payment.create({
@@ -33,31 +41,30 @@ export class DireccionComponent implements OnInit {
             {amount: {total: this.Total, currency : 'USD'}}
           ]
         }
-      })
+      });
     },
     onAuthorize : (data, actions) => {
       return actions.payment.execute().then((payment) => {
-        
-      })
+      }) ;
     }
   };
 
-  ngAfterViewChecked():void {
-    if(!this.addScript){
+  ngAfterViewChecked(): void {
+    if (!this.addScript) {
       this.addPayPalScript().then(() => {
         paypal.Button.render(this.paypalConfig, '#paypal-checkout-button');
-      })
+      }) ;
     }
   }
 
   addPayPalScript() {
     this.addScript = true;
     return new Promise ((resolve, reject) => {
-      let scripttagelement = document.createElement('script')
-      scripttagelement.src = 'https://www.paypalobjects.com/api/checkout.js'
+      const scripttagelement = document.createElement('script');
+      scripttagelement.src = 'https://www.paypalobjects.com/api/checkout.js';
       scripttagelement.onload = resolve;
       document.body.appendChild(scripttagelement);
-    })
+    });
   }
 
 
@@ -65,15 +72,6 @@ export class DireccionComponent implements OnInit {
     public router: Router,
     public flashMessage: FlashMessagesService,
     public comprasService: ComprasService) { }
-
- compras: ProductoPedido[];
- Total = 0;
- // dirrecion
- pais: string;
- ciudad: string;
- dirreccion: string;
- codigoPostal: string;
- userUid: string ;
 
   ngOnInit() {
     this.getCompras();
