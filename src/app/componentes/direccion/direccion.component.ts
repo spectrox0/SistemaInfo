@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewChecked } from '@angular/core';
 import {ProductoPedido} from './../../models/producto-Pedido';
 import {AuthService} from './../../services/auth.service';
 import {ComprasService} from './../../services/compras.service';
@@ -26,7 +26,7 @@ export class DireccionComponent implements OnInit {
  userUid: string ;
 
   addScript: boolean = false;
-  finalAmount: number = 1;
+  paypalLoad: boolean = true;
   paypalConfig  = {
     env: 'sandbox',
     client: {
@@ -38,21 +38,33 @@ export class DireccionComponent implements OnInit {
       return actions.payment.create({
         payment: {
           transactions: [
-            {amount: {total: this.Total, currency : 'USD'}}
+            {
+              amount: {total: this.Total,
+               currency : 'USD'}
+              }
           ]
         }
       });
     },
+    style: {
+      color: 'blue',   // 'gold, 'blue', 'silver', 'black'
+      size:  'responsive', // 'medium', 'small', 'large', 'responsive'
+      shape: 'pill'
+           // 'rect', 'pill'
+    },
     onAuthorize : (data, actions) => {
       return actions.payment.execute().then((payment) => {
+        window.alert('Thank you for your purchase!');
       }) ;
     }
   };
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterViewChecked(): void {
     if (!this.addScript) {
       this.addPayPalScript().then(() => {
-        paypal.Button.render(this.paypalConfig, '#paypal-checkout-button');
+        paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
+        this.paypalLoad = false;
       }) ;
     }
   }
