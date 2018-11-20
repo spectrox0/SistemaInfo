@@ -31,7 +31,7 @@
            font-size: 1.5em;
            margin:10px;
          border-radius: 10px;
-         background: linear-gradient(#c51d41b2,#00000075);
+         background: linear-gradient(#c51d41b2,#000000ad);
          box-shadow: 0px 0px 15px 1px crimson;
          border-top-right-radius: 50%;
          border-top-left-radius: 50%;
@@ -46,8 +46,8 @@
        }
         .card img {
            border-radius: 50% ;
-           box-shadow: 0px 0px 10px crimson;
-          background: radial-gradient(rgba(255, 0, 55, 0.05),rgba(116, 7, 34, 0.3),rgba(0,0,0,0.6));
+           box-shadow: 0px 0px 15px rgb(16, 223, 205);
+          background: radial-gradient(rgba(16, 223, 205, 0.05),rgba(16, 223, 205, 0.4),rgba(0, 0, 0, 0.7));
            max-height:300px;
         }
         .card:hover{
@@ -64,8 +64,9 @@
         color: white;
         text-decoration: none;
         font-weight: normal;
+        font-size: 30px;
         font-family: 'Pacifico' , cursive;
-        text-shadow: 0px 0px 4px rgb(16, 223, 205);
+        text-shadow: 0px 0px 5px rgb(16, 223, 205);
         transition: all .5s ease;
       }
 .search-form .form-group {

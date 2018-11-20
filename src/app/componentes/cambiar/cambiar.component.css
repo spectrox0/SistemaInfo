@@ -8,12 +8,12 @@
 
 
 .contenedorF{
-  background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
   border: 2px ridge crimson;
   box-shadow: 0px 0px 4px crimson;
   max-width: 500px;
   width: 100%;
-  margin: 48px auto;
+  margin: 20px auto;
   border-radius: 5px;
   color: #fff;
   position: relative;
@@ -24,11 +24,11 @@
 
 .contenedorF h2{
   margin: 0 0 28px 0;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 400;
   line-height: 1;
   font-family: 'Oleo Script', cursive;
-  text-shadow: 0px 0px 10px yellow;
+  text-shadow: 0px 0px 10px chartreuse;
   text-align: center;
 }
 .contenedorF input[type="text"],
@@ -47,6 +47,7 @@
   border-bottom-right-radius: 10px;
   box-shadow: 0px 6px 10px crimson;
   box-sizing: border-box;
+  font-family: 'Oleo Script', cursive;
   font-size: 14px;
   font-weight:normal;
   transition: all .5s ease;
@@ -55,19 +56,19 @@
 .contenedorF input[type="text"]:focus,
 .contenedorF input[type="password"]:focus,
 .contenedorF input[type="email"]:focus {
-  box-shadow: 0px 6px 10px  #f3e309;
+  box-shadow: 0px 6px 10px  chartreuse;
 }
 
 .contenedorF input[type="submit"] {
-  background: linear-gradient(rgba(4, 207, 14, 0.212),rgba(8, 204, 18, 0.904));
+  background: linear-gradient(rgba(21, 255, 0, 0.4),rgb(21, 255, 0));
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(20, 175, 28);
+  border: 2px ridge rgb(21, 255, 0);
   padding: 10px 0;
   font-size: 16px;
   font-weight: normal;
-
+  font-family: 'Oleo Script', cursive;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all .5s ease;

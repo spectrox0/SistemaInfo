@@ -71,7 +71,7 @@ font-family: fantasy;
   border-left: ridge 1px whitesmoke;
   border-right: ridge 1px whitesmoke;
   border: 1px white ridge;
-color: rgb(87, 243, 39);
+color:rgb(16, 223, 205);
 text-shadow: 0px 0px 4px greenyellow;
 font-weight: bold;
  }
@@ -104,8 +104,8 @@ font-weight: bold;
 
 }
  .btn-secondary {
-  border: ridge 2px rgb(140, 20, 220);
-  background: linear-gradient(rgba(140, 20, 220,0.2),rgba(140, 20, 220, 0.897));
+  border: ridge 2px rgb(16, 223, 205);
+  background: linear-gradient(rgba(16, 223, 205,0.2),rgba(16, 223, 205, 0.897));
   color: whitesmoke;
   margin-right: 10px;
   float: right;
@@ -121,7 +121,7 @@ button:active{
   font-weight: bold;
 }
 .btn-secondary:hover {
-  box-shadow: 0px 0px 15px rgb(140, 20, 220);
+  box-shadow: 0px 0px 15px rgb(16, 223, 205);
   font-weight: bold;
 }
  button[type="submit"]:hover{
@@ -173,7 +173,7 @@ button:active{
   box-shadow: none;
   display:block;
   font-family: 'Oleo Script', cursive;
-  color: #00ff15;
+  color: rgb(16, 223, 205);
 }
 .search-form .form-group input.form-control::-webkit-input-placeholder {
   display: none;

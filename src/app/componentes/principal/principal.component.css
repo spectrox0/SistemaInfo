@@ -9,12 +9,12 @@
 }
 
 .contenedorF{
-    background: radial-gradient(rgba(46, 59, 58, 0.4),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
     border: 2px ridge #cf0520;
-    box-shadow: 0px 0px 6px #cf0520;
+    box-shadow: 0px 0px 10px #cf0520;
     max-width: 500px;
     width: 100%;
-    margin: 48px auto;
+    margin: 20px auto;
     border-radius: 5px;
     color: #fff;
     position: relative;
@@ -42,13 +42,13 @@
   line-height: 1;
   text-align: center;
   font-family: 'Oleo Script',cursive;
-  text-shadow: 0px 0px 4px rgb(16, 223, 205);
+  text-shadow: 0px 0px 10px crimson;
   font-size: 45px;
 
 }
 .contenedorF .toggle:hover{
-  border-top: 2px ridge #f3e309;
-  border-bottom: 2px ridge #f3e309;
+  border-top: 2px ridge chartreuse;
+  border-bottom: 2px ridge chartreuse;
 }
 
 .contenedorF .toggle span{
@@ -81,7 +81,7 @@
    border-radius: 2px;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
-   box-shadow: 0px 3px 5px #cf0520;
+   box-shadow: 0px 4px 5px #cf0520;
    box-sizing: border-box;
    font-size: 16px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -96,11 +96,11 @@
 }
 
 .contenedorF input[type="submit"] {
-  background: linear-gradient(rgba(2, 163, 2, 0.294),rgba(3, 173, 3, 0.849));
+  background: linear-gradient(rgba(21, 255, 0, 0.4),rgb(21, 255, 0));
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(20, 175, 28);
+  border: 2px ridge rgb(127, 255, 0);
   padding: 10px 0;
   font-family:'Timmana', sans-serif;;
   font-size: 21px;
@@ -113,7 +113,7 @@
 
 .contenedorF input[type="submit"]:hover ,.btn-primary:hover {
   font-weight: bold;
-  box-shadow: 0px 0px 20px greenyellow;
+  box-shadow: 0px 0px 20px rgb(127, 255, 0);
   text-shadow: 0px 0px 4px white;
 }
   .contenedorF input[type="submit"]:focus ,.btn-primary:focus{
@@ -127,15 +127,15 @@
 .btn-primary {
   margin-top: 15px;
   border: 2px ridge rgb(250, 102, 3);
-   background: rgba(255, 81, 0, 0.5);
-   background-image: linear-gradient(rgba(255, 81, 0, 0.01), rgba(255, 81, 0, 0.5));
+  background:none;
+   background-image: linear-gradient(rgba(255, 81, 0, 0.4), rgba(255, 81, 0, 1));
    border-radius: 10px;
    padding: 10px 0;
 }
 .btn-primary b {
   display: inline-block;
   margin-left: 5px;
-  
+
 }
 .btn-primary:hover {
   text-shadow: 0px 0px 5px white;

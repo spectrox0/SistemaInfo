@@ -14,7 +14,7 @@
 
 
 .contenedorF{
-  background: radial-gradient(rgba(46, 59, 58, 0.05),rgba(35, 46, 45, 0.5),rgba(4, 26, 29, 0.9));
+  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
   border: 2px ridge crimson;
   max-width: 500px;
   width: 100%;

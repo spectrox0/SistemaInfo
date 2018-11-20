@@ -54,7 +54,7 @@ export class DireccionComponent implements OnInit {
     },
     onAuthorize : (data, actions) => {
       return actions.payment.execute().then((payment) => {
-        window.alert('Thank you for your purchase!');
+        this.saveCompra();
       }) ;
     }
   };
@@ -84,10 +84,9 @@ export class DireccionComponent implements OnInit {
     public router: Router,
     public flashMessage: FlashMessagesService,
     public comprasService: ComprasService) { }
-
-  ngOnInit() {
-    this.getCompras();
-  }
+    ngOnInit() {
+      this.getCompras();
+    }
 
   getCompras () {
     this.authService.getUsuarios().subscribe( usuarios => {
@@ -107,8 +106,7 @@ export class DireccionComponent implements OnInit {
   } ) ;
 
   }
-    saveCompra (myForm: NgForm ) {
-   if (myForm.valid) {
+    saveCompra () {
     this.compras.forEach( element =>  {
       element.fecha =  Date.now();
     this.comprasService.agregarCompraHistorial(element, this.userUid);
@@ -117,6 +115,4 @@ export class DireccionComponent implements OnInit {
     this.router.navigate(['/compras']);
    this.flashMessage.show('Has completado el pedido correctamente', {cssClass: 'alert-success', timeout: 4000});
    }
-
-    }
 }

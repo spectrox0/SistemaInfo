@@ -55,7 +55,7 @@ import { from } from 'rxjs';
     TooltipModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig, 'uMakeIT'),
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
     FormsModule ,
     FontAwesomeModule,
