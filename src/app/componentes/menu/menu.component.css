@@ -6,17 +6,38 @@
    .list-group-item{
     background: linear-gradient(#c51d41b2,#00000075);
       color: rgb(255, 255, 255);
+
+      font-size: 18px;
       font-family: 'Oleo Script', cursive;
     }
 
    .list-group{
-       margin-top: 0px;
+       margin-top: 10px;
        margin-bottom: 20px;
        padding-top: 0px;
        box-shadow: 0px 0px 15px 1px black;
    }
+    .search-form label {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+     text-align:center;
+     font-size:25px;
+     text-shadow:0px 0px 10px chartreuse;
+     font-family: 'Oleo Script', cursive;
+     margin: 0px ;
+
+    }
+    h4{
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
+      margin-top: 10px;
+
+      text-align:center;
+      font-size:28px;
+      text-shadow: 0px 0px 10px rgb(16, 223, 205);
+      font-family: 'Oleo Script', cursive;
+    }
        .list-group-item:hover{
-       color: rgb(17, 207, 10);
+       color: rgb(16, 223, 205);
+       text-shadow: 0px 0px 10px rgb(16, 223, 205);
        font-weight: bold;
        background: rgba(0, 0, 0, 0.5);
        cursor: pointer;
@@ -69,66 +90,10 @@
         text-shadow: 0px 0px 5px rgb(16, 223, 205);
         transition: all .5s ease;
       }
-.search-form .form-group {
-  float: left !important;
-  transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
-  background-color: rgba(0, 0, 0,0.4);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 25px;
-  border: 1px ridge crimson;
-
-
-}
 .col-lg-3 {
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.5));
   border-radius: 16px;
   box-shadow: 0px 0px 15px black;
-}
-.search-form .form-group input.form-control {
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border: 0 none;
-  background: transparent;
-  box-shadow: none;
-  display:block;
-  color: chartreuse;
-  font-family: 'Oleo Script', cursive;
-  font-size:16px;
-}
-.search-form .form-group input.form-control::-webkit-input-placeholder {
-  display: none;
-}
-.search-form .form-group input.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  display: none;
-}
-.search-form .form-group input.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  display: none;
-}
-.search-form .form-group input.form-control:-ms-input-placeholder {
-  display: none;
-}
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-  width: 100%;
-  border-radius: 4px 25px 25px 4px;
-}
-.search-form .form-group span.form-control-feedback {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  color:  crimson;
-  left: initial;
-  font-size: 16px;
 }
 .baila{
   width: 70%;
@@ -211,4 +176,126 @@ border-color:black;
 font-weight: normal;
 
 }
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+
+
+.search-form .container {
+   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 210px;
+  height: 60px;
+}
+.search-form .container .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(rgba(9, 255, 0, 0.1),rgba(9, 255, 0, 0.4),rgba(0, 0, 0, 0.9));
+  box-shadow: 0px 0px 10px chartreuse;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 chartreuse;
+}
+.search-form .container .search:hover {
+  cursor: pointer;
+}
+.search-form .container .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 2px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all .5s;
+}
+.search-form .container .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all .5s;
+}
+.search-form .container input {
+  font-family: 'Inconsolata', monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px !important;
+  height: 40px;
+  outline: none;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(16, 223, 205);
+  text-shadow: 0 0 10px rgb(16, 223, 205);
+  padding: 0 0px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 6;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+.search-form .container input:hover {
+  cursor: pointer;
+}
+.search-form .container input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.search-form .container input:focus ~ .search {
+  right: -255px;
+  background: radial-gradient(rgba(220, 20, 60, 0.4),rgba(220, 20, 60, 0.7),rgba(0, 0, 0, 1));
+  z-index: 6;
+  box-shadow: 0 0 25px 0 crimson;
+}
+.search-form .container input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.search-form .container input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+.search-form .container input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
 
