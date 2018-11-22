@@ -2,9 +2,8 @@ export interface Producto {
   id?: string;
   nombre?: string;
   img?: string;
-  ing1?: string;
-  ing2?: string;
-  ing3?: string;
+  idImg?: string;
+  extras?: string [];
   categoria?: string;
   precio?: number;
   precioTotal?: number;

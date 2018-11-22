@@ -6,13 +6,14 @@ import {map} from 'rxjs/operators';
 import {AngularFireStorage} from 'angularfire2/storage';
 import {finalize} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {combineLatest} from 'rxjs';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-administrador',
   templateUrl: './administrador.component.html',
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent implements OnInit {
-
   producto: Producto = {
     nombre: '',
     precio: 0,
@@ -21,10 +22,9 @@ export class AdministradorComponent implements OnInit {
     descripcion: '',
     categoria: 'Desayuno',
     disponibilidad: true,
-    ing1: '',
-    ing2: '',
-    ing3: '',
     img: '',
+    idImg: '',
+    extras: [] ,
     isPersonalizable: true
   };
   Busquedad: string;
@@ -33,15 +33,24 @@ export class AdministradorComponent implements OnInit {
   productos: Producto [];
 uploadProgress: Observable<number>;
 uploadURL: Observable <string>;
+startAt = new Subject ();
+  endAt = new Subject ();
+  starobs = this.startAt.asObservable();
+  endobs = this.endAt.asObservable();
+  ingrediente = '';
   constructor(private productoService: ProductService, private _storage: AngularFireStorage) {
 }
  ngOnInit() {
   this.getProduct();
   }
   getProduct() {
-    this.productoService.getProductos().subscribe( productos =>
-      this.productos = productos
-     );
+    combineLatest(this.starobs, this.endobs).subscribe((value) => {
+      this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
+        this.productos = productos;
+        }) ;
+       }) ;
+       this.startAt.next('');
+       this.endAt.next('\uf8ff');
   }
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
@@ -56,9 +65,15 @@ uploadURL: Observable <string>;
   } else {console.log('error');
 }
   }
+  search($event) {
+    const q = $event.target.value ;
+    this.startAt.next(q);
+    this.endAt.next(q + '\uf8ff');
+  }
  editProducto( event, producto: Producto) {
  this.editState = true;
  this.productoToEdit = producto;
+ this.producto.extras = this.productoToEdit.extras;
  }
  suma(valor1, valor2): number {
   return ( valor1 + parseInt(valor2, 10));
@@ -79,8 +94,8 @@ uploadURL: Observable <string>;
     this.uploadURL = fileRef.getDownloadURL();
    this.uploadURL.subscribe (
      url => {
+      this.producto.idImg = randomId;
       this.producto.img = url;
-      console.log (this.producto.img);
    });
   }) // {{ downloadURL | async }})
   ).subscribe();
@@ -89,13 +104,15 @@ uploadURL: Observable <string>;
 
   clearState() {
    this.editState = false;
-    console.log(this.productoToEdit.nombre);
-    console.log(this.productoToEdit.id);
     this.productoToEdit = null;
   }
   onUpdateProducto (producto: Producto) {
      if (this.producto.img !== '') {
         producto.img = this.producto.img;
+        const filepath = `images/${producto.idImg}`;
+        const fileRef = this._storage.ref(filepath);
+        producto.idImg = this.producto.idImg;
+        fileRef.delete();
       }
       const iva = parseInt((producto.precio * 0.1).toFixed(2), 10);
       const precioTotal = this.suma(iva , producto.precio);
@@ -111,7 +128,9 @@ uploadURL: Observable <string>;
      });
   }
  deleteProducto(event, producto: Producto) {
-   console.log (producto.nombre);
+  const filepath = `images/${producto.idImg}`;
+  const fileRef = this._storage.ref(filepath);
+  fileRef.delete();
     this.productoService.deleteProducto(producto);
     this.clearState();
  }
@@ -119,7 +138,21 @@ uploadURL: Observable <string>;
   this.productoService.getProductoFilterCategory(categoria).subscribe( productos => {
     this.productos = productos;
     });
+
  }
+
+ agregaIng(myForm: NgForm) {
+   if (myForm.valid) {
+   console.log(this.ingrediente);
+   this.producto.extras.push(this.ingrediente);
+  }
+ }
+ borraExtra(extra: string) {
+  const index = this.producto.extras.indexOf(extra);
+  this.producto.extras.splice(index, 1);
+ }
+
+
 
 
 }

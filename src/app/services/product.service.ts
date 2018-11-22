@@ -28,9 +28,24 @@ export class ProductService {
  return this.productos;
   }
 
+  firequery(start , end) {
+    this.productosCollection = this.afs.collection('productos', ref =>
+    ref.orderBy('nombre').startAt(start).endAt(end));
+    this.productos = this.productosCollection.snapshotChanges(). pipe (
+      map (actions => {
+       return actions.map(a => {
+  const data = a.payload.doc.data() as Producto;
+  data.id = a.payload.doc.id;
+  return data;
+      });
+      }) );
+ return this.productos;
+  }
+
   addProducto(producto: Producto) {
 this.productosCollection.add(producto);
   }
+
 
   updateProducto(producto: Producto) {
     this.productoDoc = this.afs.doc(`productos/${producto.id}`);

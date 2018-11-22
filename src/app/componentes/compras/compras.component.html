@@ -33,18 +33,14 @@
                 <label for="sel1 {{compra.id}}">Ing 1</label>
                 <select [(ngModel)]="compra.ing1" name="ing1" class="custom-select" id="sel1 {{compra.id}}">
               <option>Ninguno</option>
-              <option>{{compra.option1}}</option>
-              <option>{{compra.option2}}</option>
-              <option>{{compra.option3}}</option>
+              <option *ngFor="let option of compra.option">{{option}}</option>
                 </select>
              </div>
              <div class="form-group col-sm">
                 <label for="sel2 {{compra.id}}">Ing 2</label>
                 <select [(ngModel)]="compra.ing2" name="ing2" class="custom-select" id="sel2 {{compra.id}}">
               <option>Ninguno</option>
-              <option>{{compra.option1}}</option>
-              <option>{{compra.option2}}</option>
-              <option>{{compra.option3}}</option>
+              <option *ngFor="let option of compra.option">{{option}}</option>
                 </select>
               </div>
               <div class="col-sm">

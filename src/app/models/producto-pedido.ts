@@ -9,9 +9,7 @@ export interface ProductoPedido {
   fecha?: any;
   ing1?: string;
   ing2?: string;
-  option1?: string;
-  option2?: string;
-  option3?: string;
+  option?: string [];
   isEntregado?: boolean;
   urlImg?: string;
 }

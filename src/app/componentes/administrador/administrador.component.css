@@ -90,11 +90,12 @@ font-weight: bold;
 }
 
   .btn-primary {
-   border: ridge 2px crimson;
+   border: ridge 1px crimson;
+   border-radius:15px;
    background: #dc143cab;
-   background: linear-gradient(#dc143c2f,#dc143cda);
+   background: radial-gradient(#dc143c7c,#dc143cf6,black);
    color: whitesmoke;
-   margin-right: 10px;
+   margin-right: 0px;
    float: right;
  }
  .btn-primary[type="submit"] {
@@ -104,8 +105,9 @@ font-weight: bold;
 
 }
  .btn-secondary {
-  border: ridge 2px rgb(16, 223, 205);
-  background: linear-gradient(rgba(16, 223, 205,0.2),rgba(16, 223, 205, 0.897));
+  border: ridge 1px rgb(16, 223, 205);
+  border-radius:15px;
+  background: radial-gradient(rgba(16, 223, 205,0.1),rgba(16, 223, 205, 0.6),black);
   color: whitesmoke;
   margin-right: 10px;
   float: right;
@@ -129,13 +131,13 @@ button:active{
   font-weight: bold;
 
 }
-.table tfoot button{
+.table tfoot button, table .btn-block{
   float: right;
   color: white;
   border-color: greenyellow;
   background: linear-gradient(#acff2f57,rgba(172, 255, 47, 0.829));
 }
-.table tfoot button:hover{
+.table tfoot button:hover, table .btn-block:hover{
   text-shadow: 0px 0px 4px white;
   box-shadow: 0px 0px 15px chartreuse;
 
@@ -148,65 +150,10 @@ button:active{
 .table tfoot {
   background: rgba(0, 0, 0, 0.5);
 }
-.search-form .form-group {
-  float: left !important;
-  transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
-  background-color: rgba(0, 0, 0,0.4);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 25px;
-  border: 1px ridge crimson;
-
-
-}
 .col-lg-3 {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   box-shadow: 0px 0px 15px black;
-}
-.search-form .form-group input.form-control {
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border: 0 none;
-  background: transparent;
-  box-shadow: none;
-  display:block;
-  font-family: 'Oleo Script', cursive;
-  color: rgb(16, 223, 205);
-}
-.search-form .form-group input.form-control::-webkit-input-placeholder {
-  display: none;
-}
-.search-form .form-group input.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  display: none;
-}
-.search-form .form-group input.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  display: none;
-}
-.search-form .form-group input.form-control:-ms-input-placeholder {
-  display: none;
-}
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-  width: 100%;
-  border-radius: 4px 25px 25px 4px;
-}
-.search-form .form-group span.form-control-feedback {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  color: crimson;
-  left: initial;
-  font-size: 14px;
 }
 .form-group {
   text-align: center;
@@ -271,3 +218,187 @@ button:active{
 }
 
 
+.search-form .container {
+  margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ position: relative;
+ margin: auto;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ width: 210px;
+ height: 60px;
+}
+.search-form .container .search {
+ position: absolute;
+ margin: auto;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ width: 60px;
+ height: 60px;
+ background: radial-gradient(rgba(9, 255, 0, 0.1),rgba(9, 255, 0, 0.4),rgba(0, 0, 0, 0.9));
+ box-shadow: 0px 0px 10px chartreuse;
+ border-radius: 50%;
+ transition: all 1s;
+ z-index: 4;
+ box-shadow: 0 0 25px 0 chartreuse;
+}
+.search-form .container .search:hover {
+ cursor: pointer;
+}
+.search-form .container .search::before {
+ content: "";
+ position: absolute;
+ margin: auto;
+ top: 22px;
+ right: 0;
+ bottom: 0;
+ left: 22px;
+ width: 2px;
+ height: 2px;
+ background: white;
+ transform: rotate(45deg);
+ transition: all .5s;
+}
+.search-form .container .search::after {
+ content: "";
+ position: absolute;
+ margin: auto;
+ top: -5px;
+ right: 0;
+ bottom: 0;
+ left: -5px;
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ border: 2px solid white;
+ transition: all .5s;
+}
+.search-form .container input {
+ font-family: 'Inconsolata', monospace;
+ position: absolute;
+ margin: auto;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ width: 250px !important;
+ height: 40px;
+ outline: none;
+ border: none;
+ background: rgba(0, 0, 0, 0.5);
+ color: rgb(16, 223, 205);
+ text-shadow: 0 0 10px rgb(16, 223, 205);
+ padding: 0 0px 0 20px;
+ border-radius: 30px;
+ box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+ transition: all 1s;
+ opacity: 0;
+ z-index: 6;
+ font-weight: bolder;
+ letter-spacing: 0.1em;
+}
+.search-form .container input:hover {
+ cursor: pointer;
+}
+.search-form .container input:focus {
+ width: 300px;
+ opacity: 1;
+ cursor: text;
+}
+.search-form .container input:focus ~ .search {
+ right: -255px;
+ background: radial-gradient(rgba(220, 20, 60, 0.4),rgba(220, 20, 60, 0.7),rgba(0, 0, 0, 1));
+ z-index: 6;
+ box-shadow: 0 0 25px 0 crimson;
+}
+.search-form .container input:focus ~ .search::before {
+ top: 0;
+ left: 0;
+ width: 25px;
+}
+.search-form .container input:focus ~ .search::after {
+ top: 0;
+ left: 0;
+ width: 25px;
+ height: 2px;
+ border: none;
+ background: white;
+ border-radius: 0%;
+ transform: rotate(-45deg);
+}
+.search-form .container input::placeholder {
+ color: white;
+ opacity: 0.5;
+ font-weight: bolder;
+}
+.search-form label {
+  color :white;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+   text-align:center;
+   font-size:25px;
+   text-shadow:0px 0px 10px chartreuse;
+   font-family: 'Oleo Script', cursive;
+   margin: 0px ;
+
+  }
+  h4{
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    margin-top: 10px;
+   color:white;
+    text-align:center;
+    font-size:28px;
+    text-shadow: 0px 0px 10px rgb(16, 223, 205);
+    font-family: 'Oleo Script', cursive;
+  }
+
+  ul {
+    position: absolute;
+    top: 20px;
+    color: rgb(16, 223, 205);
+    text-shadow: 0px 0px 10px rgb(16, 223, 205);
+    bottom: 20px;
+    height: 90px;
+    left: 20px;
+    right: 20px;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
+    margin: 10px;
+    padding: 0;
+    border: 2px ridge crimson;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-family: 'Oleo Script', cursive;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  li {
+    padding: 10px 20px;
+    border-bottom: 1px solid crimson;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  li:nth-child(even) {
+    background:  rgba(255, 0, 98, 0.5);
+  }
+  ul .fa-times-circle{
+    color:red;
+
+  }
+  ::-webkit-scrollbar {width: 9px; height: 3px; background: rgb(0, 0, 0);}
+::-webkit-scrollbar-thumb {background-color:crimson ; box-shadow:0px 0px 10px crimson;border: 1px ridge crimson;}
+
+ li div{
+ display:inline-block;
+ width : 10%;
+}
+li div:hover{
+  display:inline-block;
+  width : 10%;
+  cursor:pointer;
+ }

@@ -8,16 +8,16 @@
         <h2 class="my-4" (click)="getProduct()"><img class="baila" src="/../../assets/img/logo.png" alt=""> </h2>
         <div class="container">
         <div class="row">
-
-            <form (ngSubmit)="getProductoFilterNombre()" class="search-form">
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Busca</label>
-            		<input [(ngModel)]="Busquedad" type="text" class="form-control" name="search" id="search" placeholder="Busca por nombre">
-              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
-            	</div>
-            </form>
+          <div class="search-form">
+            <label for="search"> Barra de Busquedad </label>
+          <div class="container">
+            <input [(ngModel)]="Busquedad" id ="search" (keydown)="search($event)" type="text" placeholder="Busca por nombre">
+            <div class="search"></div>
           </div>
+        </div>
     </div>
+    </div>
+     <h4>Categorias</h4>
     <div class="list-group">
         <span (click)="getProductoFilterCategory('Bebida')" class="list-group-item"><i class="fas fa-beer"></i>Bebida</span>
         <span (click)="getProductoFilterCategory('Almuerzo')" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNMjc2LDIyMi40Yy0yNS44LTEwLjgtNTUuMi0xNy04Ni41LTE3Qzg5LDIwNS40LDcuMywyNjguOSw2LDM0Ny42aDI4Mi44TDI3NiwyMjIuNHogTTQ1LjQsMzA3LjVsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42ICAgTDQ1LjQsMzA3LjV6IE0xMjAsMjY4LjlsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42TDEyMCwyNjguOXogTTE0NC43LDMyOS45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNDQuNywzMjkuOXogTTE1MS43LDI5Mi4xICAgbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNTEuNywyOTIuMXogTTE3MC4yLDI0MC45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNzAuMiwyNDAuOXogTTIxNy40LDI3OC4ybDUuNi00LjlsMS41LDEuNiAgIGwtNS42LDQuOUwyMTcuNCwyNzguMnogTTIyMi40LDMyNi42bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyMjIuNCwzMjYuNnogTTI0Mi4zLDI0OS4xbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyNDIuMywyNDkuMXogICAgTTI3MC43LDI4MS41bDUuNi00LjlsMS41LDEuNmwtNS42LDQuOUwyNzAuNywyODEuNXoiLz48cGF0aCBkPSJNMjk2LjksNDI3LjJjLTIuNSwxLjUtNS4zLDIuOC04LjQsNGMtMTIuMSw0LjYtMjcuMSw2LjEtMzkuOCwyLjVjLTI3LjUtNy44LTM1LjktMzUuNy02OS42LTM1LjEgICBjLTEyLjEsMC4yLTIzLjQsNC4zLTMzLjIsOS4xYy0xMS45LDUuOS0yMi44LDEyLjYtMzUuMiwxOC4xYy0xNi40LDcuMi0zNy45LDExLjgtNTUuNSw1LjljLTE3LjMtNS44LTI1LjEtMjIuOC0zMC40LTM1LjRINnYyMy40ICAgYzAsMzAuNiwxNS40LDU1LjUsMzQuMyw1NS41SDMwNWMtMi40LTMuNS00LTcuNi00LjQtMTIuMUwyOTYuOSw0MjcuMnoiLz48cGF0aCBkPSJNMTMuNCwzNjAuNWMwLDIuNCwxLjksNC4zLDQuMyw0LjNoMjcyLjlsLTAuOS04LjZoLTI3MkMxNS4zLDM1Ni4yLDEzLjQsMzU4LjEsMTMuNCwzNjAuNXoiLz48cGF0aCBkPSJNMTMuNywzODcuN2gyNzkuMmwtMS42LTE1LjRIMTMuN2MtNC4yLDAtNy43LDMuNC03LjcsNy43QzYsMzg0LjMsOS40LDM4Ny43LDEzLjcsMzg3Ljd6Ii8+PHBhdGggZD0iTTQ1Nyw0NC4zaDQ5di03LjRoLTQ5Yy0xMiwwLTIyLjQsNy43LTI1LjksMTkuMmwtMTcuNSw1Ny40SDI5Mi40Yy04LjcsMC0xNS41LDcuNS0xNC42LDE2LjJsMzQsMzMyLjMgICBjMC44LDcuNSw3LjEsMTMuMiwxNC42LDEzLjJoNDUuN2gxLjFoNDUuN2M3LjUsMCwxMy45LTUuNywxNC42LTEzLjJsMzQtMzMyLjNjMC45LTguNy01LjktMTYuMi0xNC42LTE2LjJoLTMxLjRsMTYuOS01NS4yICAgQzQ0MC43LDQ5LjksNDQ4LjMsNDQuMyw0NTcsNDQuM3oiLz48L2c+PC9zdmc+" alt="">Almuerzo</span>
@@ -47,14 +47,14 @@
           <td><strong>{{producto.precio}}</strong></td>
           <td><strong *ngIf="producto.disponibilidad">Disponible</strong>
             <strong *ngIf="!producto.disponibilidad">No disponible</strong></td>
-          <td><button type="button" (click)="deleteProducto($event,producto)"class="btn btn-primary"><i class="far fa-times-circle"></i>Borra</button>
-            <button type="button" *ngIf="editState==false" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="false" [attr.aria-controls]="producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i>Edita</button>
-            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="true" [attr.aria-controls]="producto.id" ><i class="fas fa-edit"></i>Cierra</button>
+          <td><button type="button" (click)="deleteProducto($event,producto)"class="btn btn-primary"><i class="far fa-times-circle"></i></button>
+            <button type="button" *ngIf="editState==false" data-toggle="collapse" [attr.data-target]="'#'+'sel'+producto.id" aria-expanded="false" [attr.aria-controls]="'sel'+producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+producto.id" aria-expanded="true" [attr.aria-controls]="'sel'+producto.id" ><i class="fas fa-edit"></i></button>
           </td>
 
           </tr>
           <tr > <td colspan="5">
-            <div [attr.id]="producto.id" class="collapse container">
+            <div [attr.id]="'sel'+producto.id" class="collapse container">
                 <form (ngSubmit)="onUpdateProducto(producto)" #formOld="ngForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -80,18 +80,26 @@
 
                       <div class="form-row">
                           <div class="form-group col-md-4">
-                        <label for="ing1{{producto.id}}">Ingrediente 1</label>
-                        <input  [(ngModel)]="producto.ing1" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1{{producto.id}}">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="ing2{{producto.id}}">Ingrediente 2</label>
-                        <input  [(ngModel)]="producto.ing2" name="ing2" #ing2="ngModel" type="text" class="form-control" id="ing2{{producto.id}}" >
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="ing3{{producto.id}}">Ingrediente 3</label>
-                        <input [(ngModel)]="producto.ing3" name="ing3" #ing3="ngModel" type="text" class="form-control" id="ing3{{producto.id}}">
-                      </div>
-                      </div>
+                              <form (ngSubmit)="agregaIng(formNew1)" #formNew1="ngForm">
+
+                                  <label for="ing1{{producto.id}}">Ingrediente</label>
+                                  <input [(ngModel)]="ingrediente" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1{{producto.id}}" placeholder="Ingrediente"
+                                   minlength="5" maxlength="10" required>
+
+                                <div class='alerta' *ngIf="ing1.touched && !ing1.valid">
+                                    <div *ngIf="ing1.errors.required"> El nombre del ingrediente es requerido </div>
+                                    <div *ngIf="ing1.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
+                                  </div>
+
+                                  <button type="submit" style="margin-top:10px"class="btn btn-block">Agrega</button>
+                                </form>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label>Lista de Ingredientes</label>
+                                    <ul> <li *ngFor="let extras of producto.extras">{{extras}}   <div (click)="borraExtra(extras)"><i class="far fa-times-circle"></i></div> </li> </ul>
+
+                                </div>
+                               </div>
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="precios{{producto.id}}">Precio</label>
@@ -168,33 +176,28 @@
 
                   <div class="form-row">
                       <div class="form-group col-md-4">
-                    <label for="ing1x">Ingrediente 1</label>
-                    <input [(ngModel)]="producto.ing1" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1x" placeholder="Ingrediente 1"
+                    <form (ngSubmit)="agregaIng(formNew1)" #formNew1="ngForm">
+
+                    <label for="ing1x">Ingrediente</label>
+                    <input [(ngModel)]="ingrediente" name="ing1" #ing1="ngModel" type="text" class="form-control" id="ing1x" placeholder="Ingrediente 1"
                      minlength="5" maxlength="10" required>
 
                   <div class='alerta' *ngIf="ing1.touched && !ing1.valid">
                       <div *ngIf="ing1.errors.required"> El nombre del ingrediente es requerido </div>
                       <div *ngIf="ing1.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
                     </div>
+
+                    <button type="submit" style="margin-top:10px"class="btn btn-block">Agrega</button>
+                  </form>
                   </div>
-                  <div class="form-group col-md-4">
-                    <label for="ing2x">Ingrediente 2</label>
-                    <input [(ngModel)]="producto.ing2" name="ing2" #ing2="ngModel" type="text" class="form-control" id="ing2x" placeholder="Ingrediente 2"
-                    minlength="3" maxlength="10" required>
-                    <div class='alerta' *ngIf="ing2.touched && !ing2.valid">
-                        <div *ngIf="ing2.errors.required"> El nombre del ingrediente es requerido </div>
-                        <div *ngIf="ing2.errors.minlength"> El nombre debe ser de al menos 5 caracteres </div>
-                      </div>
+
+                  <div class="form-group col-md-8">
+                      <label>Lista de Ingredientes</label>
+                      <ul> <li *ngFor="let extras of producto.extras">{{extras}}   <div (click)="borraExtra(extras)"><i class="far fa-times-circle"></i></div> </li> </ul>
+
                   </div>
-                  <div class="form-group col-md-4">
-                    <label for="ing3x">Ingrediente 3</label>
-                    <input [(ngModel)]="producto.ing3" name="ing3" #ing3="ngModel" type="text" class="form-control" id="ing3x" placeholder="Ingrediente 3"
-                   minlength="3" maxlength="10" required>
-                   <div class='alerta' *ngIf="ing3.touched && !ing3.valid">
-                      <div *ngIf="ing3.errors.required"> El nombre del ingrediente es requerido </div>
-                      <div *ngIf="ing3.errors.minlength"> El nombre debe ser de al menos 3 caracteres </div>
-                    </div>
-                  </div>
+
+
                   </div>
                   <div class="form-row">
                       <div class="form-group col-md-6">
