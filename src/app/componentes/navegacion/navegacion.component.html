@@ -1,4 +1,4 @@
-<nav *ngIf="isLogin" class="navbar navbar- bg-dark navbar-dark">
+<nav *ngIf="isLogin; else carrousel" class="navbar navbar- bg-dark navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand"> <img src="/../../assets/img/logo.png" alt=""></a>
 
@@ -34,3 +34,7 @@
     </ul>
   </div>
 </nav>
+
+<ng-template #carrousel>
+    <app-encabezado></app-encabezado>
+  </ng-template>

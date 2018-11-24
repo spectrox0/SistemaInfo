@@ -36,6 +36,7 @@ export class PrincipalComponent implements OnInit {
   }
   onClickGoogleLogin() {
     this.authService.loginGoogle().then( (res) => {
+      console.log('entra aca');
         if (res.additionalUserInfo.isNewUser) {
       this.usuario.uid = res.user.uid;
       this.usuario.userName = res.user.displayName;
@@ -44,5 +45,24 @@ export class PrincipalComponent implements OnInit {
        this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});
        this.router.navigate(['/menu']);
    }).catch(err => this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 8000}));
+  }
+  onClickFacebookLogin() {
+    this.authService.loginFacebook().then( (res) => {
+      console.log('entra aca');
+      if (res.additionalUserInfo.isNewUser) {
+    this.usuario.uid = res.user.uid;
+    this.usuario.userName = res.user.displayName;
+    this.authService.agregaUsuario(this.usuario);
+      } else { }
+     this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});
+     this.router.navigate(['/menu']);
+ }).catch(err => this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 8000}));
+
+  }
+  recoverPass() {
+     this.authService.recoverPass(this.email).then(() =>
+      this.flashMessage.show('Se va enviado un correo de recuperacion', {cssClass: 'alert-success', timeout: 8000}))
+     .catch((error) => this.flashMessage.show('Error algun campo es incorrecto', {cssClass: 'alert-warning', timeout: 8000}));
+    //  $('#myModal').modal('hide');
   }
 }

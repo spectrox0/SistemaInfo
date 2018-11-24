@@ -11,6 +11,8 @@ import {ComprasService} from '../../services/compras.service';
 import {ProductoPedido} from '../../models/producto-pedido';
 import {Usuario} from '../../models/usuario';
 import {combineLatest} from 'rxjs';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import { timeout } from 'rxjs/operators';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -42,7 +44,8 @@ export class MenuComponent implements OnInit {
   endobs = this.endAt.asObservable();
 
   constructor ( public productoService: ProductService ,
-    public authService: AuthService, public comprasService: ComprasService) {
+    public authService: AuthService, public comprasService: ComprasService,
+    public flashMessage: FlashMessagesService) {
 
    }
 
@@ -94,7 +97,6 @@ this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
   editProducto( event, producto: Producto) {
     this.editState = true;
     this.productoToEdit = producto;
-    console.log(this.productoToEdit.id);
     }
     clearState() {
       this.editState = false;
@@ -102,7 +104,6 @@ this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
      }
      clearStatex() {
       this.editState = false;
-      console.log(this.productoToEdit.id);
        this.productoToEdit = null;
       this.productoPedido.ing1 = 'Ninguno';
       this.productoPedido.ing2 = 'Ninguno';
@@ -113,10 +114,11 @@ this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
     this.productoPedido.nombre = this.productoToEdit.nombre;
     this.productoPedido.urlImg = this.productoToEdit.img;
     this.productoPedido.precio = this.productoToEdit.precio;
-    this.productoPedido.precioTotal = this.productoToEdit.precioTotal;
+    this.productoPedido.precioTotal = this.productoPedido.cantidad * this.productoToEdit.precioTotal;
     this.productoPedido.iva = this.productoToEdit.iva ;
     this.productoPedido.option = this.productoToEdit.extras;
   this.comprasService.agregarProductoCarrito(this.productoPedido, this.userUid);
+  this.flashMessage.show('Has agregado ' + this.productoPedido.nombre + ' a tu carrito', {cssClass: 'alert-success', timeout: 8000});
   this.productoPedido.ing1 = 'Ninguno';
       this.productoPedido.ing2 = 'Ninguno';
       this.productoPedido.cantidad = 1;

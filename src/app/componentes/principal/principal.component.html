@@ -1,5 +1,4 @@
 
-
   <div class= "contenedorF">
   <div class = "toggle">
     <span> <a routerLink ="/registro">Registrarse
@@ -13,6 +12,44 @@
       <input type="password" class="form-control" name="password" id ="password" [(ngModel)] ="password" placeholder="Ingrese su correo" placeholder="Ingrese su contrasena" required>
       <input type="submit" value="Inicia Sesion">
       <button type="button" class="btn btn-primary btn-lg btn-block" (click) = "onClickGoogleLogin()"> <i class="fab fa-google"></i> <b> Inicia sesion con Google </b></button>
+      <button type="button" class="btn btn-block btn-secondary" (click)="onClickFacebookLogin()">
+        <i class="fab fa-facebook"></i> Inicia con Facebook
+      </button>
+
+      <div class="container resetPass" >
+        <span  text="center" data-toggle="modal" data-target="#myModal"> <a> Has olvidado tu contraseña?</a> </span>
+      </div>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title"> Recuperacion de contraseña</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <form (ngSubmit)="recoverPass()">
+              <div class="modal-body">
+                <label for="correo"> Escribe tu correo</label>
+               <input id="correo"  type="email" class="form-control" name="correo" [(ngModel)] ="email" placeholder="Ingrese su correo" required>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <input type="submit" value="Enviar correo">
+              </div>
+            </form>
+
+            </div>
+          </div>
+        </div>
+
+
+
 
 </form>
     </div>

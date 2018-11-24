@@ -51,20 +51,34 @@
   border-bottom: 2px ridge chartreuse;
 }
 
-.contenedorF .toggle span{
+ span{
    letter-spacing: 1px;
    font-family: 'Acme', sans-serif;
 }
-.contenedorF .toggle span a{
+ span a{
 
     color: whitesmoke;
 
  }
-.contenedorF .toggle span a:hover{
+ .container {
+   margin: 0;
+   padding:0;
+ }
+ .container span{
+   display:block;
+   padding: 0px;
+   font-size:18px;
+   margin:10px;
+   text-align: center;
+ }
+ .container span a{
+   text-align: center;
+ }
+ span a:hover{
     text-decoration: none;
     color: rgb(16, 223, 205);
     text-shadow: 0px 0px 10px ;
-
+   cursor:pointer;
  }
 
  .contenedorF input[type="text"],
@@ -101,7 +115,7 @@
   width: 100%;
   border-radius: 10px;
   border: 2px ridge rgb(127, 255, 0);
-  padding: 10px 0;
+  padding: 7px 0;
   font-family:'Timmana', sans-serif;;
   font-size: 21px;
   font-weight: bold;
@@ -132,11 +146,7 @@
    border-radius: 10px;
    padding: 10px 0;
 }
-.btn-primary b {
-  display: inline-block;
-  margin-left: 5px;
 
-}
 .btn-primary:hover {
   text-shadow: 0px 0px 5px white;
   box-shadow: 0px 0px 15px coral;
@@ -149,5 +159,74 @@
    border-radius: 10px;
    border: ridge 1px coral;
    position: relative;
+
+}
+.fa-facebook {
+  margin:0px;
+  padding: 0px;
+  width:25px;
+  height: 25px;
+  position: relative;
+
+}
+
+.btn-secondary{
+  margin-top: 15px;
+  border: 2px ridge rgb(98, 80, 255);
+  background:none;
+  font-size: 21px;
+  font-weight: bold;
+  font-family:'Timmana', sans-serif;;
+   background-image: linear-gradient(rgba(98, 80, 255, 0.4), rgba(98, 80, 255, 1));
+   border-radius: 10px;
+   padding: 7px 0;
+
+}
+
+.btn-secondary:hover {
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 15px rgb(98, 80, 255);
+  transition: all .5s ease;
+}
+.modal {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color:rgb(255, 255, 255);
+  padding: 0px !important;
+}
+ .modal-title {
+  text-align: center;
+  font-family: 'Oleo Script',cursive;
+  text-shadow: 0px 0px 10px rgb(16, 223, 205);
+ }
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+ .close{
+   color:red;
+   text-shadow: 0px 5px 10px black;
+ }
+ .modal-header , .modal-footer{
+   border:none;
+ }
+ .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 20px red;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-content{  background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
+  box-shadow:0px 0px 10px crimson;
+padding:10px;}
+.modal input[type="submit"] {
+ width:auto;
 
 }

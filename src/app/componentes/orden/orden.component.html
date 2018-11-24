@@ -1,6 +1,7 @@
 
 <div class = "container">
     <div class="row"> <h2><img src="/../../assets/img/Orden.png" alt=""></h2></div>
+    <div class="table-responsive-sm">
   <table class="table table-hover">
     <thead>
       <tr>
@@ -30,13 +31,21 @@
       </tr>
     </tbody>
     <tfoot>
-        <tr> <td></td>
+        <tr *ngIf="productos.length!==0; else sinProduct">
 
-          <td colspan="5"> <span>Costo total de la orden: {{Total}} $</span> </td>
+          <td colspan="6" > <span>Costo total de la orden: {{Total}} $</span> </td>
           <td > <button type="button" class="btn" routerLink='/direccion' >Proceder <i class="fa-shopping-cart"></i>
           </button></td>
          </tr>
+         <ng-template #sinProduct>
+
+            <tr>
+               <td colspan="7"> <span> No tiene productos en el carrito</span></td>
+            </tr>
+
+          </ng-template>
     </tfoot>
   </table>
+</div>
 
 </div>

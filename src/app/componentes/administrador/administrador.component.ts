@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Producto} from './../../models/producto';
 import {ProductService} from './../../services/product.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
+import {ComprasService} from './../../services/compras.service';
 import {map} from 'rxjs/operators';
 import {AngularFireStorage} from 'angularfire2/storage';
+import {AuthService} from './../../services/auth.service';
+import {Usuario} from './../../models/usuario';
 import {finalize} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {combineLatest} from 'rxjs';
@@ -38,10 +41,13 @@ startAt = new Subject ();
   starobs = this.startAt.asObservable();
   endobs = this.endAt.asObservable();
   ingrediente = '';
-  constructor(private productoService: ProductService, private _storage: AngularFireStorage) {
+  vista = true;
+  constructor(private productoService: ProductService, private _storage: AngularFireStorage, public afs: AuthService
+   , private compraService: ComprasService) {
 }
  ngOnInit() {
   this.getProduct();
+  this.getPedidos();
   }
   getProduct() {
     combineLatest(this.starobs, this.endobs).subscribe((value) => {
@@ -52,6 +58,17 @@ startAt = new Subject ();
        this.startAt.next('');
        this.endAt.next('\uf8ff');
   }
+  getPedidos () {
+    this.afs.getUsuarios().subscribe((usuarios) => {
+      usuarios.forEach(element => {
+        const id = element.id;
+        this.compraService.getHistorial(id);
+
+      });
+    });
+  }
+
+
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
     const fecha = Date.now();
@@ -152,6 +169,14 @@ startAt = new Subject ();
   this.producto.extras.splice(index, 1);
  }
 
+changeTP() {
+ if (!this.vista) {
+  this.vista = true;
+ }}
+
+ changeTC() {
+   if (this.vista) { this.vista = false; }
+ }
 
 
 

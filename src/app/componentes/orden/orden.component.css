@@ -1,5 +1,11 @@
 
 
+ *{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  }
 h2{
   text-align: center;
   width:100%;
@@ -69,6 +75,22 @@ border-radius: 16px;
 text-shadow: 0px 0px 3px rgb(255, 255, 255);
 padding: 7px;
 }
+h2 img{
+  width: 70%;
+
+  max-width: 300px;
+
+  height: auto;
+ border-radius: 10px;
+
+}
+::-webkit-scrollbar {width: 9px; height: 6px; background: rgb(0, 0, 0);}
+::-webkit-scrollbar-thumb {background-color:crimson ; box-shadow:0px 0px 10px crimson;border: 1px ridge crimson;}
+
+  h2 img {
+    padding:0px;
+    margin:0px;
+  }
 .table tfoot button:hover{
 
   box-shadow: 0px 0px 15px chartreuse;

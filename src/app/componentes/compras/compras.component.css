@@ -1,5 +1,11 @@
 
 
+ *{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  }
 
   h2{
     text-align: center;
@@ -92,6 +98,7 @@ background: rgba(0, 0, 0, 0.5);
   background: rgba(0, 0, 0, 0.5);
   border: crimson 2px ridge;
   border-bottom-left-radius: 10px;
+  padding:2px;
   border-bottom-right-radius: 10px;
   color: #11cf0ab3;
 }
@@ -101,4 +108,24 @@ background: rgba(0, 0, 0, 0.5);
 .form-group select:focus{
   box-shadow: 0px 7px 15px crimson;
   transition: all .5s ease;
+}
+
+option:not(:checked) {
+  background-color: rgba(0, 0, 0,0.7);
+  color:chartreuse;
+}
+::-webkit-scrollbar {width: 9px; height: 6px; background: rgb(0, 0, 0);}
+::-webkit-scrollbar-thumb {background-color:crimson ; box-shadow:0px 0px 10px crimson;border: 1px ridge crimson;}
+h2 img {
+  width: 70%;
+
+  max-width: 300px;
+
+  height: auto;
+ }
+
+option:checked {
+  background-color: black;
+  color:rgb(16, 223, 61);
+  text-shadow: 0px 0px 10px rgb(16, 223, 85);
 }

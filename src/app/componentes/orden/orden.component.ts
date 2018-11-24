@@ -33,7 +33,6 @@ export class OrdenComponent implements OnInit {
     this.comprasService.getCarrito(this.userUid).subscribe( productos => {
       this.productos = productos;
       this.productos.forEach (element => {
-        element.precioTotal = element.precioTotal * element.cantidad;
         this.Total += element.precioTotal ;
       }) ;
    }) ;
@@ -41,11 +40,12 @@ export class OrdenComponent implements OnInit {
   }
   deleteProduct(event , product: ProductoPedido) {
     this.comprasService.deleteProductoPedido(this.userUid, product);
-    this.Total = 0;
+
     this.comprasService.getCarrito(this.userUid).subscribe( productos => {
       this.productos = productos;
+      this.Total = 0 ;
+
       this.productos.forEach (element => {
-        element.precioTotal = element.precioTotal * element.cantidad;
         this.Total += element.precioTotal ;
       }) ;
    }) ;

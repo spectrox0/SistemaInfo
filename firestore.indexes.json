@@ -1,0 +1,32 @@
+{
+  "indexes": [
+    {
+      "collectionId": "productos",
+      "state": "READY",
+      "fields": [
+        {
+          "fieldPath": "categoria",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "mode": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionId": "productos",
+      "state": "READY",
+      "fields": [
+        {
+          "fieldPath": "nombre",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "mode": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}
