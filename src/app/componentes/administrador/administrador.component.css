@@ -32,7 +32,7 @@
         display: none;
       }
        strong img {
-        width: 15%;
+        width: 30px;
         max-width: 70px;
         height: auto;
        border-radius: 50%;
@@ -60,32 +60,34 @@
        .titulo{
         background: linear-gradient(#00000000,black);
         box-shadow: 0px 0px 15px 1px black;
+        margin-right: 20px;
+        margin-left:20px;
        }
-       h2 img {
-        width: 70%;
 
-        max-width: 300px;
-
-        height: auto;
-       }
 
 .table{
 margin: 20px;
-background: rgba(0, 0, 0, 0.5);
 color: white;
 font-family:'Acme', sans-serif;
 
 }
+ .table tbody{
+  background: rgba(0, 0, 0, 0.5);
+ }
+
 table thead{
-  background:none;
+  background: linear-gradient(rgba(0, 0, 0,0),black);
+  border:none;
 }
  .table thead th{
    text-align:center;
-
-   background: linear-gradient(rgba(0, 0, 0,0),black);
+   padding:4px;
+   margin:0 ;
+   border:none;
   font-family: 'Oleo script',cursive;
-  border: 1px white ridge;
+  box-shadow: 0 2px 15px 2px black;
 color: white;
+font-size: 27px;
 text-shadow: 0px 0px 10px rgb(16, 223, 205);
  }
  h2 img{
@@ -160,7 +162,7 @@ button:active{
   }
 
 .table tfoot {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 }
 .col-lg-3 {
   background: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.5));
@@ -426,5 +428,74 @@ option:checked {
   background-color: black;
   color:rgb(16, 223, 61);
   text-shadow: 0px 0px 10px rgb(16, 223, 85);
+}
+
+ .btn-group{
+   margin-bottom: 10px;
+   display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: middle;
+  justify-content: center;
+ right: 0;
+ bottom: 0;
+
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.3);
+  color:rgb(255, 255, 255);
+  padding: 0px !important;
+}
+ .modal-title {
+  text-align: center;
+  font-family: 'Oleo Script',cursive;
+  text-shadow: 0px 0px 10px rgb(16, 223, 205);
+ }
+
+ .close{
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+   color:red;
+   text-shadow: 0px 5px 10px black;
+ }
+ .modal-header , .modal-footer{
+   border:none;
+   margin: 0px;
+ }
+  .modal-header {
+    background: rgba(17, 17, 17, 0.9);
+    box-shadow: 0px 4px 4px black;
+  }
+ .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 20px red;
+}
+.modal-dialog .paypal{
+color:white;
+margin:0px;
+padding: 0px;
+}
+
+.modal-content{  background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
+  box-shadow:0px 0px 10px crimson;
+padding:0px;}
+.modal input[type="submit"] {
+ width:auto;
+
+}
+.modal .container {
+  background: linear-gradient(#c51d4159,#00000023);
+  margin: 4px;
+  border-radius:10px;
+}
+.modal .container span {
+  text-shadow: 0 0 10px rgb(16, 223, 205);
+}
+.modal p {
+  text-align: center;
+  font-size: 30px;
 }
 

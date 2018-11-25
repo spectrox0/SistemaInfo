@@ -3,4 +3,6 @@ export interface Usuario {
     id?: string;
     isAdmin?: boolean;
     userName?: string;
+    isExtern?: boolean;
+    urlImg?: string;
   }

@@ -10,7 +10,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { CambiarComponent } from './componentes/cambiar/cambiar.component';
-import { DireccionComponent} from './componentes/direccion/direccion.component';
 import { AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
@@ -25,7 +24,6 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'administrador', component: AdministradorComponent, canActivate: [AuthGuard]},
   {path: 'cambiar', component: CambiarComponent, canActivate: [AuthGuard] },
-  {path: 'direccion', component: DireccionComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

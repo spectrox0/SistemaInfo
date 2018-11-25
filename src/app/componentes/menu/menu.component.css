@@ -213,7 +213,14 @@ font-weight: normal;
    text-align: center;
   width:100%;
  }
-
+ .card-footer .form-row{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+ }
 .search-form .container {
    margin: 0;
   padding: 0;

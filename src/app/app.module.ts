@@ -15,7 +15,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { CambiarComponent } from './componentes/cambiar/cambiar.component';
-import { DireccionComponent } from './componentes/direccion/direccion.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -46,8 +45,6 @@ import { from } from 'rxjs';
     EncabezadoComponent,
     MenuComponent,
     CambiarComponent,
-    DireccionComponent,
-
   ],
   imports: [
     BrowserModule,

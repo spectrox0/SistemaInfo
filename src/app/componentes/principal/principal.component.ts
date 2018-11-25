@@ -36,7 +36,6 @@ export class PrincipalComponent implements OnInit {
   }
   onClickGoogleLogin() {
     this.authService.loginGoogle().then( (res) => {
-      console.log('entra aca');
         if (res.additionalUserInfo.isNewUser) {
       this.usuario.uid = res.user.uid;
       this.usuario.userName = res.user.displayName;

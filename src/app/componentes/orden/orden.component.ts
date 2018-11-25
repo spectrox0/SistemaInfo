@@ -5,6 +5,10 @@ import {AuthService} from '../../services/auth.service';
 import {ComprasService} from '../../services/compras.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 
+declare let paypal: any;
+
+import {Router} from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-orden',
@@ -13,13 +17,77 @@ import {NgForm} from '@angular/forms/src/directives/ng_form';
 })
 export class OrdenComponent implements OnInit {
 
+  municipio: string;
+ urbanizacion: string;
+ calle: string;
+ casa: string;
 
-  constructor( public authService: AuthService, public comprasService: ComprasService ) {
+
+  addScript = false;
+  paypalLoad = true;
+  productos: ProductoPedido [] = [];
+  userUid: string ;
+  Total = 0;
+  paypalConfig  = {
+    env: 'sandbox',
+    client: {
+      sandbox: 'AQGQTww7YgXAPJ7Vgm98Fg7VML0OxFF8N4ZMHoZrX3Syqrr5h7PIDzcGaMRi58WsGdDrTX_ulrqKPC-P',
+      production: ''
+    },
+    commit: true,
+    payment: (data, actions) => {
+      return actions.payment.create({
+        payment: {
+          transactions: [
+            {
+              amount: {total: this.Total,
+               currency : 'USD'}
+              }
+          ]
+        }
+      });
+    },
+    style: {
+      color: 'blue',   // 'gold, 'blue', 'silver', 'black'
+      size:  'responsive', // 'medium', 'small', 'large', 'responsive'
+      shape: 'pill'
+           // 'rect', 'pill'
+    },
+    onAuthorize : (data, actions) => {
+      return actions.payment.execute().then((payment) => {
+        this.saveCompra();
+      }) ;
+    }
+  };
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngAfterViewChecked(): void {
+    if (!this.addScript) {
+      this.addPayPalScript().then(() => {
+        paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
+        this.paypalLoad = false;
+      }) ;
+    }
+  }
+
+  addPayPalScript() {
+    this.addScript = true;
+    return new Promise ((resolve, reject) => {
+      const scripttagelement = document.createElement('script');
+      scripttagelement.src = 'https://www.paypalobjects.com/api/checkout.js';
+      scripttagelement.onload = resolve;
+      document.body.appendChild(scripttagelement);
+    });
+  }
+
+
+  constructor( public authService: AuthService,
+    public comprasService: ComprasService ,
+    public router: Router,
+    public flashMessage: FlashMessagesService,
+    ) {
 
   }
-    productos: ProductoPedido [];
-    userUid: string ;
-    Total = 0;
   ngOnInit() {
     this.getProductosPedidos();
   }
@@ -50,4 +118,19 @@ export class OrdenComponent implements OnInit {
       }) ;
    }) ;
   }
+
+  saveCompra () {
+    this.productos.forEach( element =>  {
+      element.fecha =  Date.now();
+     element.dir1 = this.urbanizacion;
+     element.dir2 = this.municipio;
+     element.dir3 = this.calle ;
+     element.dir4 = this.casa ;
+    this.comprasService.agregarCompraHistorial(element, this.userUid);
+    this.comprasService.deleteProductoPedido(this.userUid, element);
+    } ) ;
+     $('#myModal').modal('toggle');
+    this.router.navigate(['/compras']);
+   this.flashMessage.show('Has completado el pedido correctamente', {cssClass: 'alert-success', timeout: 4000});
+   }
 }

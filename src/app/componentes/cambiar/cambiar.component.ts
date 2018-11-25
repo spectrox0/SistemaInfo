@@ -11,11 +11,17 @@ export class CambiarComponent implements OnInit {
   public newPassword: string;
   public newPassword2: string;
   public oldPassword: string;
+  public imgUrl: string;
+  public userName: string;
   constructor(public authService: AuthService , public flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
+    this.getUser();
   }
+   getUser() {
 
+
+   }
    onSubmitChange() {
     const User = this.authService.afAuth.auth.currentUser;
      this.authService.loginEmail(User.email, this.oldPassword).then(sucess => {

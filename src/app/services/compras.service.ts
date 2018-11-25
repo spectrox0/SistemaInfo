@@ -51,9 +51,27 @@ export class ComprasService {
    this.comprasCollection.add(productoPedido);
 
   }
+  updateHistorial ( userUid: string, pedido: ProductoPedido) {
+    this.compraDoc = this.afs.doc(`usuarios/${userUid}/historial/${pedido.id}`);
+    return this.compraDoc.update(pedido);
+  }
 
   getHistorial(userUid: string) {
    this.comprasCollection = this.afs.collection<ProductoPedido>(`usuarios/${userUid}/historial`);
+   this.compra = this.comprasCollection.snapshotChanges(). pipe (
+     map (actions => {
+      return actions.map(a => {
+ const data = a.payload.doc.data();
+  data.id = a.payload.doc.id;
+ return data;
+     });
+     }) );
+return this.compra;
+
+ }
+ getPedidosPendientes(userUid: string) {
+  this.comprasCollection = this.afs.collection<ProductoPedido>(`usuarios/${userUid}/historial`,
+  ref => ref.where('isEntregado', '==', false).orderBy('fecha'));
    this.compra = this.comprasCollection.snapshotChanges(). pipe (
      map (actions => {
       return actions.map(a => {

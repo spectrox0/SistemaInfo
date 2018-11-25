@@ -25,14 +25,22 @@ export class MenuComponent implements OnInit {
   editState: any = false;
   userId: string;
   userUid: string;
+  emailUser: string;
   Busquedad = '';
+
   productoPedido: ProductoPedido = {
   nombre: '',
+  idUser: '',
+  emailUser: '',
   ing1: 'Ninguno',
   ing2: 'Ninguno',
   cantidad: 1 ,
   isEntregado: false,
   id : '' ,
+  dir1: '' ,
+  dir2: '' ,
+  dir3: '' ,
+  dir4: '' ,
   urlImg: '',
   precio: 0,
   iva: 0,
@@ -53,6 +61,7 @@ export class MenuComponent implements OnInit {
   this.authService.getUsuarios().subscribe( usuarios => {
     this.usuarios = usuarios;
     this.userId = this.authService.afAuth.auth.currentUser.uid;
+    this.emailUser = this.authService.afAuth.auth.currentUser.email;
     this.usuarios.forEach(element => {
       if ((element.uid === this.userId)) {
          this.userUid = element.id;
@@ -116,6 +125,8 @@ this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
     this.productoPedido.precio = this.productoToEdit.precio;
     this.productoPedido.precioTotal = this.productoPedido.cantidad * this.productoToEdit.precioTotal;
     this.productoPedido.iva = this.productoToEdit.iva ;
+    this.productoPedido.idUser = this.userUid;
+    this.productoPedido.emailUser = this.emailUser;
     this.productoPedido.option = this.productoToEdit.extras;
   this.comprasService.agregarProductoCarrito(this.productoPedido, this.userUid);
   this.flashMessage.show('Has agregado ' + this.productoPedido.nombre + ' a tu carrito', {cssClass: 'alert-success', timeout: 8000});

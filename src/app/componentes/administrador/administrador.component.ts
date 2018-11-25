@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Producto} from './../../models/producto';
+import {ProductoPedido} from './../../models/producto-pedido';
 import {ProductService} from './../../services/product.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 import {ComprasService} from './../../services/compras.service';
@@ -42,9 +43,11 @@ startAt = new Subject ();
   endobs = this.endAt.asObservable();
   ingrediente = '';
   vista = true;
+  ProductosPedidos = [];
   constructor(private productoService: ProductService, private _storage: AngularFireStorage, public afs: AuthService
    , private compraService: ComprasService) {
 }
+
  ngOnInit() {
   this.getProduct();
   this.getPedidos();
@@ -58,11 +61,28 @@ startAt = new Subject ();
        this.startAt.next('');
        this.endAt.next('\uf8ff');
   }
+
   getPedidos () {
+    let nro = 0;
+    let nro2 = 0 ;
     this.afs.getUsuarios().subscribe((usuarios) => {
       usuarios.forEach(element => {
         const id = element.id;
-        this.compraService.getHistorial(id);
+        this.compraService.getPedidosPendientes(id).subscribe((pedidos) => {
+         if (pedidos.length !== 0) {
+           nro++;
+           console.log(nro);
+           pedidos.forEach( elemento => {
+             nro2++;
+             console.log('el numero de elementos en productos son' + nro2);
+             this.ProductosPedidos.push(elemento);
+           });
+          // console.log('entra aca una vez');
+          // console.log(nro);
+          // this.ProductosPedidos = this.ProductosPedidos.concat(pedidos);
+         }
+        }
+        );
 
       });
     });
@@ -178,6 +198,18 @@ changeTP() {
    if (this.vista) { this.vista = false; }
  }
 
+ entregarPedido(pedido: ProductoPedido) {
+   pedido.isEntregado = true;
+   this.ProductosPedidos = [];
+   $(`#myModal2${pedido.id}`).modal('hide');
+ this.compraService.updateHistorial(pedido.idUser, pedido).then(() => {
+this.ProductosPedidos = [];
+  this.getPedidos();
+
+ });
+
+
+ }
 
 
 }

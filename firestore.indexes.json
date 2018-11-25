@@ -1,6 +1,20 @@
 {
   "indexes": [
     {
+      "collectionId": "historial",
+      "state": "READY",
+      "fields": [
+        {
+          "fieldPath": "isEntregado",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "fecha",
+          "mode": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionId": "productos",
       "state": "READY",
       "fields": [

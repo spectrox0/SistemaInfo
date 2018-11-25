@@ -16,36 +16,58 @@ background: linear-gradient(#c51d41b2,#00000075);
 box-shadow: 0px 0px 15px 1px crimson;
 border-top-right-radius: 50%;
 border-top-left-radius: 50%;}
-h3 {
-  text-align: center;
-  font-size: 1.4em;
-}
- table thead {
-  background: url(../../../assets/img/imgMosaico.jpg) !important;
-  background-position: center;
+
+.titulo{
+  background: linear-gradient(#00000000,black);
+  box-shadow: 0px 0px 15px 1px black;
  }
+ h2 img {
+  width: 70%;
+
+  max-width: 300px;
+
+  height: auto;
+ }
+
+.table{
+margin: 20px;
+color: white;
+font-family:'Acme', sans-serif;
+
+}
+.table tbody{
+background: rgba(0, 0, 0, 0.5);
+}
+
+table thead{
+background: linear-gradient(rgba(0, 0, 0,0),black);
+border:none;
+
+}
+.table tbody {
+  border: none;
+}
+.table thead th{
+padding:4px;
+text-align: center;
+font-family: 'Oleo Script',cursive;
+box-shadow: 0 0px 7px 1px black;
+border:none;
+font-size:25px;
+color: white;
+text-shadow: 0px 0px 10px crimson;
+}
+.table  tr{
+  border: none;
+  margin:0px;
+}
 table img {
-  width: 15%;
-  max-width: 70px;
+  width: 30px;
   height: auto;
  border-radius: 50%;
  }
-.table{
-margin: 20px;
-background: rgba(0, 0, 0, 0.5);
-color: white;
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-}
-.table thead th{
-background: linear-gradient(#c51d41b2,#00000075);
-color: rgb(16, 223, 205);
-text-shadow: 0px 0px 4px crimson;
-font-family: 'Pacifico', cursive;
-border-left: ridge 2px whitesmoke;
-border-right: ridge 2px whitesmoke;
-}
-button {
+.btn {
   float: right;
 border: ridge 2px crimson;
 background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 1));
@@ -53,7 +75,7 @@ color: whitesmoke;
 margin-right: 10px;
 font-family: 'Oleo Script',cursive;
 }
-button:hover {
+.btn:hover {
 box-shadow: 0px 0px 15px crimson;
 font-weight: bold;
 text-shadow: 0px 0px 10px white;
@@ -75,15 +97,7 @@ border-radius: 16px;
 text-shadow: 0px 0px 3px rgb(255, 255, 255);
 padding: 7px;
 }
-h2 img{
-  width: 70%;
 
-  max-width: 300px;
-
-  height: auto;
- border-radius: 10px;
-
-}
 ::-webkit-scrollbar {width: 9px; height: 6px; background: rgb(0, 0, 0);}
 ::-webkit-scrollbar-thumb {background-color:crimson ; box-shadow:0px 0px 10px crimson;border: 1px ridge crimson;}
 
@@ -96,5 +110,110 @@ h2 img{
   box-shadow: 0px 0px 15px chartreuse;
   }
 .table tfoot {
-background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.8);
 }
+
+.modal {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color:rgb(255, 255, 255);
+  padding: 0px !important;
+}
+ .modal-title {
+  text-align: center;
+  font-family: 'Oleo Script',cursive;
+  text-shadow: 0px 0px 10px rgb(16, 223, 205);
+ }
+.modal:before {
+
+}
+ .close{
+    font-size: 30px;
+   color:red;
+   text-shadow: 0px 5px 10px black;
+ }
+ .modal-header , .modal-footer{
+   border:none;
+   margin: 0px;
+ }
+ .modal-title{
+   text-align: center;
+ }
+  .modal-header {
+    background: rgba(17, 17, 17, 0.8);
+    box-shadow: 0px 4px 4px black;
+  }
+ .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 20px red;
+}
+.modal-dialog .paypal{
+color:white;
+margin:0px;
+padding: 0px;
+}
+
+.modal-content{  background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
+  box-shadow:0px 0px 10px crimson;
+padding:0px;}
+.modal input[type="submit"] {
+ width:auto;
+
+}
+
+ input[type="text"],
+  input[type="password"],
+  input[type="email"]{
+   outline: none;
+   display: block;
+   width: 100%;
+   padding: 10px 15px;
+   margin: 0 0 20px 0;
+   background: rgba(0,0,0,.5);
+   color: white;
+   border: ridge 2px #cf0520;
+   border-radius: 2px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   box-shadow: 0px 4px 5px #cf0520;
+   box-sizing: border-box;
+   font-size: 16px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-weight:normal;
+   transition: all .5s ease;
+ }
+
+ input[type="text"]:focus,
+ input[type="password"]:focus,
+ input[type="email"]:focus {
+    box-shadow: 0px 6px 10px  rgb(16, 223, 205);
+}
+
+input[type="submit"] {
+  background: linear-gradient(rgba(21, 255, 0, 0.4),rgb(21, 255, 0));
+  color: #FFF;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px ridge rgb(127, 255, 0);
+  padding: 7px 0;
+  font-size: 21px;
+  font-weight: bold;
+  font-family: 'Acme', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+input[type="submit"]:hover ,.btn-primary:hover {
+  font-weight: bold;
+  box-shadow: 0px 0px 20px rgb(127, 255, 0);
+  text-shadow: 0px 0px 4px white;
+}
+  input[type="submit"]:focus ,.btn-primary:focus{
+  outline :0 !important;
+  }
+  input[type="submit"]:active ,.btn-primary:active {
+    border:none;
+  }
+
+
