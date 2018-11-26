@@ -44,21 +44,29 @@
           <th> Opciones</th>
         </tr>
       </thead>
-      <tbody *ngFor="let producto of productos" class="collection" >
-        <tr>
+      <tbody class="collection" >
+        <tr  *ngFor="let producto of productos" >
           <td> <strong> <img src="{{producto.img}}" alt=""> {{producto.nombre}}</strong> </td>
           <td> <strong>{{producto.fecha | date: 'dd/MM/yyyy'}}</strong> </td>
           <td><strong>{{producto.precio}}</strong></td>
           <td><strong *ngIf="producto.disponibilidad">Disponible</strong>
             <strong *ngIf="!producto.disponibilidad">No disponible</strong></td>
           <td><button type="button" (click)="deleteProducto($event,producto)"class="btn btn-primary"><i class="far fa-times-circle"></i></button>
-            <button type="button" *ngIf="editState==false" data-toggle="collapse" [attr.data-target]="'#'+'sel'+producto.id" aria-expanded="false" [attr.aria-controls]="'sel'+producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
-            <button type="button" *ngIf="editState && productoToEdit.id==producto.id" (click)="clearState()" class="btn btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+producto.id" aria-expanded="true" [attr.aria-controls]="'sel'+producto.id" ><i class="fas fa-edit"></i></button>
+            <button type="button" *ngIf="editState==false" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+            <button type="button" *ngIf="editState && productoToEdit!=undefined && productoToEdit.id==producto.id" (click)="clearState()" class="btn btn-secondary" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" ><i class="fas fa-edit"></i></button>
           </td>
 
-          </tr>
-          <tr > <td colspan="5">
-            <div [attr.id]="'sel'+producto.id" class="collapse container">
+
+            <div class="modal fade" [attr.id]="'sel'+producto.id">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <h3 class="modal-title">Edicion Producto</h3>
+                        <button type="button" class="close" (click)="clearState()" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <div class="modal-body">
                 <form (ngSubmit)="onUpdateProducto(producto)" #formOld="ngForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -134,19 +142,25 @@
                             <input [(ngModel)]="producto.isPersonalizable" name="personalizable" #isPersonalizable="ngModel" type="checkbox" class="custom-control-input" id="Check2{{producto.id}}">
                             <label class="custom-control-label" for="Check2{{producto.id}}">Personalizable</label>
                           </div>
-                      <button type="submit" class="btn btn-primary" data-toggle="collapse" [attr.data-target]="'#'+producto.id" aria-expanded="true" aria-controls="collapse" >Actualizar</button>
+                      <button type="submit" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" >Actualizar</button>
 
                 </form>
 
               </div>
-          </td> </tr>
+            </div>
+          </div>
+        </div>
+      </tr>
 
 
         </tbody>
         <tfoot>
           <tr>
             <td colspan="5">
-          <button type="button" *ngIf="!editState" class="btn" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1" >Crear nuevo producto</button>
+          <button type="button" *ngIf="!editState" (click)="stateNew()" class="btn" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+              <i class="fas fa-folder-plus"></i> Crear producto </button>
+              <button type="button" *ngIf="editState" (click)="stateNew()" class="btn" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1" >
+              <i class="fas fa-folder-plus"></i> Cierra </button>
         </td>
       </tr>
         <tr> <td colspan="5"> <div class="collapse" id="collapseExample1">

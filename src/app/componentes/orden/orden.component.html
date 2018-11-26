@@ -34,7 +34,7 @@
         <tr *ngIf="productos.length!= 0 ; else sinProduct">
 
           <td colspan="6" > <span>Costo total de la orden: {{Total}} $</span> </td>
-          <td > <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Proceder <i class="fa-shopping-cart"></i>
+          <td > <button #myModal type="button" class="btn" data-toggle="modal" data-target="#myModal">Proceder <i class="fa-shopping-cart"></i>
           </button>
   </td>
          </tr>

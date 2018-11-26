@@ -12,6 +12,7 @@ import {finalize} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {combineLatest} from 'rxjs';
 import { Subject } from 'rxjs';
+declare let $: any;
 @Component({
   selector: 'app-administrador',
   templateUrl: './administrador.component.html',
@@ -92,7 +93,7 @@ startAt = new Subject ();
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
     const fecha = Date.now();
-    const iva = parseInt((this.producto.precio * 0.1).toFixed(2), 10);
+    const iva = parseFloat((this.producto.precio * 0.1).toFixed(2));
     const precioTotal = this.suma(iva , this.producto.precio);
     this.producto.iva = iva;
     this.producto.precioTotal = precioTotal;
@@ -143,6 +144,14 @@ startAt = new Subject ();
    this.editState = false;
     this.productoToEdit = null;
   }
+  stateNew() {
+     if (this.editState) {
+       this.editState = false;
+     } else {
+       this.editState = true;
+     }
+
+  }
   onUpdateProducto (producto: Producto) {
      if (this.producto.img !== '') {
         producto.img = this.producto.img;
@@ -151,10 +160,9 @@ startAt = new Subject ();
         producto.idImg = this.producto.idImg;
         fileRef.delete();
       }
-      const iva = parseInt((producto.precio * 0.1).toFixed(2), 10);
+      const iva = parseFloat((producto.precio * 0.1).toFixed(2));
       const precioTotal = this.suma(iva , producto.precio);
       producto.iva = iva;
-      console.log (iva);
       producto.precioTotal = precioTotal;
     this.productoService.updateProducto(producto);
     this.clearState();

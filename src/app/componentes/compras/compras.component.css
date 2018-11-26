@@ -59,7 +59,7 @@
 
 .btn-secondary {
 border: ridge 2px crimson;
-background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 0.781));
+background: linear-gradient(rgba(220, 20, 60, 0.4),rgba(220, 20, 60, 1));
 color: whitesmoke;
 margin-right: 10px;
 }

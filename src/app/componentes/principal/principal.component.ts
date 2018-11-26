@@ -39,6 +39,8 @@ export class PrincipalComponent implements OnInit {
         if (res.additionalUserInfo.isNewUser) {
       this.usuario.uid = res.user.uid;
       this.usuario.userName = res.user.displayName;
+      this.usuario.urlImg = res.user.photoURL;
+      this.usuario.isExtern = true;
       this.authService.agregaUsuario(this.usuario);
         } else { }
        this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});
@@ -47,10 +49,11 @@ export class PrincipalComponent implements OnInit {
   }
   onClickFacebookLogin() {
     this.authService.loginFacebook().then( (res) => {
-      console.log('entra aca');
       if (res.additionalUserInfo.isNewUser) {
     this.usuario.uid = res.user.uid;
     this.usuario.userName = res.user.displayName;
+    this.usuario.urlImg = res.user.photoURL;
+    this.usuario.isExtern = true;
     this.authService.agregaUsuario(this.usuario);
       } else { }
      this.flashMessage.show('Te has logeado correctamente', {cssClass: 'alert-success', timeout: 8000});

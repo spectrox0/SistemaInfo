@@ -13,13 +13,22 @@ export class ComprasComponent implements OnInit {
 
   constructor(public authService: AuthService ,
     public comprasService: ComprasService) { }
+   pedidoToEdit: ProductoPedido;
+   isState: boolean;
    compras: ProductoPedido[];
    userUid: string;
    Total = 0 ;
   ngOnInit() {
   this.getHistorial();
   }
-
+   clearState(producto: ProductoPedido ) {
+   this.pedidoToEdit = producto;
+   this.isState = true;
+   }
+   editProducto( event, producto: ProductoPedido) {
+    this.isState = true;
+    this.pedidoToEdit = producto;
+    }
   getHistorial () {
     this.authService.getUsuarios().subscribe( usuarios => {
       const userId = this.authService.afAuth.auth.currentUser.uid;

@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ElementRef } from '@angular/core';
+import {ViewChild} from '@angular/core';
 import {ProductoPedido} from '../../models/producto-pedido';
 import {ProductService} from '../../services/product.service';
 import {AuthService} from '../../services/auth.service';
@@ -6,10 +7,9 @@ import {ComprasService} from '../../services/compras.service';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 
 declare let paypal: any;
-
+declare let $: any;
 import {Router} from '@angular/router';
 import {FlashMessagesService} from 'angular2-flash-messages';
-
 @Component({
   selector: 'app-orden',
   templateUrl: './orden.component.html',
@@ -129,7 +129,8 @@ export class OrdenComponent implements OnInit {
     this.comprasService.agregarCompraHistorial(element, this.userUid);
     this.comprasService.deleteProductoPedido(this.userUid, element);
     } ) ;
-     $('#myModal').modal('toggle');
+
+     $('#myModal').modal('hide');
     this.router.navigate(['/compras']);
    this.flashMessage.show('Has completado el pedido correctamente', {cssClass: 'alert-success', timeout: 4000});
    }
