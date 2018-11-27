@@ -17,5 +17,6 @@ export interface ProductoPedido {
   ing2?: string;
   option?: string [];
   isEntregado?: boolean;
+  isPersonalizable?: boolean;
   urlImg?: string;
 }

@@ -17,7 +17,12 @@
     <tbody>
       <tr *ngFor='let product of productos'>
         <td> <span> <img src="{{product.urlImg}}" alt="">{{product.nombre}} </span></td>
-        <td><span> {{product.cantidad}}</span></td>
+        <td><span> <p *ngIf="product.cantidad==1; else masUnidades">
+            1 unidad
+          </p>
+          <ng-template #masUnidades>
+              <p> {{product.cantidad}} unidades </p>
+          </ng-template></span></td>
         <td><span *ngIf="product.ing1!='Ninguno' && product.ing2!='Ninguno'">{{product.ing1}} y {{product.ing2}}</span>
           <span *ngIf="product.ing1!='Ninguno' && product.ing2=='Ninguno'">{{product.ing1}}</span>
           <span *ngIf="product.ing1=='Ninguno' && product.ing2!='Ninguno'">{{product.ing2}}</span>

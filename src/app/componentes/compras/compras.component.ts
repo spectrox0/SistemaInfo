@@ -14,16 +14,16 @@ export class ComprasComponent implements OnInit {
   constructor(public authService: AuthService ,
     public comprasService: ComprasService) { }
    pedidoToEdit: ProductoPedido;
-   isState: boolean;
+   isState = false;
    compras: ProductoPedido[];
    userUid: string;
    Total = 0 ;
   ngOnInit() {
   this.getHistorial();
   }
-   clearState(producto: ProductoPedido ) {
-   this.pedidoToEdit = producto;
-   this.isState = true;
+   clearState() {
+   this.pedidoToEdit = null;
+   this.isState = false;
    }
    editProducto( event, producto: ProductoPedido) {
     this.isState = true;

@@ -17,15 +17,27 @@
         <tr *ngFor= 'let compra of compras'>
           <td> <strong> <img src="{{compra.urlImg}}"> {{compra.nombre}} </strong></td>
           <td>{{compra.fecha | date: 'dd/MM/yyyy'}}</td>
-          <td> {{compra.cantidad}}</td>
-          <td> {{compra.precioTotal}}</td>
+          <td>
+          <p *ngIf="compra.cantidad==1; else masUnidades">
+            1 unidad
+          </p>
+          <ng-template #masUnidades>
+              <p> {{compra.cantidad}} unidades </p>
+          </ng-template>
+
+          </td>
+          <td> {{compra.precioTotal}} $</td>
           <td> <span *ngIf="compra.ing1!='Ninguno' && compra.ing2!='Ninguno'">{{compra.ing1}} y {{compra.ing2}}</span>
             <span *ngIf="compra.ing1!='Ninguno' && compra.ing2=='Ninguno'">{{compra.ing1}}</span>
             <span *ngIf="compra.ing1=='Ninguno' && compra.ing2!='Ninguno'">{{compra.ing2}}</span>
             <span *ngIf="compra.ing1=='Ninguno' && compra.ing2=='Ninguno'">Ninguno</span></td>
           <td> <span *ngIf="!compra.isEntregado">Sin entregar</span>
             <span *ngIf="compra.isEntregado">Entregado</span></td>
-          <td><button type="button" class="btn btn-block btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+compra.id" aria-expanded="false" [attr.aria-controls]="'sel'+compra.id" ><i class="fas fa-shopping-cart"></i> Agrega al Carrito</button>
+          <td><button *ngIf="!isState" type="button" (click)="editProducto($event,compra)" class="btn btn-block btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+compra.id" aria-expanded="false" [attr.aria-controls]="'sel'+compra.id" ><i class="fas fa-shopping-cart"></i> Agrega al Carrito</button>
+
+              <button *ngIf = "isState && pedidoToEdit!=undefined && pedidoToEdit.id==compra.id" type="button" (click)="clearState()" class="btn btn-block btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+compra.id" aria-expanded="false" [attr.aria-controls]="'sel'+compra.id" ><i class="fas fa-shopping-cart"></i> Cierra </button>
+
+
              <div class="container collapse" id="sel{{compra.id}}">
             <form (ngSubmit)="agregaCarrito(compra)">
       <div class="row">
