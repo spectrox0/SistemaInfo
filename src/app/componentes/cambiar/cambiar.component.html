@@ -6,9 +6,13 @@
  <form (ngSubmit)="onSubmitChange()">
  <img src="" alt="">
 <input type="password" name="password1" placeholder="Ingrese su contraseña" [(ngModel)] ="oldPassword" required>
-<input type="password"  name="newPassword" placeholder="Ingrese su nueva contraseña" [(ngModel)] ="newPassword" required>
+<input type="password"  name="newPassword" placeholder="Ingrese su nueva contraseña" [(ngModel)] ="newPassword" minlength="6" maxlength="20" required>
+<div class='alerta' *ngIf="newPassword.touched && !newPassword.valid">
+  <div *ngIf="newPassword.errors.minlength"> La contraseña debe ser de al menos 6 caracteres </div>
+</div>
 <input type="password" name="password2" placeholder="Confirme su nueva contraseña" [(ngModel)] ="newPassword2" required>
 <input type="submit" value="Confirmar">
+
 </form>
     </div>
   </div>
