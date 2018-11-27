@@ -75,7 +75,7 @@
               </p>
               </div>
                <div class="modal-footer">
-               <button class="btn btn-primary" (click)="deleteProducto($event,producto)"> <i class="far fa-times-circle"></i> Eliminar Producto</button>
+               <button class="btn btn-primary" (click)="deleteProducto($event,producto)"  data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" > <i class="far fa-times-circle"></i> Eliminar Producto</button>
               </div>
           </div>
         </div>

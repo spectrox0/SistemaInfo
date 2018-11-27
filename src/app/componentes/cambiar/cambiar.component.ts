@@ -6,6 +6,7 @@ import { timeout } from 'rxjs/operators';
 import {Observable} from 'rxjs' ;
 import {AngularFireStorage} from 'angularfire2/storage';
 import {finalize} from 'rxjs/operators';
+declare let $: any;
 @Component({
   selector: 'app-cambiar',
   templateUrl: './cambiar.component.html',
@@ -45,6 +46,10 @@ export class CambiarComponent implements OnInit {
     );
    });
 
+   }
+   actualizaUser2() {
+    this.Usuario.userName = this.userName ;
+    this.authService.updateUser(this.Usuario);
    }
    actualizaUser() {
       this.Usuario.userName = this.userName ;
@@ -89,6 +94,7 @@ export class CambiarComponent implements OnInit {
     const User = this.authService.afAuth.auth.currentUser;
      this.authService.loginEmail(User.email, this.oldPassword).then(sucess => {
      if (this.newPassword === this.newPassword2) {
+       $('#myModal').modal('hide');
       this.flashMessage.show('Has cambiado la clave correctamente', {cssClass: 'alert-success', timeout: 4000});
      User.updatePassword(this.newPassword);
      } else {

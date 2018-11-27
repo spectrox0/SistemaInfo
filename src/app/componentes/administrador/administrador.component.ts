@@ -106,8 +106,8 @@ startAt = new Subject ();
  this.productoToEdit = producto;
  this.producto.extras = this.productoToEdit.extras;
  }
- suma(valor1: number, valor2: number): number {
-  return ( valor1 + valor2);
+ suma(valor1, valor2): number {
+  return ( parseFloat(valor1) + parseFloat(valor2));
  }
 
  upload(event) {
@@ -154,6 +154,7 @@ startAt = new Subject ();
         fileRef.delete();
       }
       const iva = parseFloat((producto.precio * 0.1).toFixed(3));
+
       const precioTotal = this.suma(iva , producto.precio);
       producto.iva = iva;
       producto.precioTotal = precioTotal;
