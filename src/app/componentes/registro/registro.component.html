@@ -12,10 +12,11 @@
     <input type="text" class="form-control" name="name" id ="name" [(ngModel)] ="usuario.userName" placeholder="Ingrese su nombre" required>
     <input type="email" class="form-control" name="email" id ="email" [(ngModel)] ="email" placeholder="Ingrese su correo" required>
     <input type="password" class="form-control" name="password" id ="password" [(ngModel)] ="password" placeholder="Ingrese su correo" placeholder="Ingrese su contrasena" minlength="6" maxlength="20" required>
-    <input type="submit" value="Registrarse" >
     <div class='alerta' *ngIf="password.touched && !password.valid">
       <div *ngIf="password.errors.minlength"> La contraseña debe ser de al menos 6 caracteres </div>
     </div>
+    <input type="submit" value="Registrarse" >
+    
     </form>
         </div>
       </div>
