@@ -15,6 +15,7 @@ export class NavegacionComponent implements OnInit {
  public userEmail: string;
  public isLogin = false;
  public isAdmin = false;
+ public isExtern = false;
  public userPicture: string;
   public usuarios: Usuario [];
 
@@ -39,6 +40,7 @@ export class NavegacionComponent implements OnInit {
           if (element.isAdmin) {
           this.isAdmin = true; }
           this.userName = element.userName;
+          this.isExtern = element.isExtern;
         }
       });
     });

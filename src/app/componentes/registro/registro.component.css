@@ -9,7 +9,7 @@
 
 
 .contenedorF{
-  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
+  background: radial-gradient(rgba(116, 7, 49, 0.4),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
     border: 2px ridge  crimson;
     max-width: 500px;
     box-shadow: 0px 0px 10px #cf0520;
@@ -72,6 +72,7 @@
    outline: none;
    display: block;
    width: 100%;
+   text-align: center;
    padding: 10px 15px;
    margin: 0 0 20px 0;
    background: rgba(0,0,0,.5);
@@ -99,8 +100,8 @@
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(16, 223,205);
-  padding: 10px 0;
+  border: 1px ridge rgb(16, 223,205);
+  padding: 5px 0;
   font-size: 20px;
   font-family:'Timmana', sans-serif;
   font-weight: bold;
@@ -120,4 +121,27 @@
 h2{
   font-family: 'Frijole',cursive;
   text-shadow: 0px 0px 4px white;
+}
+
+.logo {
+  padding:0px;
+  margin:0px;
+ display: -ms-flexbox;
+ display: flex;
+ -ms-flex-align: center;
+ align-items: center;
+ -ms-flex-pack: middle;
+ justify-content: center;
+right: 0;
+bottom: 0;
+}
+div img {
+
+
+          width: 30%;
+          padding: 0 ;
+          margin:0px;
+          height: auto;
+          max-width: 200px;
+
 }

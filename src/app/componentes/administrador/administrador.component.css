@@ -41,7 +41,8 @@
       }
        strong img {
         width: 30px;
-        max-width: 70px;
+        max-height:30px;
+           object-fit: fill;
         height: auto;
        border-radius: 50%;
 
@@ -121,7 +122,7 @@ text-shadow: 0px 0px 10px rgb(16, 223, 205);
    float: right;
  }
  .btn-primary[type="submit"] {
-  border: ridge 2px rgb(43, 220, 20);
+  border: ridge 1px rgb(43, 220, 20);
    background: #25dc14ab;
    background: linear-gradient(#32dc142f,#4ddc14da);
 

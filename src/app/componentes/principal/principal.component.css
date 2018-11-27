@@ -8,7 +8,7 @@
 }
 
 .contenedorF{
-  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
+  background: radial-gradient(rgba(116, 7, 49, 0.4),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
     border: 2px ridge #cf0520;
     box-shadow: 0px 0px 10px #cf0520;
     max-width: 500px;
@@ -89,6 +89,7 @@
    padding: 10px 15px;
    margin: 0 0 20px 0;
    background: rgba(0,0,0,.5);
+   text-align: center;
    color: white;
    border: ridge 2px #cf0520;
    border-radius: 2px;
@@ -113,9 +114,9 @@
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(127, 255, 0);
-  padding: 7px 0;
-  font-size: 21px;
+  border: 1px ridge rgb(127, 255, 0);
+  padding: 5px 0;
+  font-size: 1.2em;
   font-weight: bold;
   font-family: 'Acme', sans-serif;
   letter-spacing: 0.5px;
@@ -138,12 +139,13 @@
 
 .btn-primary {
   margin-top: 15px;
-  border: 2px ridge rgb(250, 102, 3);
+  border: 1px ridge rgb(250, 102, 3);
   background:none;
   font-family: 'Acme', sans-serif;
+  font-size: 1.2em;
    background-image: linear-gradient(rgba(255, 81, 0, 0.4), rgba(255, 81, 0, 1));
    border-radius: 10px;
-   padding: 10px 0;
+   padding: 5px 0;
 }
 
 .btn-primary:hover {
@@ -171,9 +173,9 @@
 
 .btn-secondary{
   margin-top: 15px;
-  border: 2px ridge rgb(98, 80, 255);
+  border: 1px ridge rgb(98, 80, 255);
   background:none;
-  font-size: 21px;
+  font-size: 1.2em;
   font-weight: bold;
   font-family: 'Acme', sans-serif;
    background-image: linear-gradient(rgba(98, 80, 255, 0.4), rgba(98, 80, 255, 1));
@@ -211,6 +213,7 @@
  }
  .modal-header , .modal-footer{
    border:none;
+   padding:6px;
  }
  .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
   color: rgb(255, 0, 0);
@@ -222,10 +225,46 @@
   vertical-align: middle;
 }
 
-.modal-content{  background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
+.modal-content{
+   background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
   box-shadow:0px 0px 10px crimson;
-padding:10px;}
+padding:0px;}
 .modal input[type="submit"] {
  width:auto;
 
 }
+
+ .logo {
+   padding:0px;
+   margin:0px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: middle;
+  justify-content: center;
+ right: 0;
+ bottom: 0;
+ }
+div img {
+
+
+           width: 30%;
+           padding: 0 ;
+           margin:0px;
+           height: auto;
+           max-width: 200px;
+
+}
+
+ .modal-header {
+   background: rgba(17, 17, 17, 0.9);
+   box-shadow: 0px 4px 4px black;
+   margin-bottom:4px;
+ }
+ .modal-body{
+   padding:7px;
+ }
+ .modal input[type="submit"] {
+   padding: 5px;
+ }
