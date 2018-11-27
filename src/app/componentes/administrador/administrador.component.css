@@ -506,4 +506,6 @@ padding:0px;}
   text-align: center;
   font-size: 30px;
 }
-
+select {
+  text-align-last:center;
+}

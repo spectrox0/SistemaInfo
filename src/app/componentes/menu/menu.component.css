@@ -154,7 +154,7 @@ box-shadow: 0 0 12px black;
 }
 .form-group select{
   background: rgba(0, 0, 0, 0.5);
-  border: crimson 1px ridge;
+  border: crimson 2px ridge;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 2px;
@@ -162,7 +162,7 @@ box-shadow: 0 0 12px black;
 }
 .card-footer .btn-primary{
 
-  border: ridge 2px  crimson;
+  border: ridge 1px  crimson;
   background: linear-gradient(#ac34489c,#dc143cc7);
    color: whitesmoke;
    margin-right: 10px;
@@ -175,19 +175,19 @@ box-shadow: 0 0 12px black;
  border:none;
 }
 .card-footer .btn-secondary{
-  border: ridge 2px chartreuse;
+  border: ridge 1px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
   float:right;
 }
 .card-footer .btn-primary:hover {
   text-shadow: 0px 0px 7px whitesmoke;
- border: 2px ridge crimson;
+ border: 1px ridge crimson;
  box-shadow: 0px 0px 15px crimson;
  font-weight: bold;
 }
 .card-footer .btn-secondary{
-  border: ridge 2px chartreuse;
+  border: ridge 1px chartreuse;
   background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
   color: rgb(255, 255, 255);
   margin-right: 10px;
@@ -360,10 +360,13 @@ option:checked {
 
 .confirm {
   margin: 10px;
- border: ridge 2px chartreuse;
+ border: ridge 1px chartreuse;
  background: linear-gradient(rgba(21, 255, 0, 0.137),rgba(21, 255, 0, 0.788));
  color: rgb(255, 255, 255);
 position: relative;
 bottom :-25%;
 float: right;;
+}
+select {
+  text-align-last:center;
 }

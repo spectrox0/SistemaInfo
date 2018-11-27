@@ -68,11 +68,11 @@
                                 <div *ngIf="product.isPersonalizable" class="form-group col-md-6">
                                     <label for="sel2 {{product.id}}">Ingrediente 2</label>
                                     <select [(ngModel)]="productoPedido.ing2" name="ing2" class="custom-select" id="sel2 {{product.id}}">
-                                      <optgroup>
+
 
                                       <option>Ninguno</option>
                                   <option *ngFor="let extra of product.extras">{{extra}}</option>
-                                </optgroup>
+
                                     </select>
                                     </div>
                                      <div class="row">
