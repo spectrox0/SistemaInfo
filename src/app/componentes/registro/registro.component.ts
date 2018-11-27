@@ -15,6 +15,8 @@ export class RegistroComponent implements OnInit {
    public usuario: Usuario = {
     userName : '' ,
     isAdmin : false ,
+    isExtern: false,
+    urlImg: ''
    } ;
   constructor(public authService: AuthService,
     public flashMessage: FlashMessagesService,
@@ -30,7 +32,6 @@ export class RegistroComponent implements OnInit {
   } ).catch((err) => {
     this.flashMessage.show('Ha ocurrido un error', { cssClass: 'alert-warning', timeout: 4000});
     this.router.navigate(['/principal']);
-    console.log(err);
   });
 
   }

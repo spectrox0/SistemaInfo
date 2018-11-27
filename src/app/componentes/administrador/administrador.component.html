@@ -7,7 +7,7 @@
 
         <h2 class="my-4" (click)="getProduct()"><img class="baila" src="/../../assets/img/logo.png" alt=""> </h2>
         <div class="container">
-        <div class="row">
+        <div *ngIf="vista" class="row">
           <div class="search-form">
             <label for="search"> Barra de Busquedad </label>
           <div class="container">
@@ -17,8 +17,8 @@
         </div>
     </div>
     </div>
-     <h4>Categorias</h4>
-    <div class="list-group">
+     <h4 *ngIf="vista">Categorias</h4>
+    <div *ngIf="vista" class="list-group">
         <span (click)="getProductoFilterCategory('Bebida')" class="list-group-item"><i class="fas fa-beer"></i> Bebida</span>
         <span (click)="getProductoFilterCategory('Almuerzo')" class="list-group-item"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNMjc2LDIyMi40Yy0yNS44LTEwLjgtNTUuMi0xNy04Ni41LTE3Qzg5LDIwNS40LDcuMywyNjguOSw2LDM0Ny42aDI4Mi44TDI3NiwyMjIuNHogTTQ1LjQsMzA3LjVsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42ICAgTDQ1LjQsMzA3LjV6IE0xMjAsMjY4LjlsLTEuNS0xLjZsNS42LTQuOWwxLjUsMS42TDEyMCwyNjguOXogTTE0NC43LDMyOS45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNDQuNywzMjkuOXogTTE1MS43LDI5Mi4xICAgbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNTEuNywyOTIuMXogTTE3MC4yLDI0MC45bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwxNzAuMiwyNDAuOXogTTIxNy40LDI3OC4ybDUuNi00LjlsMS41LDEuNiAgIGwtNS42LDQuOUwyMTcuNCwyNzguMnogTTIyMi40LDMyNi42bC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyMjIuNCwzMjYuNnogTTI0Mi4zLDI0OS4xbC0xLjUtMS42bDUuNi00LjlsMS41LDEuNkwyNDIuMywyNDkuMXogICAgTTI3MC43LDI4MS41bDUuNi00LjlsMS41LDEuNmwtNS42LDQuOUwyNzAuNywyODEuNXoiLz48cGF0aCBkPSJNMjk2LjksNDI3LjJjLTIuNSwxLjUtNS4zLDIuOC04LjQsNGMtMTIuMSw0LjYtMjcuMSw2LjEtMzkuOCwyLjVjLTI3LjUtNy44LTM1LjktMzUuNy02OS42LTM1LjEgICBjLTEyLjEsMC4yLTIzLjQsNC4zLTMzLjIsOS4xYy0xMS45LDUuOS0yMi44LDEyLjYtMzUuMiwxOC4xYy0xNi40LDcuMi0zNy45LDExLjgtNTUuNSw1LjljLTE3LjMtNS44LTI1LjEtMjIuOC0zMC40LTM1LjRINnYyMy40ICAgYzAsMzAuNiwxNS40LDU1LjUsMzQuMyw1NS41SDMwNWMtMi40LTMuNS00LTcuNi00LjQtMTIuMUwyOTYuOSw0MjcuMnoiLz48cGF0aCBkPSJNMTMuNCwzNjAuNWMwLDIuNCwxLjksNC4zLDQuMyw0LjNoMjcyLjlsLTAuOS04LjZoLTI3MkMxNS4zLDM1Ni4yLDEzLjQsMzU4LjEsMTMuNCwzNjAuNXoiLz48cGF0aCBkPSJNMTMuNywzODcuN2gyNzkuMmwtMS42LTE1LjRIMTMuN2MtNC4yLDAtNy43LDMuNC03LjcsNy43QzYsMzg0LjMsOS40LDM4Ny43LDEzLjcsMzg3Ljd6Ii8+PHBhdGggZD0iTTQ1Nyw0NC4zaDQ5di03LjRoLTQ5Yy0xMiwwLTIyLjQsNy43LTI1LjksMTkuMmwtMTcuNSw1Ny40SDI5Mi40Yy04LjcsMC0xNS41LDcuNS0xNC42LDE2LjJsMzQsMzMyLjMgICBjMC44LDcuNSw3LjEsMTMuMiwxNC42LDEzLjJoNDUuN2gxLjFoNDUuN2M3LjUsMCwxMy45LTUuNywxNC42LTEzLjJsMzQtMzMyLjNjMC45LTguNy01LjktMTYuMi0xNC42LTE2LjJoLTMxLjRsMTYuOS01NS4yICAgQzQ0MC43LDQ5LjksNDQ4LjMsNDQuMyw0NTcsNDQuM3oiLz48L2c+PC9zdmc+" alt=""> Almuerzo</span>
         <span (click)="getProductoFilterCategory('Postre')" class="list-group-item"><i class="fas fa-cookie-bite"></i> Postre</span>
@@ -48,7 +48,7 @@
         <tr  *ngFor="let producto of productos" >
           <td> <strong> <img src="{{producto.img}}" alt=""> {{producto.nombre}}</strong> </td>
           <td> <strong>{{producto.fecha | date: 'dd/MM/yyyy'}}</strong> </td>
-          <td><strong>{{producto.precio}}</strong></td>
+          <td><strong>{{producto.precio}} $</strong></td>
           <td><strong *ngIf="producto.disponibilidad">Disponible</strong>
             <strong *ngIf="!producto.disponibilidad">No disponible</strong></td>
           <td><button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#'+'myModal'+producto.id"><i class="far fa-times-circle"></i></button>

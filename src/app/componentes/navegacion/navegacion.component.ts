@@ -32,7 +32,6 @@ export class NavegacionComponent implements OnInit {
      this.isLogin = true;
      this.userEmail =  auth.email;
      this.userId = auth.uid;
-     this.userPicture = auth.photoURL;
      this.authService.getUsuarios().subscribe( usuarios => {
       this.usuarios = usuarios;
       this.usuarios.forEach(element => {
@@ -41,6 +40,7 @@ export class NavegacionComponent implements OnInit {
           this.isAdmin = true; }
           this.userName = element.userName;
           this.isExtern = element.isExtern;
+          this.userPicture = element.urlImg;
         }
       });
     });

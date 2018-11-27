@@ -64,23 +64,16 @@ startAt = new Subject ();
   }
 
   getPedidos () {
-    let nro = 0;
-    let nro2 = 0 ;
     this.afs.getUsuarios().subscribe((usuarios) => {
       usuarios.forEach(element => {
         const id = element.id;
         this.compraService.getPedidosPendientes(id).subscribe((pedidos) => {
          if (pedidos.length !== 0) {
-           nro++;
-           console.log(nro);
+
            pedidos.forEach( elemento => {
-             nro2++;
-             console.log('el numero de elementos en productos son' + nro2);
+
              this.ProductosPedidos.push(elemento);
            });
-          // console.log('entra aca una vez');
-          // console.log(nro);
-          // this.ProductosPedidos = this.ProductosPedidos.concat(pedidos);
          }
         }
         );
@@ -93,14 +86,14 @@ startAt = new Subject ();
   onGuardarProducto(myForm: NgForm) {
     if (myForm.valid) {
     const fecha = Date.now();
-    const iva = parseFloat((this.producto.precio * 0.1).toFixed(2));
+    const iva = parseFloat((this.producto.precio * 0.1).toFixed(3));
     const precioTotal = this.suma(iva , this.producto.precio);
     this.producto.iva = iva;
     this.producto.precioTotal = precioTotal;
     this.producto.fecha = fecha;
     this.productoService.addProducto(this.producto);
     myForm.reset();
-  } else {console.log('error');
+  } else {
 }
   }
   search($event) {
@@ -113,8 +106,8 @@ startAt = new Subject ();
  this.productoToEdit = producto;
  this.producto.extras = this.productoToEdit.extras;
  }
- suma(valor1, valor2): number {
-  return ( valor1 + parseInt(valor2, 10));
+ suma(valor1: number, valor2: number): number {
+  return ( valor1 + valor2);
  }
 
  upload(event) {
@@ -160,7 +153,7 @@ startAt = new Subject ();
         producto.idImg = this.producto.idImg;
         fileRef.delete();
       }
-      const iva = parseFloat((producto.precio * 0.1).toFixed(2));
+      const iva = parseFloat((producto.precio * 0.1).toFixed(3));
       const precioTotal = this.suma(iva , producto.precio);
       producto.iva = iva;
       producto.precioTotal = precioTotal;

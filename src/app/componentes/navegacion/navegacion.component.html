@@ -16,7 +16,7 @@
       <li class="nav-item">
           <a class="nav-link" routerLink="/menu"><i class="fas fa-utensils"></i> Menu</a>
        </li>
-      <li class="nav-item" *ngIf="isExtern">
+      <li class="nav-item" *ngIf="!isExtern">
         <a class="nav-link" routerLink="/cambiar"><i class="fas fa-user-cog"></i> Edita Perfil</a>
       </li>
       <li class="nav-item">

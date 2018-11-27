@@ -5,4 +5,5 @@ export interface Usuario {
     userName?: string;
     isExtern?: boolean;
     urlImg?: string;
+    idImg?: string;
   }

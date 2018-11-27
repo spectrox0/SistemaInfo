@@ -34,15 +34,21 @@ export class AuthService {
         const id = this.afAuth.auth.currentUser.uid;
 
        }
+
+       updateUser(user: Usuario) {
+        this.usuarioDoc = this.afs.doc(`usuarios/${user.id}`);
+    this.usuarioDoc.update(user);
+
+       }
     loginGoogle() {
        return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
     loginFacebook () {
       return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
     }
-    LoginTwitter() {
-     return this.afAuth.auth.signInWithPopup (new firebase.auth.TwitterAuthProvider());
-    }
+    // LoginTwitter() {
+    //   return this.afAuth.auth.signInWithPopup (new firebase.auth.TwitterAuthProvider());
+   //  }
     getAuth() {
        return this.afAuth.authState.pipe(map(auth => auth));
 

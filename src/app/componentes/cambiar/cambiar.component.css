@@ -8,7 +8,7 @@
 
 
 .contenedorF{
-  background: radial-gradient(rgba(116, 7, 49, 0.3),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
+  background: radial-gradient(rgba(116, 7, 49, 0.4),rgba(0, 0, 0, 0.5),rgba(0, 0, 0,1));
   border: 2px ridge crimson;
   box-shadow: 0px 0px 4px crimson;
   max-width: 500px;
@@ -35,24 +35,37 @@ h2 img{
   }
 
 .contenedorF h2{
-  margin: 0 0 28px 0;
-  font-size: 38px;
+  margin: 0;
+  font-size: 2em;
   font-weight: 400;
   line-height: 1;
   font-family: 'Oleo Script', cursive;
-  text-shadow: 0px 0px 10px chartreuse;
+  text-shadow: 0px 1px 10px rgb(16, 223, 205);
   text-align: center;
+}
+.contenedorF h3{
+  margin: 0;
+  margin-top: 3px;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1;
+  font-family: 'Oleo Script', cursive;
+  text-shadow: 0px 1px 10px crimson;
+  text-align: center;
+}
+.row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .contenedorF input[type="text"],
 .contenedorF input[type="password"],
 .contenedorF input[type="email"]{
   outline: none;
+  color: chartreuse;
   display: block;
   width: 100%;
-  padding: 10px 15px;
-  margin: 0 0 20px 0;
+  padding: 2px;
+  margin: 0 0 10px 0;
   background: rgba(0,0,0,.5);
-  color: white;
   border: ridge 2px crimson;
   border-radius: 2px;
   border-bottom-left-radius: 10px;
@@ -76,11 +89,11 @@ h2 img{
   color: #FFF;
   width: 100%;
   border-radius: 10px;
-  border: 2px ridge rgb(21, 255, 0);
-  padding: 10px 0;
-  font-size: 16px;
+  border: 1px ridge rgb(21, 255, 0);
+  padding: 5px 0;
+  font-size: 1.2em;
   font-weight: normal;
-  font-family: 'Oleo Script', cursive;
+  font-family: 'Acme', sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all .5s ease;
@@ -96,4 +109,179 @@ input[type="submit"]:focus {
 }
 input[type="submit"]:active {
  border: none;
+}
+.img {
+  padding:0px;
+  margin:0px;
+ display: -ms-flexbox;
+ display: flex;
+ -ms-flex-align: center;
+ align-items: center;
+ -ms-flex-pack: middle;
+ justify-content: center;
+right: 0;
+bottom: 0;
+}
+div img {
+
+  border-radius:50%;
+  width: 27%;
+  padding: 0 ;
+  margin:0px;
+  height: auto;
+  max-width: 240px;
+   border: ridge 1px crimson;
+   box-shadow: 0 4px 10px crimson;
+}
+input ,p , label{
+  text-align:center;
+}
+
+.btn-primary{
+  padding: 2px;
+  font-size:1em;
+  border: ridge 1px  rgb(20, 220, 47);
+  border-radius:3px;
+  font-family: 'Acme' sans-serif;
+  background: linear-gradient(#34ac3e85,#1bdc14c7);
+   color: whitesmoke;
+   margin-right: 10px;
+   float:right;
+}
+
+.btn-primary:focus{
+  outline :0 !important;
+}
+ .btn-primary:active{
+ border:none;
+}
+.btn-primary:hover {
+  text-shadow: 0px 0px 3px whitesmoke;
+ box-shadow: 0px 0px 15px chartreuse;
+ font-weight: bold;
+ cursor: pointer;
+}
+.btn-block {
+  padding: 2px;
+  margin: 2px;
+  font-size:1em;
+  border: ridge 1px  rgb(16, 223, 205);
+  border-radius:3px;
+  font-family: 'Acme' sans-serif;
+  background: linear-gradient(rgba(16, 223, 205,0.3),rgba(16, 223, 205,0.8));
+   color: whitesmoke;
+
+
+}
+.btn-secondary {
+  padding-left:4px;
+  padding-right:4px;
+  padding-top: 12px;
+  padding-bottom:12px;
+  margin: 2px;
+  font-size:1em;
+  border: ridge 1px  rgb(50, 0, 129);
+  border-radius:3px;
+  font-family: 'Acme' sans-serif;
+  background: linear-gradient(rgba(50, 0, 129,0.3),rgba(50, 0, 129,0.8));
+   color: whitesmoke;
+   margin-right: 10px;
+   float:right;
+
+}
+.btn-secondary:hover {
+  text-shadow: 0px 0px 3px whitesmoke;
+ box-shadow: 0px 0px 15px rgb(50, 0, 129);
+ font-weight: bold;
+ cursor: pointer;
+}
+.btn-block:hover {
+  text-shadow: 0px 0px 3px whitesmoke;
+ box-shadow: 0px 0px 15px rgb(16, 223, 205);
+ font-weight: bold;
+ cursor: pointer;
+}
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: crimson;
+  box-shadow: 0 2px 0 0.2rem rgba(255, 0, 0, 0.295);
+}
+
+.custom-file-input:focus ~ .custom-file-label::after {
+  border-color: #ff8080;
+}
+
+.custom-file-input:disabled ~ .custom-file-label {
+  background-color: #000000;
+}
+
+.custom-file-label {
+
+  color: chartreuse;
+  background-color: rgba(0, 0, 0,0.5);
+  border: 2px ridge crimson
+}
+
+.modal {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color:rgb(255, 255, 255);
+  padding: 0px !important;
+}
+ .modal-title {
+  text-align: center;
+  font-family: 'Oleo Script',cursive;
+  text-shadow: 0px 0px 10px rgb(16, 223, 205);
+ }
+
+ .close{
+   color:red;
+   text-shadow: 0px 5px 10px black;
+ }
+
+ .close{
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+   color:red;
+   text-shadow: 0px 5px 10px black;
+ }
+ .modal-header , .modal-footer{
+   border:none;
+   margin: 0px;
+ }
+  .modal-header {
+    background: rgba(17, 17, 17, 0.9);
+    box-shadow: 0px 4px 4px black;
+  }
+  .modal-body {
+    padding:10px;
+  }
+  .modal-footer , .modal-header {
+  padding: 8px;
+  }
+ .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 20px red;
+}
+
+.modal-content{  background: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.9));
+  box-shadow:0px 0px 10px crimson;
+padding:0px;}
+.modal input[type="submit"] {
+ width:auto;
+
+}
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }

@@ -28,6 +28,7 @@ export class OrdenComponent implements OnInit {
   productos: ProductoPedido [] = [];
   userUid: string ;
   Total = 0;
+  subTotal = 0;
   paypalConfig  = {
     env: 'sandbox',
     client: {
@@ -102,6 +103,7 @@ export class OrdenComponent implements OnInit {
       this.productos = productos;
       this.productos.forEach (element => {
         this.Total += element.precioTotal ;
+        this.subTotal += element.precio * element.cantidad;
       }) ;
    }) ;
    } ) ;
@@ -112,9 +114,10 @@ export class OrdenComponent implements OnInit {
     this.comprasService.getCarrito(this.userUid).subscribe( productos => {
       this.productos = productos;
       this.Total = 0 ;
-
+      this.subTotal = 0;
       this.productos.forEach (element => {
         this.Total += element.precioTotal ;
+        this.subTotal += (element.precio * element.precio);
       }) ;
    }) ;
   }
