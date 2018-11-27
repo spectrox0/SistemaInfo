@@ -128,6 +128,7 @@ this.productoService.firequery( value[0] , value[1] ).subscribe( productos => {
     this.productoPedido.idUser = this.userUid;
     this.productoPedido.emailUser = this.emailUser;
     this.productoPedido.option = this.productoToEdit.extras;
+    this.productoPedido.isPersonalizable = this.productoToEdit.isPersonalizable;
   this.comprasService.agregarProductoCarrito(this.productoPedido, this.userUid);
   this.flashMessage.show('Has agregado ' + this.productoPedido.nombre + ' a tu carrito', {cssClass: 'alert-success', timeout: 8000});
   this.productoPedido.ing1 = 'Ninguno';

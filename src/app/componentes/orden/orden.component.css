@@ -69,7 +69,7 @@ table img {
 
 .btn {
   float: right;
-border: ridge 2px crimson;
+border: ridge 1px crimson;
 background: linear-gradient(rgba(220, 20, 60, 0.294),rgba(220, 20, 60, 1));
 color: whitesmoke;
 margin-right: 10px;

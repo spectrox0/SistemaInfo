@@ -52,8 +52,8 @@
           <td><strong *ngIf="producto.disponibilidad">Disponible</strong>
             <strong *ngIf="!producto.disponibilidad">No disponible</strong></td>
           <td><button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#'+'myModal'+producto.id"><i class="far fa-times-circle"></i></button>
-            <button type="button" *ngIf="editState==false" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
-            <button type="button" *ngIf="editState && productoToEdit!=undefined && productoToEdit.id==producto.id" (click)="clearState()" class="btn btn-secondary" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" ><i class="fas fa-edit"></i></button>
+            <button type="button" data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" (click)="editProducto($event,producto)" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+
           </td>
           <div class="modal fade" [attr.id]="'myModal'+producto.id">
             <div class="modal-dialog modal-lg">
@@ -111,7 +111,7 @@
                         </section>
 
                       <div class="custom-file">
-                        <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img{{producto.id}}">
+                        <input class="custom-file-input" type="file" name="img" (change)="upload($event)" accept="image/*" id="img{{producto.id}}" >
                         <label class="custom-file-label" name="img" for="img{{producto.id}}">Elige imagen</label>
                       </div>
                       </div>

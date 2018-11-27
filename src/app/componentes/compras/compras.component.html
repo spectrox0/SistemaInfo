@@ -33,36 +33,76 @@
             <span *ngIf="compra.ing1=='Ninguno' && compra.ing2=='Ninguno'">Ninguno</span></td>
           <td> <span *ngIf="!compra.isEntregado">Sin entregar</span>
             <span *ngIf="compra.isEntregado">Entregado</span></td>
-          <td><button *ngIf="!isState" type="button" (click)="editProducto($event,compra)" class="btn btn-block btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+compra.id" aria-expanded="false" [attr.aria-controls]="'sel'+compra.id" ><i class="fas fa-shopping-cart"></i> Agrega al Carrito</button>
-
-              <button *ngIf = "isState && pedidoToEdit!=undefined && pedidoToEdit.id==compra.id" type="button" (click)="clearState()" class="btn btn-block btn-secondary" data-toggle="collapse" [attr.data-target]="'#'+'sel'+compra.id" aria-expanded="false" [attr.aria-controls]="'sel'+compra.id" ><i class="fas fa-shopping-cart"></i> Cierra </button>
+          <td><button type="button" (click)="editProducto($event,compra)" class="btn btn-block btn-secondary" data-toggle="modal" [attr.data-target]="'#'+'sel'+compra.id"><i class="fas fa-shopping-cart"></i> Agrega</button>
 
 
-             <div class="container collapse" id="sel{{compra.id}}">
-            <form (ngSubmit)="agregaCarrito(compra)">
-      <div class="row">
-              <div class="form-group col-sm">
 
-                <label for="sel1 {{compra.id}}">Ing 1</label>
-                <select [(ngModel)]="compra.ing1" name="ing1" class="custom-select" id="sel1 {{compra.id}}">
-              <option>Ninguno</option>
-              <option *ngFor="let option of compra.option">{{option}}</option>
-                </select>
-             </div>
-             <div class="form-group col-sm">
-                <label for="sel2 {{compra.id}}">Ing 2</label>
-                <select [(ngModel)]="compra.ing2" name="ing2" class="custom-select" id="sel2 {{compra.id}}">
-              <option>Ninguno</option>
-              <option *ngFor="let option of compra.option">{{option}}</option>
-                </select>
+             <div class="modal fade" id="sel{{compra.id}}">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Agregar {{compra.nombre}}</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+
+
+      <form (ngSubmit)="agregaCarrito(compra)">
+              <div class="modal-body">
+
+                      <div *ngIf="compra.isPersonalizable; else noP" class="row">
+
+
+                              <div class="form-group col-sm-4">
+                                <label for="sel1 {{compra.id}}">Ing 1</label>
+                                <select [(ngModel)]="compra.ing1" name="ing1" class="custom-select" id="sel1 {{compra.id}}">
+                              <option>Ninguno</option>
+                              <option *ngFor="let option of compra.option">{{option}}</option>
+                                </select>
+                             </div>
+                             <div class="form-group col-sm-4">
+                                <label for="sel2 {{compra.id}}">Ing 2</label>
+                                <select [(ngModel)]="compra.ing2" name="ing2" class="custom-select" id="sel2 {{compra.id}}">
+                              <option>Ninguno</option>
+                              <option *ngFor="let option of compra.option">{{option}}</option>
+                                </select>
+                              </div>
+                            </div>
+
+                                <ng-template #noP>
+                                  <div class="row">
+                                    <div class="col-sm">
+                                    <p> El producto no es personalizable</p>
+                                  </div>
+                                  </div>
+
+                                </ng-template>
+
+
+
+
+                  </div>
+                   <div class="modal-footer">
+                      <div class="form-group col-sm-2">
+                          <label for="sel3 {{compra.id}}">Cantidad</label>
+                          <select name="cantidad" [(ngModel)]="compra.cantidad" class="custom-select" id="sel3 {{compra.id}}">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                                </select>
+                         </div>
+                      <button class="btn btn-primary" type="submit" id="Confirm{{compra.id}}"> Confirmar </button>
+                  </div></form>
               </div>
-              <div class="col-sm">
-                   <label for="Confirm{{compra.id}}">Confirme la operacion</label>
-                  <button class="btn btn-primary" type="submit" id="Confirm{{compra.id}}"> Confirmar </button>
-             </div>
-                </div>
+            </div>
 
-              </form>
+
             </div>
           </td>
 
