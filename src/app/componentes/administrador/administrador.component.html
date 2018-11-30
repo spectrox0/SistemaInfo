@@ -75,7 +75,7 @@
               </p>
               </div>
                <div class="modal-footer">
-               <button class="btn btn-primary" (click)="deleteProducto($event,producto)"  data-toggle="modal" [attr.data-target]="'#'+'sel'+producto.id" > <i class="far fa-times-circle"></i> Eliminar Producto</button>
+               <button class="btn btn-primary" (click)="deleteProducto($event,producto)" data-toggle="modal" [attr.data-target]="'#'+'myModal'+producto.id" > <i class="far fa-times-circle"></i> Eliminar Producto</button>
               </div>
           </div>
         </div>
@@ -277,7 +277,7 @@
                         <input [(ngModel)]="producto.isPersonalizable" name="personalizable" #isPersonalizable="ngModel" type="checkbox" class="custom-control-input" id="Check2">
                         <label class="custom-control-label" for="Check2">Personalizable</label>
                       </div>
-                  <button  type="submit" class="btn btn-primary">Guardar</button>
+                  <button  type="submit" class="btn btn-primary" (click)="stateNew()" class="btn" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1" >Guardar</button>
 
             </form>
           </div>
